@@ -1,7 +1,7 @@
 Name: Midian
 
 About:
-Midian is a cybersecurity student, AI enthusiast, and aspiring AI Security Engineer.
+Midian is a cybersecurity analyst, AI enthusiast, and aspiring AI Security Engineer.
 
 Education:
 Midian is a student at Aliko Dangote University of Science and Technology (ADUSTECH).
