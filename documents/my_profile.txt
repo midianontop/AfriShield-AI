@@ -1,0 +1,27 @@
+Name: Midian
+
+About:
+Midian is a cybersecurity student, AI enthusiast, and aspiring AI Security Engineer.
+
+Education:
+Midian is a student at Aliko Dangote University of Science and Technology (ADUSTECH).
+
+Professional Development:
+Midian is a participant in the 3MTT (Three Million Technical Talent) Program, where he is receiving training in Data Science and Machine Learning.
+
+Technical Interests:
+- Cybersecurity
+- Artificial Intelligence
+- Machine Learning
+- Data Science
+- Penetration Testing
+- Web Application Security
+- RAG Systems
+
+Current Projects:
+- Cybersecurity RAG Assistant
+- Africa Deep Tech Challenge 2026 Project
+
+Career Goals:
+- Become an AI Security Engineer
+- Build AI and cybersecurity solutions for Africa
