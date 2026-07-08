@@ -24,6 +24,7 @@ if "messages" not in st.session_state:
 # ====================================
 
 with st.sidebar:
+
     st.title("🛡️ About")
 
     st.write("""
@@ -33,10 +34,11 @@ with st.sidebar:
 
     Features:
     - Offline AI
-    - RAG (Retrieval-Augmented Generation)
+    - Retrieval-Augmented Generation (RAG)
     - ChromaDB Vector Search
     - Llama 3.2 Local LLM
     - Cybersecurity Knowledge Base
+    - African Cybersecurity Awareness
     """)
 
     st.markdown("---")
@@ -55,7 +57,9 @@ st.write(
     "Ask cybersecurity questions and get answers from the local knowledge base."
 )
 
-question = st.text_input("Enter your question:")
+question = st.text_input(
+    "Enter your question:"
+)
 
 # ====================================
 # Ask Button
@@ -65,17 +69,21 @@ if st.button("Ask"):
 
     if question.strip():
 
-        with st.spinner("Searching and generating answer..."):
+        with st.spinner("Searching knowledge base and generating answer..."):
 
+            # Retrieve relevant chunks
             results = search_documents(question)
 
+            # Combine retrieved chunks
             context = "\n\n".join(results)
 
+            # Generate answer
             answer = generate_answer(
                 question,
                 context
             )
 
+            # Save user message
             st.session_state.messages.append(
                 {
                     "role": "user",
@@ -83,11 +91,11 @@ if st.button("Ask"):
                 }
             )
 
+            # Save assistant message
             st.session_state.messages.append(
                 {
                     "role": "assistant",
-                    "content": answer,
-                    "sources": results
+                    "content": answer
                 }
             )
 
@@ -108,13 +116,5 @@ for msg in st.session_state.messages:
 
         st.markdown("### 🛡️ AI Assistant")
         st.write(msg["content"])
-
-        if "sources" in msg:
-
-            with st.expander("📚 Retrieved Sources"):
-
-                for i, chunk in enumerate(msg["sources"], start=1):
-                    st.write(f"Source {i}")
-                    st.text(chunk[:500] + "...")
 
     st.markdown("---")
