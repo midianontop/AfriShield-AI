@@ -57,64 +57,60 @@ st.write(
     "Ask cybersecurity questions and get answers from the local knowledge base."
 )
 
-question = st.text_input(
-    "Enter your question:"
+# ====================================
+# Display Chat History
+# ====================================
+
+for msg in st.session_state.messages:
+    with st.chat_message(msg["role"]):
+        st.write(msg["content"])
+
+# ====================================
+# Chat Input
+# ====================================
+
+question = st.chat_input(
+    "Ask a cybersecurity question..."
 )
 
 # ====================================
-# Ask Button
+# Process Question
 # ====================================
 
-if st.button("Ask"):
+if question:
 
-    if question.strip():
+    # Show user message immediately
+    st.session_state.messages.append(
+        {
+            "role": "user",
+            "content": question
+        }
+    )
 
-        with st.spinner("Searching knowledge base and generating answer..."):
+    with st.chat_message("user"):
+        st.write(question)
 
-            # Retrieve relevant chunks
-            results = search_documents(question)
+    with st.spinner("Searching knowledge base and generating answer..."):
 
-            # Combine retrieved chunks
-            context = "\n\n".join(results)
+        # Retrieve relevant chunks
+        results = search_documents(question)
 
-            # Generate answer
-            answer = generate_answer(
-                question,
-                context
-            )
+        # Combine retrieved chunks
+        context = "\n\n".join(results)
 
-            # Save user message
-            st.session_state.messages.append(
-                {
-                    "role": "user",
-                    "content": question
-                }
-            )
+        # Generate answer
+        answer = generate_answer(
+            question,
+            context
+        )
 
-            # Save assistant message
-            st.session_state.messages.append(
-                {
-                    "role": "assistant",
-                    "content": answer
-                }
-            )
+    # Save assistant response
+    st.session_state.messages.append(
+        {
+            "role": "assistant",
+            "content": answer
+        }
+    )
 
-# ====================================
-# Chat History
-# ====================================
-
-st.markdown("---")
-
-for msg in st.session_state.messages:
-
-    if msg["role"] == "user":
-
-        st.markdown("### 👤 You")
-        st.write(msg["content"])
-
-    else:
-
-        st.markdown("### 🛡️ AI Assistant")
-        st.write(msg["content"])
-
-    st.markdown("---")
+    with st.chat_message("assistant"):
+        st.write(answer)
