@@ -1,5 +1,6 @@
 import json
 import os
+from datetime import datetime
 
 LOG_FILE = "incident_logs.json"
 
@@ -12,6 +13,9 @@ def save_incident(
 ):
 
     incident = {
+        "timestamp": datetime.now().strftime(
+            "%Y-%m-%d %H:%M:%S"
+        ),
         "question": question,
         "threat": threat,
         "severity": severity,
@@ -20,8 +24,12 @@ def save_incident(
 
     if os.path.exists(LOG_FILE):
 
-        with open(LOG_FILE, "r") as f:
-            logs = json.load(f)
+        try:
+            with open(LOG_FILE, "r") as f:
+                logs = json.load(f)
+
+        except:
+            logs = []
 
     else:
         logs = []

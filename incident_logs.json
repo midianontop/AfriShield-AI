@@ -1,0 +1,42 @@
+[
+    {
+        "question": "My WhatsApp account was hacked",
+        "threat": "Account Compromise",
+        "severity": "High",
+        "confidence": "90%"
+    },
+    {
+        "question": "what is SQL injection?",
+        "threat": "General Security Question",
+        "severity": "Low",
+        "confidence": "70%"
+    },
+    {
+        "timestamp": "2026-07-09 18:34:56",
+        "question": "my whatsapp was hacked",
+        "threat": "General Security Question",
+        "severity": "Low",
+        "confidence": "70%"
+    },
+    {
+        "timestamp": "2026-07-09 18:49:29",
+        "question": "who is midian?",
+        "threat": "General Security Question",
+        "severity": "Low",
+        "confidence": "70%"
+    },
+    {
+        "timestamp": "2026-07-09 19:42:27",
+        "question": "what is malware?",
+        "threat": "Malware",
+        "severity": "High",
+        "confidence": "90%"
+    },
+    {
+        "timestamp": "2026-07-09 19:44:14",
+        "question": "how can i prevent malware?",
+        "threat": "Malware",
+        "severity": "High",
+        "confidence": "90%"
+    }
+]

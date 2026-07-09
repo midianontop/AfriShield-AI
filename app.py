@@ -4,6 +4,8 @@ from generate_answer import generate_answer
 from threat_detector import detect_threat
 from incident_response import get_incident_response
 from confidence import get_confidence
+from incident_logger import save_incident
+from scam_detector import detect_scam
 
 # ====================================
 # Page Configuration
@@ -42,6 +44,7 @@ with st.sidebar:
     - Llama 3.2 Local LLM
     - Cybersecurity Knowledge Base
     - Threat Detection
+    - Scam Detection
     - Incident Response Recommendations
     - Confidence Score
     """)
@@ -72,19 +75,55 @@ for msg in st.session_state.messages:
 
         if msg["role"] == "assistant":
 
-            st.write(f"🛡️ Threat Type: {msg['threat']}")
-            st.write(f"⚠️ Severity: {msg['severity']}")
-            st.write(f"📊 Confidence: {msg['confidence']}")
+            # Threat Information
 
-            st.write(msg["content"])
+            if msg["threat"]:
 
-            st.write("### Recommended Actions")
+                st.write(
+                    f"🛡️ Threat Type: {msg['threat']}"
+                )
 
-            for action in msg["recommendations"]:
-                st.write(f"✅ {action}")
+                st.write(
+                    f"⚠️ Severity: {msg['severity']}"
+                )
+
+                st.write(
+                    f"📊 Confidence: {msg['confidence']}"
+                )
+
+            # Scam Information
+
+            if msg["scam_type"]:
+
+                st.error(
+                    f"🚨 Scam Alert: {msg['scam_type']}"
+                )
+
+            # AI Answer
+
+            st.write(
+                msg["content"]
+            )
+
+            # Recommendations
+
+            if msg["recommendations"]:
+
+                st.write(
+                    "### Recommended Actions"
+                )
+
+                for action in msg["recommendations"]:
+
+                    st.write(
+                        f"✅ {action}"
+                    )
 
         else:
-            st.write(msg["content"])
+
+            st.write(
+                msg["content"]
+            )
 
 # ====================================
 # Chat Input
@@ -101,6 +140,7 @@ question = st.chat_input(
 if question:
 
     # Save User Message
+
     st.session_state.messages.append(
         {
             "role": "user",
@@ -111,32 +151,119 @@ if question:
     with st.chat_message("user"):
         st.write(question)
 
-    with st.spinner("Analyzing threat and generating answer..."):
+    with st.spinner(
+        "Analyzing and generating answer..."
+    ):
 
-        # Threat Detection
-        threat_type, severity = detect_threat(question)
+        # ====================================
+        # Scam Detection
+        # ====================================
 
-        # Confidence Score
-        confidence = get_confidence(severity)
-
-        # Incident Response Recommendations
-        recommendations = get_incident_response(
-            threat_type
+        scam_type = detect_scam(
+            question
         )
 
-        # Retrieve Documents
-        results = search_documents(question)
+        # ====================================
+        # Threat Detection
+        # ====================================
 
-        # Build Context
-        context = "\n\n".join(results)
+        threat_keywords = [
+            "attack",
+            "hacked",
+            "hack",
+            "malware",
+            "virus",
+            "ransomware",
+            "phishing",
+            "breach",
+            "compromised",
+            "fraud",
+            "scam"
+        ]
 
+        is_threat = any(
+            word in question.lower()
+            for word in threat_keywords
+        )
+
+        if is_threat:
+
+            threat_type, severity = detect_threat(
+                question
+            )
+
+            confidence = get_confidence(
+                severity
+            )
+
+            recommendations = (
+                get_incident_response(
+                    threat_type
+                )
+            )
+
+            save_incident(
+                question,
+                threat_type,
+                severity,
+                confidence
+            )
+
+        else:
+
+            threat_type = None
+            severity = None
+            confidence = None
+            recommendations = []
+
+        # ====================================
+        # Retrieve Context
+        # ====================================
+
+        results = search_documents(
+            question
+        )
+
+        context = "\n\n".join(
+            results
+        )
+
+        # ====================================
         # Generate AI Answer
+        # ====================================
+
         ai_answer = generate_answer(
             question,
             context
         )
 
-    # Save Assistant Response
+        # ====================================
+        # Scam Warning
+        # ====================================
+
+        if scam_type:
+
+            ai_answer = f"""
+🚨 Scam Alert Detected
+
+Scam Type: {scam_type}
+
+{ai_answer}
+
+⚠️ Be careful.
+
+Do not share:
+- Passwords
+- OTP Codes
+- ATM Card Details
+- Bank Details
+- Personal Information
+"""
+
+    # ====================================
+    # Save Assistant Message
+    # ====================================
+
     st.session_state.messages.append(
         {
             "role": "assistant",
@@ -144,20 +271,49 @@ if question:
             "threat": threat_type,
             "severity": severity,
             "confidence": confidence,
-            "recommendations": recommendations
+            "recommendations": recommendations,
+            "scam_type": scam_type
         }
     )
 
+    # ====================================
     # Display Assistant Response
+    # ====================================
+
     with st.chat_message("assistant"):
 
-        st.write(f"🛡️ Threat Type: {threat_type}")
-        st.write(f"⚠️ Severity: {severity}")
-        st.write(f"📊 Confidence: {confidence}")
+        if threat_type:
 
-        st.write(ai_answer)
+            st.write(
+                f"🛡️ Threat Type: {threat_type}"
+            )
 
-        st.write("### Recommended Actions")
+            st.write(
+                f"⚠️ Severity: {severity}"
+            )
 
-        for action in recommendations:
-            st.write(f"✅ {action}")
+            st.write(
+                f"📊 Confidence: {confidence}"
+            )
+
+        if scam_type:
+
+            st.error(
+                f"🚨 Scam Alert: {scam_type}"
+            )
+
+        st.write(
+            ai_answer
+        )
+
+        if recommendations:
+
+            st.write(
+                "### Recommended Actions"
+            )
+
+            for action in recommendations:
+
+                st.write(
+                    f"✅ {action}"
+                )
