@@ -1,0 +1,12 @@
+# Virtual Environment
+venv/
+
+# Python Cache
+__pycache__/
+*.pyc
+
+# Runtime Logs
+incident_logs.json
+
+# Environment Variables
+.env
