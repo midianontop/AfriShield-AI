@@ -192,135 +192,65 @@ AfriShield AI consists of several major components:
 
 
 
-User
+&#x20;```text
 
-|
+&#x20;                   User
 
-|
+&#x20;                     |
 
-Streamlit Interface
+&#x20;                     |
 
-|
+&#x20;           Streamlit Interface
 
-|
+&#x20;                     |
 
-Cybersecurity Modules
+&#x20;                     |
 
-|
+&#x20;       +-------------+-------------+
 
-|-------------|-------------|
+&#x20;       |             |             |
 
-| | |
+&#x20;       |             |             |
 
-Threat Scam Incident
+&#x20;  Threat        Scam Detection   Incident
 
-Detection Detection Response
+&#x20;Detection                        Response
 
-|
+&#x20;       |             |             |
 
-|
+&#x20;       +-------------+-------------+
 
-RAG Retrieval System
+&#x20;                     |
 
-|
+&#x20;                     |
 
-|
+&#x20;             RAG Retrieval System
 
-Chroma Vector Database
+&#x20;                     |
 
-|
+&#x20;                     |
 
-|
+&#x20;            Chroma Vector Database
 
-Cybersecurity Knowledge Base
+&#x20;                     |
 
-|
+&#x20;                     |
 
-|
+&#x20;      Cybersecurity Knowledge Base
 
-Llama 3.2 Local LLM
+&#x20;                     |
 
-|
+&#x20;                     |
 
-|
+&#x20;             Llama 3.2 Local LLM
 
-AI Response
+&#x20;                     |
 
+&#x20;                     |
 
+&#x20;                AI Response
 
-
-
-
-
-&#x20;
-
-\---
-
-
-
-\# 6. Artificial Intelligence Approach
-
-
-
-\## 6.1 Local Large Language Model
-
-
-
-AfriShield AI uses:
-
-
-
-\*\*Model: Llama 3.2 3B\*\*
-
-
-
-The model runs locally using:
-
-
-
-\*\*Ollama Runtime\*\*
-
-
-
-Benefits:
-
-
-
-\- Offline operation
-
-\- Privacy protection
-
-\- Reduced cloud dependency
-
-\- Suitable for low-resource environments
-
-
-
-\---
-
-
-
-\# 6.2 Retrieval-Augmented Generation (RAG)
-
-
-
-The system uses RAG to improve response accuracy.
-
-
-
-Instead of relying only on the language model's internal knowledge, AfriShield AI retrieves relevant information from cybersecurity documents.
-
-
-
-Knowledge sources include:
-
-
-
-\- OWASP Security Documentation
-
-\- NIST Cybersecurity Materials
-
-\- Incident Response Guides
+```
 
 \---
 
@@ -634,7 +564,55 @@ Advantages:
 
 
 
-\# 11. Evaluation and Testing
+\# 11. Innovation
+
+
+
+AfriShield AI introduces an offline-first cybersecurity assistance model that combines:
+
+
+
+\- Local Large Language Models
+
+\- Retrieval-Augmented Generation
+
+\- Cybersecurity knowledge retrieval
+
+\- Threat detection
+
+\- Scam analysis
+
+\- Incident response guidance
+
+
+
+Unlike traditional cloud-based assistants, AfriShield AI can operate without internet connectivity, making it more suitable for underserved and low-connectivity environments.
+
+
+
+\# 12. Current Limitations
+
+
+
+Current limitations include:
+
+
+
+\- Limited African-language support
+
+\- No malware file analysis yet
+
+\- Limited cybersecurity dataset size
+
+\- Performance depends on available hardware
+
+
+
+These limitations are planned areas for future development.
+
+
+
+\# 13. Evaluation and Testing
 
 
 
@@ -692,7 +670,7 @@ Evaluation areas:
 
 
 
-\# 12. Challenges and Solutions
+\# 14. Challenges and Solutions
 
 
 
@@ -744,7 +722,7 @@ Designed the entire system to operate offline.
 
 
 
-\# 13. Future Improvements
+\# 15. Future Improvements
 
 
 
@@ -770,7 +748,7 @@ Future versions may include:
 
 
 
-\# 14. Conclusion
+\# 16. Conclusion
 
 
 
