@@ -1,0 +1,15 @@
+[
+    {
+        "incident_id": "336582cc",
+        "timestamp": "2026-07-16T00:39:46.378639+00:00",
+        "user_report": "I think my WhatsApp was hacked",
+        "incident_type": "Active Incident",
+        "threat_category": "Account/Device Compromise",
+        "severity": "🟠 High",
+        "confidence": 75,
+        "risk_score": 72.0,
+        "scam_detected": null,
+        "recommendations": [],
+        "ai_response": null
+    }
+]
