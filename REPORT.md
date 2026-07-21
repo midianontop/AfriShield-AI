@@ -748,7 +748,39 @@ Future versions may include:
 
 
 
-\# 16. Conclusion
+\# 16.Performance Evaluation
+
+
+
+Benchmark testing was performed on an Intel Core i5-7200U system with 8 GB RAM.
+
+
+
+Results:
+
+
+
+| Metric | Result |
+
+|----------|----------|
+
+| Startup Time | 38.7 seconds |
+
+| Average Response Time | 72.2 seconds |
+
+| Offline Operation | Supported |
+
+| Internet Requirement | None |
+
+| Memory Usage | \~467 MB Working Set |
+
+
+
+The results demonstrate that AfriShield AI can operate successfully on modest consumer hardware while maintaining complete offline functionality.
+
+
+
+\# 17. Conclusion
 
 
 
