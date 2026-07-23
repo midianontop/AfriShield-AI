@@ -1,0 +1,123 @@
+{
+  "_metadata": {
+    "language": "Hausa",
+    "language_code": "ha",
+    "project": "AfriShield AI",
+    "purpose": "Maps common Hausa security/fraud-related terms to their canonical English keyword equivalents, for use in multilingual scam/threat detection.",
+    "version": "2.0.0",
+    "maintainer": "Midian",
+    "disclaimer": "This is a starter, community-style vocabulary, not an exhaustive or professionally certified translation. Confidence levels are noted per entry. Corrections and native-speaker review are welcome, especially for entries marked 'community' or 'uncertain'.",
+    "confidence_levels": {
+      "verified": "Cross-checked against a published Hausa-English dictionary or multiple independent sources.",
+      "common": "Widely known/standard vocabulary, high confidence, not individually cross-checked in a dictionary this session.",
+      "uncertain": "Included from the original source list but could not be confirmed; flagged for native-speaker review."
+    },
+    "notes": [
+      "Hausa has three hooked/glottalized letters not on standard keyboards: ɓ, ɗ, ƙ. Where relevant, both the correct spelling and the common ASCII fallback (b, d, k) are included as separate keys mapping to the same English value, since real-world user input usually omits the hooks.",
+      "'tafashe' from the original list is corrected here: it appears to derive from 'tafasa' (to boil), not 'broken'. It is kept below marked as uncertain/deprecated, with 'lalace' and 'karye' provided as the verified replacements for 'broken/spoiled'."
+    ]
+  },
+
+  "stopwords": {
+    "an": "Passive/impersonal verb marker (e.g. 'an yi masa zamba' = 'he was defrauded'). Strip before matching.",
+    "yi": "'Do/did' — light verb often paired with a noun (yi zamba = commit fraud, yi hack = to hack). Strip before matching unless part of a fixed phrase.",
+    "yin": "Gerund form of 'yi' ('doing').",
+    "na": "Possessive/linking particle ('of', masculine) or 'I' depending on context.",
+    "ta": "Possessive/linking particle ('of', feminine) or possessive suffix ('my', feminine noun, e.g. wayata = my phone).",
+    "ne": "Copula ('is/are', masculine/plural).",
+    "ce": "Copula ('is', feminine).",
+    "da": "'With' / 'and'.",
+    "kuma": "'Also' / 'and then'.",
+    "sai": "'Then' / 'except'.",
+    "wani": "'A certain (someone)' — masculine.",
+    "wata": "'A certain (someone)' — feminine.",
+    "wannan": "'This'."
+  },
+
+  "categories": {
+    "account_compromise": ["hacked", "hack", "unauthorized_access", "sim_swap"],
+    "financial_fraud": ["scam", "fraud", "money", "bank", "account", "stolen", "bvn", "otp", "pin"],
+    "malware_technical": ["virus", "malware", "computer", "internet", "network", "data"],
+    "phishing_social_engineering": ["password", "link", "click", "phone_number", "email", "website"],
+    "actions": ["steal", "attack", "warn", "report", "open", "close", "change", "contact", "enter_type"],
+    "people_institutions": ["thief", "fraudster", "police", "efcc"],
+    "devices": ["phone", "my_phone", "broken"]
+  },
+
+  "translations": {
+    "hacking": {"english": "hacked", "confidence": "common"},
+    "hack": {"english": "hacked", "confidence": "common"},
+    "an hack": {"english": "hacked", "confidence": "common", "note": "'an' + loanword 'hack', very common construction in spoken Hausa."},
+
+    "shiga ba tare da izini ba": {"english": "unauthorized access", "confidence": "community", "note": "Literally 'entering without permission'."},
+
+    "sim swap": {"english": "sim swap", "confidence": "common", "note": "Usually kept as an English loan phrase."},
+
+    "whatsapp": {"english": "whatsapp", "confidence": "verified", "note": "Brand name, unchanged."},
+    "email": {"english": "email", "confidence": "verified", "note": "Common loanword."},
+    "bvn": {"english": "bvn", "confidence": "verified"},
+    "otp": {"english": "otp", "confidence": "verified"},
+    "virus": {"english": "virus", "confidence": "verified", "note": "Common loanword."},
+    "malware": {"english": "malware", "confidence": "verified", "note": "Common loanword, no established native equivalent."},
+    "scam": {"english": "scam", "confidence": "verified", "note": "Loanword; 'zamba' is the native equivalent, see below."},
+    "fraud": {"english": "fraud", "confidence": "verified", "note": "Loanword; 'zamba' is the native equivalent, see below."},
+    "zamba": {"english": "fraud", "confidence": "verified", "note": "Dictionary-confirmed: fraud / scam / swindle."},
+    "yaudara": {"english": "deceive", "confidence": "common", "note": "To deceive/trick someone."},
+    "dan damfara": {"english": "fraudster", "confidence": "common", "note": "From 'damfara' (to swindle/con); 'con man'."},
+    "ɗan damfara": {"english": "fraudster", "confidence": "common", "note": "Correct hooked-letter spelling of the entry above."},
+    "barawo": {"english": "thief", "confidence": "verified"},
+    "sata": {"english": "stolen", "confidence": "verified", "note": "Dictionary-confirmed: unlawful taking of property. 'an sata' (was stolen) reduces to this once the 'an' stopword is stripped."},
+
+    "kudi": {"english": "money", "confidence": "verified"},
+    "kuɗi": {"english": "money", "confidence": "verified", "note": "Correct hooked-letter spelling of 'kudi'."},
+    "banki": {"english": "bank", "confidence": "verified", "note": "Common loanword."},
+    "asusu": {"english": "account", "confidence": "verified"},
+    "asusun banki": {"english": "bank account", "confidence": "common"},
+
+    "waya": {"english": "phone", "confidence": "verified"},
+    "wayata": {"english": "my phone", "confidence": "verified", "note": "waya (phone) + -ta (my, feminine possessive suffix)."},
+    "lambar waya": {"english": "phone number", "confidence": "common"},
+
+    "kalmar sirri": {"english": "password", "confidence": "verified", "note": "Literally 'secret word'."},
+    "lambar sirri": {"english": "pin", "confidence": "common", "note": "Literally 'secret number' — used for PIN codes."},
+    "sirri": {"english": "secret", "confidence": "verified"},
+    "asiri": {"english": "secret", "confidence": "verified", "note": "Alternate/regional spelling of sirri."},
+
+    "hari": {"english": "attack", "confidence": "verified", "note": "e.g. 'hari ta yanar gizo' = cyber attack."},
+    "hari ta yanar gizo": {"english": "cyber attack", "confidence": "common"},
+    "yanar gizo": {"english": "internet", "confidence": "common", "note": "Literally 'spider web' — the common phrase for internet/web."},
+    "intanet": {"english": "internet", "confidence": "verified", "note": "Loanword."},
+    "kwamfuta": {"english": "computer", "confidence": "verified", "note": "Loanword."},
+    "hanyar sadarwa": {"english": "network", "confidence": "common", "note": "hanya (way/path) + sadarwa (communication)."},
+    "bayanai": {"english": "data", "confidence": "common", "note": "Information/data."},
+    "satar bayanai": {"english": "data theft", "confidence": "community"},
+
+    "tsaro": {"english": "security", "confidence": "verified", "note": "e.g. 'ma'aikatar tsaro' = ministry of security."},
+    "kariya": {"english": "protection", "confidence": "verified"},
+    "gargadi": {"english": "warning", "confidence": "common"},
+    "rahoto": {"english": "report", "confidence": "verified"},
+
+    "link": {"english": "link", "confidence": "common", "note": "Usually kept as an English loanword in spoken Hausa."},
+    "shafi": {"english": "website", "confidence": "common", "note": "'Page' — commonly used for website."},
+    "latsa": {"english": "click", "confidence": "common", "note": "Literally 'press/tap'."},
+    "buga": {"english": "enter", "confidence": "common", "note": "'To type/enter' e.g. 'buga lambar sirri' = enter your PIN."},
+
+    "bude": {"english": "open", "confidence": "verified", "note": "e.g. 'bude asusu' = open an account."},
+    "rufe": {"english": "close", "confidence": "verified", "note": "e.g. 'rufe asusu' = close an account."},
+    "canza": {"english": "change", "confidence": "verified", "note": "e.g. 'canza kalmar sirri' = change password."},
+    "tuntuɓi": {"english": "contact", "confidence": "common", "note": "e.g. 'tuntuɓi banki' = contact the bank."},
+    "tuntubi": {"english": "contact", "confidence": "common", "note": "ASCII fallback spelling of tuntuɓi."},
+
+    "'yan sanda": {"english": "police", "confidence": "verified"},
+    "yan sanda": {"english": "police", "confidence": "verified", "note": "ASCII fallback spelling (no apostrophe)."},
+    "efcc": {"english": "efcc", "confidence": "verified", "note": "Economic and Financial Crimes Commission (Nigeria) — kept as-is, commonly referenced in fraud reports."},
+
+    "tafashe": {
+      "english": "broken",
+      "confidence": "uncertain",
+      "note": "DEPRECATED / UNVERIFIED — kept from the original list for backward compatibility, but 'tafasa' appears to mean 'to boil' in published Hausa dictionaries, not 'broken'. Prefer 'lalace' or 'karye' below. Needs native-speaker confirmation."
+    },
+    "lalace": {"english": "broken", "confidence": "verified", "note": "Dictionary-confirmed: to spoil/go bad/break down."},
+    "karye": {"english": "broken", "confidence": "common", "note": "To snap/break (physical breakage, e.g. a cracked screen)."}
+  }
+}
