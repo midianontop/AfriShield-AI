@@ -1,0 +1,52 @@
+# ==============================================================================
+# AfriShield AI — custom Streamlit theme
+# Tertiary color system: Indigo (brand) / Magenta (scam) / Teal-Olive-Amber-
+# Vermilion (severity gradient, low -> critical)
+# ==============================================================================
+
+[theme]
+base = "dark"
+
+primaryColor = "#5B5FC7"
+backgroundColor = "#0F1117"
+secondaryBackgroundColor = "#171A24"
+textColor = "#E7E6EA"
+borderColor = "#2A2E3A"
+linkColor = "#7A7EDB"
+
+font = "Inter:https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+headingFont = "Space Grotesk:https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&display=swap"
+codeFont = "IBM Plex Mono:https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap"
+
+baseRadius = "small"
+buttonRadius = "small"
+showWidgetBorder = true
+
+# Semantic alert colors — tertiary severity gradient
+# green  = Teal (blue-green)     -> Low / safe
+greenColor = "#2FA893"
+greenBackgroundColor = "#12241F"
+greenTextColor = "#8FE0D2"
+
+# yellow = Olive (yellow-green)  -> Medium
+yellowColor = "#9AA83A"
+yellowBackgroundColor = "#20220F"
+yellowTextColor = "#D6DE9E"
+
+# orange = Amber (yellow-orange) -> High
+orangeColor = "#D69A3A"
+orangeBackgroundColor = "#26200F"
+orangeTextColor = "#F0CC8F"
+
+# red    = Vermilion (red-orange) -> Critical
+redColor = "#D6553A"
+redBackgroundColor = "#271410"
+redTextColor = "#F0A692"
+
+# blue   = Indigo tint -> info / scam banner (red-violet handled via custom chip)
+blueColor = "#7A7EDB"
+blueBackgroundColor = "#181B2E"
+blueTextColor = "#B7B9EE"
+
+codeBackgroundColor = "#141722"
+codeTextColor = "#C7C9D6"

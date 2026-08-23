@@ -7,7 +7,6 @@ all_text = ""
 documents_folder = "documents"
 
 for filename in os.listdir(documents_folder):
-
     filepath = os.path.join(documents_folder, filename)
 
     # Read PDFs

@@ -1,0 +1,353 @@
+{
+  "_metadata": {
+    "language": "Fulfulde",
+    "language_code": "ff",
+    "project": "AfriShield AI",
+    "purpose": "Maps common Fulfulde security/fraud-related terms to their canonical English keyword equivalents, for use in multilingual scam/threat detection.",
+    "version": "2.1.0",
+    "maintainer": "Midian",
+    "disclaimer": "IMPORTANT: this file has notably lower vocabulary coverage and confidence than hausa.json, yoruba.json, igbo.json, and swahili.json. Fulfulde/Fula is spoken across a very wide dialect continuum (Nigeria, Senegal, Guinea, Mali, Cameroon and more), and accessible documentation of tech/security-specific vocabulary is far sparser online than for the other four languages. Only 2 entries below (ceede=money, gujjo=thief) were confirmed against an actual dictionary/source text this session; nearly everything else is either a common loanword pattern or an educated inference by analogy to neighboring languages (especially Hausa, given close contact in Northern Nigeria), clearly marked as such. This file needs native-speaker review more than the other three, and should be treated as a minimal starting point, not a finished glossary.",
+    "confidence_levels": {
+      "verified": "Cross-checked against a published Fulfulde-English dictionary/source text.",
+      "common": "A loanword pattern consistent with how neighboring/contact languages (Hausa, English) handle the same modern/technical concept; not independently dictionary-confirmed this session.",
+      "uncertain": "An educated inference (e.g. derived by regular grammatical pattern from a verified word, or by analogy to a related language) rather than a confirmed term; needs native-speaker review before relying on it."
+    },
+    "notes": [
+      "Fulfulde has a large, complex noun-class system (20+ classes) with consonant alternation between related words (e.g. gujjo 'thief' and the verb root for 'to steal' likely share a 'g/w' alternating root). Only a minimal, cautious stopword list is included below rather than attempting to enumerate this system without strong source support.",
+      "Most modern/technical vocabulary below (bank, computer, internet, password, malware, phishing, scam) is given as a loanword, following the same pattern seen in Hausa and other regional languages, since no confirmed native Fulfulde coinage for these concepts was found. This is a reasonable real-world assumption (code-switching with Hausa/English for modern terms is extremely common in Northern Nigeria) but is explicitly a lower-confidence guess, not a sourced fact."
+    ]
+  },
+  "stopwords": {
+    "am": "'I/me' — first person singular pronoun (community knowledge, not independently sourced this session).",
+    "maa": "'You/your' — second person singular pronoun/possessive.",
+    "e": "'And' — common conjunction.",
+    "ko": "Focus/topic marker ('that/what/it is'), very common in Fula grammar."
+  },
+  "categories": {
+    "account_compromise": [
+      "hacked",
+      "hacker",
+      "hack",
+      "unauthorized access",
+      "sim swap",
+      "compromised"
+    ],
+    "financial_fraud": [
+      "fraud",
+      "scam",
+      "money",
+      "bank",
+      "account",
+      "bvn",
+      "otp",
+      "pin",
+      "card",
+      "debit card",
+      "credit card",
+      "atm",
+      "transaction",
+      "mobile money",
+      "wire transfer",
+      "gift card",
+      "loan scam",
+      "investment scam",
+      "crypto scam",
+      "romance scam",
+      "fake lottery",
+      "employment scam",
+      "parcel scam",
+      "giveaway"
+    ],
+    "malware_technical": [
+      "virus",
+      "malware",
+      "computer",
+      "internet",
+      "data",
+      "security",
+      "ransomware",
+      "trojan",
+      "worm",
+      "spyware",
+      "keylogger",
+      "botnet",
+      "ddos",
+      "vpn",
+      "firewall",
+      "backup",
+      "restore",
+      "recovery"
+    ],
+    "phishing_social_engineering": [
+      "password",
+      "phishing",
+      "email",
+      "phone",
+      "link",
+      "click",
+      "website",
+      "social engineering",
+      "authentication",
+      "verification code",
+      "2fa",
+      "mfa",
+      "urgent",
+      "verify now",
+      "claim prize",
+      "account suspended"
+    ],
+    "actions": [
+      "stolen",
+      "steal",
+      "attack",
+      "warn",
+      "report",
+      "change",
+      "contact",
+      "monitor",
+      "scan",
+      "update",
+      "open",
+      "close",
+      "recover"
+    ],
+    "people_institutions": [
+      "thief",
+      "police",
+      "fraudster",
+      "criminal"
+    ],
+    "devices": [
+      "phone",
+      "computer",
+      "sim card",
+      "laptop",
+      "router",
+      "wifi",
+      "usb"
+    ],
+    "authentication": [
+      "password",
+      "otp",
+      "2fa",
+      "mfa",
+      "verification code"
+    ],
+    "banking": [
+      "bank",
+      "mobile money",
+      "airtime",
+      "bank transfer",
+      "debit card",
+      "credit card",
+      "atm",
+      "transaction",
+      "account number",
+      "payment",
+      "merchant",
+      "ussd"
+    ],
+    "mobile_security": [
+      "android",
+      "iphone",
+      "apk",
+      "play store",
+      "app store",
+      "sms",
+      "call",
+      "contact list",
+      "camera",
+      "microphone"
+    ],
+    "network_security": [
+      "vpn",
+      "firewall",
+      "dns",
+      "domain",
+      "ssl",
+      "tls",
+      "router",
+      "wifi"
+    ],
+    "incident_response": [
+      "breach",
+      "incident",
+      "compromised",
+      "infected",
+      "encrypted",
+      "locked",
+      "backup",
+      "restore",
+      "recovery",
+      "monitor",
+      "containment",
+      "eradication"
+    ],
+    "social_media": [
+      "telegram",
+      "whatsapp",
+      "facebook",
+      "instagram",
+      "gmail"
+    ]
+  },
+  "translations": {
+    "ceede": {
+      "english": "money",
+      "confidence": "verified",
+      "note": "Confirmed via a Western Niger Fulfulde-English dictionary entry."
+    },
+    "gujjo": {
+      "english": "thief",
+      "confidence": "verified",
+      "note": "Confirmed via a genuine Fulfulde proverb text using the word in context."
+    },
+    "wujjude": {
+      "english": "steal",
+      "confidence": "uncertain",
+      "note": "Inferred, not independently confirmed: Fulfulde infinitives commonly end in -ude, and 'gujjo' (thief) plausibly shares a g/w-alternating root with a verb for 'to steal'. Needs native-speaker confirmation."
+    },
+    "wujjaa": {
+      "english": "stolen",
+      "confidence": "uncertain",
+      "note": "Inferred past/passive form of wujjude; needs native-speaker confirmation."
+    },
+    "telefon": {
+      "english": "phone",
+      "confidence": "common",
+      "note": "Loanword, widely used across West African languages for 'telephone'."
+    },
+    "banki": {
+      "english": "bank",
+      "confidence": "common",
+      "note": "Loanword, same form used in Hausa and other regional languages."
+    },
+    "akaawun": {
+      "english": "account",
+      "confidence": "uncertain",
+      "note": "Guessed phonetic loanword adaptation of 'account'; not confirmed."
+    },
+    "bvn": {
+      "english": "bvn",
+      "confidence": "common",
+      "note": "Nigeria-specific acronym, likely used as-is."
+    },
+    "otp": {
+      "english": "otp",
+      "confidence": "common"
+    },
+    "virus": {
+      "english": "virus",
+      "confidence": "common",
+      "note": "Loanword."
+    },
+    "malware": {
+      "english": "malware",
+      "confidence": "common",
+      "note": "Loanword; no confirmed native term found."
+    },
+    "phishing": {
+      "english": "phishing",
+      "confidence": "common",
+      "note": "Loanword; no confirmed native term found."
+    },
+    "scam": {
+      "english": "scam",
+      "confidence": "common",
+      "note": "Loanword; no confirmed native term found."
+    },
+    "fraud": {
+      "english": "fraud",
+      "confidence": "common",
+      "note": "Loanword; no confirmed native term found."
+    },
+    "hack": {
+      "english": "hacked",
+      "confidence": "common",
+      "note": "Loanword/code-switching, no confirmed native term found."
+    },
+    "hacked": {
+      "english": "hacked",
+      "confidence": "common"
+    },
+    "kompiyuta": {
+      "english": "computer",
+      "confidence": "uncertain",
+      "note": "Guessed loanword adaptation by analogy to Hausa 'kwamfuta'; not confirmed."
+    },
+    "anternet": {
+      "english": "internet",
+      "confidence": "uncertain",
+      "note": "Guessed loanword adaptation; not confirmed."
+    },
+    "email": {
+      "english": "email",
+      "confidence": "common",
+      "note": "Loanword."
+    },
+    "polis": {
+      "english": "police",
+      "confidence": "common",
+      "note": "Loanword."
+    },
+    "whatsapp": {
+      "english": "whatsapp",
+      "confidence": "verified",
+      "note": "Brand name, unchanged."
+    },
+    "koodii njiyam": {
+      "english": "verification code",
+      "confidence": "uncertain"
+    },
+    "SIM": {
+      "english": "sim card",
+      "confidence": "common"
+    },
+    "OTP": {
+      "english": "otp",
+      "confidence": "common"
+    },
+    "koodii USSD": {
+      "english": "ussd code",
+      "confidence": "uncertain"
+    },
+    "sim": {
+      "english": "sim card",
+      "confidence": "common"
+    },
+    "paswod": {
+      "english": "password",
+      "confidence": "common"
+    }
+  },
+  "phrases": {
+    "ɓe njiyaa koodii ngam noddii am": {
+      "english": "they asked for my verification code",
+      "confidence": "uncertain"
+    },
+    "OTP am njiyaa": {
+      "english": "they asked for my otp",
+      "confidence": "uncertain"
+    },
+    "muɗɗo jogii tefŋal am": {
+      "english": "my account was compromised",
+      "confidence": "uncertain"
+    },
+    "ɓe njiyaa paswod am": {
+      "english": "they asked for my password",
+      "confidence": "uncertain"
+    },
+    "ɓe njiyaa OTP am": {
+      "english": "they asked for my otp",
+      "confidence": "uncertain"
+    },
+    "bilal am wujjii": {
+      "english": "my account was compromised",
+      "confidence": "uncertain"
+    },
+    "bilal am ɓooyay": {
+      "english": "my phone was stolen",
+      "confidence": "uncertain"
+    }
+  }
+}

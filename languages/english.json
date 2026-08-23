@@ -1,0 +1,868 @@
+{
+  "_metadata": {
+    "language": "English",
+    "language_code": "en",
+    "project": "AfriShield AI",
+    "purpose": "Maps common English security/fraud-related terms to themselves for consistent downstream matching.",
+    "version": "2.1.0",
+    "maintainer": "Midian",
+    "disclaimer": "This is a starter glossary used as the canonical fallback language for the translator and detector.",
+    "confidence_levels": {
+      "verified": "Standard English vocabulary used directly in the security/fraud domain.",
+      "common": "Widely used English term, high confidence.",
+      "uncertain": "Placeholder or less certain term; flagged for review."
+    }
+  },
+  "stopwords": {
+    "the": "Common article.",
+    "and": "Common conjunction.",
+    "to": "Common preposition/infinitive marker.",
+    "of": "Common preposition.",
+    "in": "Common preposition.",
+    "is": "Copula.",
+    "are": "Copula.",
+    "my": "Possessive pronoun.",
+    "your": "Possessive pronoun.",
+    "was": "Past tense auxiliary.",
+    "a": "Common article.",
+    "an": "Common article.",
+    "for": "Common preposition.",
+    "with": "Common preposition.",
+    "on": "Common preposition.",
+    "at": "Common preposition.",
+    "by": "Common preposition.",
+    "be": "Infinitive/auxiliary verb.",
+    "have": "Auxiliary verb.",
+    "has": "Auxiliary verb.",
+    "had": "Auxiliary verb.",
+    "from": "Common preposition."
+  },
+  "categories": {
+    "account_compromise": [
+      "hacked",
+      "hack",
+      "unauthorized access",
+      "sim swap",
+      "compromised"
+    ],
+    "financial_fraud": [
+      "scam",
+      "fraud",
+      "money",
+      "bank",
+      "account",
+      "pin",
+      "card",
+      "gift card",
+      "investment scam",
+      "romance scam",
+      "crypto scam",
+      "loan scam",
+      "employment scam",
+      "parcel scam",
+      "fake lottery",
+      "giveaway",
+      "wire transfer",
+      "otp",
+      "debit card",
+      "credit card",
+      "atm",
+      "transaction",
+      "mobile money"
+    ],
+    "malware_technical": [
+      "virus",
+      "malware",
+      "computer",
+      "internet",
+      "data",
+      "security",
+      "ransomware",
+      "trojan",
+      "worm",
+      "spyware",
+      "keylogger",
+      "botnet",
+      "ddos",
+      "vpn",
+      "firewall",
+      "payload",
+      "rootkit",
+      "adware",
+      "backup",
+      "restore",
+      "recovery"
+    ],
+    "phishing_social_engineering": [
+      "password",
+      "link",
+      "click",
+      "email",
+      "website",
+      "authentication",
+      "2fa",
+      "mfa",
+      "verification code",
+      "impersonation",
+      "fake support",
+      "tech support scam",
+      "urgent",
+      "verify now",
+      "claim prize",
+      "limited time",
+      "reset password",
+      "account suspended",
+      "confirm identity",
+      "phishing",
+      "social engineering"
+    ],
+    "actions": [
+      "steal",
+      "attack",
+      "warn",
+      "report",
+      "change",
+      "contact",
+      "monitor",
+      "containment",
+      "eradication",
+      "restore",
+      "recovery",
+      "scan",
+      "update",
+      "open",
+      "close",
+      "recover"
+    ],
+    "people_institutions": [
+      "thief",
+      "police",
+      "criminal",
+      "fraudster"
+    ],
+    "devices": [
+      "phone",
+      "computer",
+      "sim_card",
+      "android",
+      "iphone",
+      "apk",
+      "play store",
+      "app store",
+      "sms",
+      "call",
+      "contact list",
+      "camera",
+      "microphone",
+      "sim card",
+      "laptop",
+      "router",
+      "wifi",
+      "usb"
+    ],
+    "authentication": [
+      "password",
+      "otp",
+      "2fa",
+      "mfa",
+      "verification code"
+    ],
+    "network_security": [
+      "firewall",
+      "vpn",
+      "dns",
+      "domain",
+      "certificate",
+      "ssl",
+      "tls",
+      "router",
+      "wifi",
+      "usb"
+    ],
+    "social_media": [
+      "telegram",
+      "whatsapp",
+      "facebook",
+      "instagram",
+      "gmail"
+    ],
+    "banking": [
+      "bank",
+      "wallet",
+      "mobile money",
+      "airtime",
+      "bank transfer",
+      "debit card",
+      "atm",
+      "transaction",
+      "account number",
+      "payment",
+      "merchant",
+      "ussd",
+      "credit card"
+    ],
+    "incident_response": [
+      "breach",
+      "incident",
+      "compromised",
+      "infected",
+      "encrypted",
+      "locked",
+      "backup",
+      "restore",
+      "recovery",
+      "monitor",
+      "containment",
+      "eradication"
+    ],
+    "cloud": [
+      "cloud",
+      "backup",
+      "restore",
+      "recovery"
+    ],
+    "mobile_security": [
+      "android",
+      "iphone",
+      "apk",
+      "play store",
+      "app store",
+      "permission",
+      "sms",
+      "call",
+      "contact list",
+      "camera",
+      "microphone",
+      "wallet",
+      "otp"
+    ]
+  },
+  "translations": {
+    "scam": {
+      "english": "scam",
+      "confidence": "verified"
+    },
+    "fraud": {
+      "english": "fraud",
+      "confidence": "verified"
+    },
+    "hack": {
+      "english": "hack",
+      "confidence": "common"
+    },
+    "hacked": {
+      "english": "hacked",
+      "confidence": "common"
+    },
+    "attack": {
+      "english": "attack",
+      "confidence": "verified"
+    },
+    "data": {
+      "english": "data",
+      "confidence": "verified"
+    },
+    "email": {
+      "english": "email",
+      "confidence": "verified"
+    },
+    "link": {
+      "english": "link",
+      "confidence": "verified"
+    },
+    "click": {
+      "english": "click",
+      "confidence": "common"
+    },
+    "website": {
+      "english": "website",
+      "confidence": "verified"
+    },
+    "password": {
+      "english": "password",
+      "confidence": "verified"
+    },
+    "pin": {
+      "english": "pin",
+      "confidence": "verified"
+    },
+    "otp": {
+      "english": "otp",
+      "confidence": "verified"
+    },
+    "bvn": {
+      "english": "bvn",
+      "confidence": "verified"
+    },
+    "nin": {
+      "english": "nin",
+      "confidence": "verified"
+    },
+    "wallet": {
+      "english": "wallet",
+      "confidence": "verified"
+    },
+    "crypto": {
+      "english": "crypto",
+      "confidence": "verified"
+    },
+    "zero-day": {
+      "english": "zero-day",
+      "confidence": "verified"
+    },
+    "exploit": {
+      "english": "exploit",
+      "confidence": "verified"
+    },
+    "vulnerability": {
+      "english": "vulnerability",
+      "confidence": "verified"
+    },
+    "patch": {
+      "english": "patch",
+      "confidence": "verified"
+    },
+    "update": {
+      "english": "update",
+      "confidence": "verified"
+    },
+    "credential": {
+      "english": "credential",
+      "confidence": "verified"
+    },
+    "credential stuffing": {
+      "english": "credential stuffing",
+      "confidence": "verified"
+    },
+    "brute force": {
+      "english": "brute force",
+      "confidence": "verified"
+    },
+    "session hijacking": {
+      "english": "session hijacking",
+      "confidence": "verified"
+    },
+    "spoofing": {
+      "english": "spoofing",
+      "confidence": "verified"
+    },
+    "dns": {
+      "english": "dns",
+      "confidence": "verified"
+    },
+    "domain": {
+      "english": "domain",
+      "confidence": "verified"
+    },
+    "certificate": {
+      "english": "certificate",
+      "confidence": "verified"
+    },
+    "ssl": {
+      "english": "ssl",
+      "confidence": "verified"
+    },
+    "tls": {
+      "english": "tls",
+      "confidence": "verified"
+    },
+    "rootkit": {
+      "english": "rootkit",
+      "confidence": "verified"
+    },
+    "adware": {
+      "english": "adware",
+      "confidence": "verified"
+    },
+    "payload": {
+      "english": "payload",
+      "confidence": "verified"
+    },
+    "hash": {
+      "english": "hash",
+      "confidence": "verified"
+    },
+    "token": {
+      "english": "token",
+      "confidence": "verified"
+    },
+    "api key": {
+      "english": "api key",
+      "confidence": "verified"
+    },
+    "mobile money": {
+      "english": "mobile money",
+      "confidence": "verified"
+    },
+    "airtime": {
+      "english": "airtime",
+      "confidence": "verified"
+    },
+    "bank transfer": {
+      "english": "bank transfer",
+      "confidence": "verified"
+    },
+    "debit card": {
+      "english": "debit card",
+      "confidence": "verified"
+    },
+    "atm": {
+      "english": "atm",
+      "confidence": "verified"
+    },
+    "transaction": {
+      "english": "transaction",
+      "confidence": "verified"
+    },
+    "account number": {
+      "english": "account number",
+      "confidence": "verified"
+    },
+    "payment": {
+      "english": "payment",
+      "confidence": "verified"
+    },
+    "merchant": {
+      "english": "merchant",
+      "confidence": "verified"
+    },
+    "ussd": {
+      "english": "ussd",
+      "confidence": "verified"
+    },
+    "android": {
+      "english": "android",
+      "confidence": "verified"
+    },
+    "iphone": {
+      "english": "iphone",
+      "confidence": "verified"
+    },
+    "apk": {
+      "english": "apk",
+      "confidence": "verified"
+    },
+    "play store": {
+      "english": "play store",
+      "confidence": "verified"
+    },
+    "app store": {
+      "english": "app store",
+      "confidence": "verified"
+    },
+    "permission": {
+      "english": "permission",
+      "confidence": "verified"
+    },
+    "sms": {
+      "english": "sms",
+      "confidence": "verified"
+    },
+    "call": {
+      "english": "call",
+      "confidence": "verified"
+    },
+    "contact list": {
+      "english": "contact list",
+      "confidence": "verified"
+    },
+    "camera": {
+      "english": "camera",
+      "confidence": "verified"
+    },
+    "microphone": {
+      "english": "microphone",
+      "confidence": "verified"
+    },
+    "impersonation": {
+      "english": "impersonation",
+      "confidence": "verified"
+    },
+    "fake support": {
+      "english": "fake support",
+      "confidence": "verified"
+    },
+    "tech support scam": {
+      "english": "tech support scam",
+      "confidence": "verified"
+    },
+    "urgent": {
+      "english": "urgent",
+      "confidence": "verified"
+    },
+    "verify now": {
+      "english": "verify now",
+      "confidence": "verified"
+    },
+    "claim prize": {
+      "english": "claim prize",
+      "confidence": "verified"
+    },
+    "limited time": {
+      "english": "limited time",
+      "confidence": "verified"
+    },
+    "reset password": {
+      "english": "reset password",
+      "confidence": "verified"
+    },
+    "account suspended": {
+      "english": "account suspended",
+      "confidence": "verified"
+    },
+    "confirm identity": {
+      "english": "confirm identity",
+      "confidence": "verified"
+    },
+    "telegram": {
+      "english": "telegram",
+      "confidence": "verified"
+    },
+    "whatsapp": {
+      "english": "whatsapp",
+      "confidence": "verified"
+    },
+    "facebook": {
+      "english": "facebook",
+      "confidence": "verified"
+    },
+    "instagram": {
+      "english": "instagram",
+      "confidence": "verified"
+    },
+    "gmail": {
+      "english": "gmail",
+      "confidence": "verified"
+    },
+    "sim swap": {
+      "english": "sim swap",
+      "confidence": "verified"
+    },
+    "identity theft": {
+      "english": "identity theft",
+      "confidence": "verified"
+    },
+    "ransomware": {
+      "english": "ransomware",
+      "confidence": "verified"
+    },
+    "trojan": {
+      "english": "trojan",
+      "confidence": "verified"
+    },
+    "worm": {
+      "english": "worm",
+      "confidence": "verified"
+    },
+    "spyware": {
+      "english": "spyware",
+      "confidence": "verified"
+    },
+    "keylogger": {
+      "english": "keylogger",
+      "confidence": "verified"
+    },
+    "botnet": {
+      "english": "botnet",
+      "confidence": "verified"
+    },
+    "ddos": {
+      "english": "ddos",
+      "confidence": "verified"
+    },
+    "vpn": {
+      "english": "vpn",
+      "confidence": "verified"
+    },
+    "firewall": {
+      "english": "firewall",
+      "confidence": "verified"
+    },
+    "authentication": {
+      "english": "authentication",
+      "confidence": "verified"
+    },
+    "2fa": {
+      "english": "2fa",
+      "confidence": "verified"
+    },
+    "mfa": {
+      "english": "mfa",
+      "confidence": "verified"
+    },
+    "backup": {
+      "english": "backup",
+      "confidence": "verified"
+    },
+    "restore": {
+      "english": "restore",
+      "confidence": "verified"
+    },
+    "recovery": {
+      "english": "recovery",
+      "confidence": "verified"
+    },
+    "monitor": {
+      "english": "monitor",
+      "confidence": "verified"
+    },
+    "containment": {
+      "english": "containment",
+      "confidence": "verified"
+    },
+    "eradication": {
+      "english": "eradication",
+      "confidence": "verified"
+    },
+    "breach": {
+      "english": "breach",
+      "confidence": "verified"
+    },
+    "incident": {
+      "english": "incident",
+      "confidence": "verified"
+    },
+    "compromised": {
+      "english": "compromised",
+      "confidence": "verified"
+    },
+    "infected": {
+      "english": "infected",
+      "confidence": "verified"
+    },
+    "encrypted": {
+      "english": "encrypted",
+      "confidence": "verified"
+    },
+    "locked": {
+      "english": "locked",
+      "confidence": "verified"
+    },
+    "usb": {
+      "english": "usb",
+      "confidence": "verified"
+    },
+    "wifi": {
+      "english": "wifi",
+      "confidence": "verified"
+    },
+    "router": {
+      "english": "router",
+      "confidence": "verified"
+    },
+    "gift card": {
+      "english": "gift card",
+      "confidence": "verified"
+    },
+    "investment scam": {
+      "english": "investment scam",
+      "confidence": "verified"
+    },
+    "romance scam": {
+      "english": "romance scam",
+      "confidence": "verified"
+    },
+    "crypto scam": {
+      "english": "crypto scam",
+      "confidence": "verified"
+    },
+    "loan scam": {
+      "english": "loan scam",
+      "confidence": "verified"
+    },
+    "employment scam": {
+      "english": "employment scam",
+      "confidence": "verified"
+    },
+    "parcel scam": {
+      "english": "parcel scam",
+      "confidence": "verified"
+    },
+    "fake lottery": {
+      "english": "fake lottery",
+      "confidence": "verified"
+    },
+    "giveaway": {
+      "english": "giveaway",
+      "confidence": "verified"
+    },
+    "verification code": {
+      "english": "verification code",
+      "confidence": "verified"
+    },
+    "urgent payment": {
+      "english": "urgent payment",
+      "confidence": "verified"
+    },
+    "wire transfer": {
+      "english": "wire transfer",
+      "confidence": "verified"
+    },
+    "bank": {
+      "english": "bank",
+      "confidence": "verified"
+    },
+    "account": {
+      "english": "account",
+      "confidence": "verified"
+    },
+    "money": {
+      "english": "money",
+      "confidence": "verified"
+    },
+    "credit card": {
+      "english": "credit card",
+      "confidence": "common"
+    },
+    "computer": {
+      "english": "computer",
+      "confidence": "verified"
+    },
+    "internet": {
+      "english": "internet",
+      "confidence": "verified"
+    },
+    "phone": {
+      "english": "phone",
+      "confidence": "verified"
+    },
+    "phone number": {
+      "english": "phone number",
+      "confidence": "common"
+    },
+    "security": {
+      "english": "security",
+      "confidence": "verified"
+    },
+    "protection": {
+      "english": "protection",
+      "confidence": "common"
+    },
+    "warning": {
+      "english": "warning",
+      "confidence": "common"
+    },
+    "report": {
+      "english": "report",
+      "confidence": "common"
+    },
+    "thief": {
+      "english": "thief",
+      "confidence": "common"
+    },
+    "police": {
+      "english": "police",
+      "confidence": "common"
+    },
+    "change": {
+      "english": "change",
+      "confidence": "common"
+    },
+    "contact": {
+      "english": "contact",
+      "confidence": "common"
+    },
+    "unauthorized access": {
+      "english": "unauthorized access",
+      "confidence": "common"
+    },
+    "OTP": {
+      "english": "otp",
+      "confidence": "verified"
+    },
+    "bank account": {
+      "english": "bank account",
+      "confidence": "verified"
+    },
+    "password reset": {
+      "english": "password reset",
+      "confidence": "verified"
+    },
+    "two-factor authentication": {
+      "english": "two-factor authentication",
+      "confidence": "verified"
+    },
+    "one-time password": {
+      "english": "otp",
+      "confidence": "verified"
+    },
+    "banking app": {
+      "english": "banking app",
+      "confidence": "verified"
+    },
+    "mobile wallet": {
+      "english": "mobile wallet",
+      "confidence": "verified"
+    },
+    "customer support": {
+      "english": "customer support",
+      "confidence": "verified"
+    },
+    "fake link": {
+      "english": "fake link",
+      "confidence": "verified"
+    },
+    "fraud alert": {
+      "english": "fraud alert",
+      "confidence": "verified"
+    }
+  },
+  "phrases": {
+    "they asked for my verification code": {
+      "english": "they asked for my verification code",
+      "confidence": "verified"
+    },
+    "they asked for my otp": {
+      "english": "they asked for my otp",
+      "confidence": "common"
+    },
+    "they asked for my password": {
+      "english": "they asked for my password",
+      "confidence": "verified"
+    },
+    "my account was hacked": {
+      "english": "my account was hacked",
+      "confidence": "verified"
+    },
+    "my phone was stolen": {
+      "english": "my phone was stolen",
+      "confidence": "verified"
+    },
+    "i received a fake message": {
+      "english": "i received a fake message",
+      "confidence": "verified"
+    },
+    "my sim card was swapped": {
+      "english": "my sim card was swapped",
+      "confidence": "common"
+    },
+    "my bank account was compromised": {
+      "english": "my bank account was compromised",
+      "confidence": "common"
+    },
+    "they asked for my bvn": {
+      "english": "they asked for my bvn",
+      "confidence": "common"
+    },
+    "they asked for my account number": {
+      "english": "they asked for my account number",
+      "confidence": "common"
+    },
+    "they asked me to install this app": {
+      "english": "they asked me to install this app",
+      "confidence": "common"
+    },
+    "my bank app was hacked": {
+      "english": "my bank app was hacked",
+      "confidence": "common"
+    },
+    "i received a phishing message from bank": {
+      "english": "i received a phishing message from bank",
+      "confidence": "common"
+    },
+    "i was told to reset my password immediately": {
+      "english": "i was told to reset my password immediately",
+      "confidence": "common"
+    }
+  }
+}

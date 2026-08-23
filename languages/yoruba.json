@@ -1,0 +1,637 @@
+{
+  "_metadata": {
+    "language": "Yoruba",
+    "language_code": "yo",
+    "project": "AfriShield AI",
+    "purpose": "Maps common Yoruba security/fraud-related terms to their canonical English keyword equivalents, for use in multilingual scam/threat detection.",
+    "version": "2.1.0",
+    "maintainer": "Midian",
+    "disclaimer": "This is a starter, community-style vocabulary, not an exhaustive or professionally certified translation. Confidence levels are noted per entry. Corrections and native-speaker review are welcome, especially for entries marked 'community' or 'uncertain'.",
+    "confidence_levels": {
+      "verified": "Cross-checked against a published Yoruba-English dictionary/glossary or genuine Yoruba-language source text.",
+      "common": "Widely known/standard vocabulary or loanword, high confidence, not individually cross-checked in a dictionary this session.",
+      "uncertain": "A compositionally constructed phrase (built from verified words) rather than a confirmed idiom; flagged for native-speaker review."
+    },
+    "notes": [
+      "Yoruba orthography marks three tones (acute á, grave à, and unmarked mid) plus underdots on ẹ, ọ, ṣ. Real-world typed text (SMS, WhatsApp, social media) very often omits all of these. Where a term is likely to be typed in practice, both the fully-marked spelling and a plain-ASCII fallback are included as separate keys mapping to the same English value.",
+      "Deliberately did not include single-syllable, highly polysemous words (e.g. 'sí' = to/at/open, 'pa' = close/kill/switch off, 'mu' = arrest/drink/hold) as standalone translation entries — the collision risk with everyday unrelated Yoruba text was judged too high. These are listed in stopwords instead where they are primarily grammatical, or omitted entirely (see notes on 'open'/'close' gap)."
+    ],
+    "known_gaps": [
+      "No high-confidence standalone term found this session for 'open'/'close' (account) or 'verify' as single words without ambiguity risk — omitted rather than guessed."
+    ]
+  },
+  "stopwords": {
+    "ti": "Perfect aspect marker ('has/have') and multi-purpose particle ('from', possessive-like constructions). Very high frequency; strip before matching.",
+    "ni": "Copula ('is/are') or locative particle ('at/in').",
+    "si": "Directional/locative particle ('to/at'), also used as 'and then'.",
+    "yi": "'This' (also spelled yii).",
+    "yii": "'This' (alternate spelling of yi).",
+    "won": "'They/them' — third person plural pronoun.",
+    "mo": "'I' — first person singular subject pronoun.",
+    "o": "'He/she/it' — third person singular subject marker. Very short/ambiguous; grammatical only.",
+    "a": "'We' or impersonal subject marker ('one/it').",
+    "ki": "Subjunctive/purpose particle ('so that/that').",
+    "pe": "Complementizer ('that', e.g. 'so pe' = 'say that').",
+    "ati": "'And'.",
+    "sugbon": "'But' (also spelled ṣùgbọ́n)."
+  },
+  "categories": {
+    "account_compromise": [
+      "hacker",
+      "hacked",
+      "unauthorized_access",
+      "hack",
+      "unauthorized access",
+      "sim swap",
+      "compromised"
+    ],
+    "financial_fraud": [
+      "fraud",
+      "fraudster",
+      "deceive",
+      "money",
+      "bank",
+      "account",
+      "money_laundering",
+      "card",
+      "credit_card",
+      "scam",
+      "otp",
+      "pin",
+      "debit card",
+      "credit card",
+      "atm",
+      "transaction",
+      "mobile money",
+      "wire transfer",
+      "gift card",
+      "loan scam",
+      "investment scam",
+      "crypto scam",
+      "romance scam",
+      "fake lottery",
+      "employment scam",
+      "parcel scam",
+      "giveaway"
+    ],
+    "malware_technical": [
+      "computer",
+      "laptop",
+      "internet",
+      "data",
+      "malicious",
+      "virus",
+      "malware",
+      "security",
+      "ransomware",
+      "trojan",
+      "worm",
+      "spyware",
+      "keylogger",
+      "botnet",
+      "ddos",
+      "vpn",
+      "firewall",
+      "backup",
+      "restore",
+      "recovery"
+    ],
+    "phishing_social_engineering": [
+      "password",
+      "link",
+      "click",
+      "phone",
+      "mobile_phone",
+      "email",
+      "website",
+      "phishing",
+      "social engineering",
+      "authentication",
+      "verification code",
+      "2fa",
+      "mfa",
+      "urgent",
+      "verify now",
+      "claim prize",
+      "account suspended"
+    ],
+    "actions": [
+      "steal",
+      "theft",
+      "warn",
+      "report",
+      "change",
+      "contact",
+      "attack",
+      "monitor",
+      "scan",
+      "update",
+      "open",
+      "close",
+      "recover"
+    ],
+    "people_institutions": [
+      "thief",
+      "police",
+      "criminal",
+      "cctv",
+      "fraudster"
+    ],
+    "devices": [
+      "phone",
+      "mobile_phone",
+      "computer",
+      "laptop",
+      "sim card",
+      "router",
+      "wifi",
+      "usb"
+    ],
+    "authentication": [
+      "password",
+      "otp",
+      "2fa",
+      "mfa",
+      "verification code"
+    ],
+    "banking": [
+      "bank",
+      "mobile money",
+      "airtime",
+      "bank transfer",
+      "debit card",
+      "credit card",
+      "atm",
+      "transaction",
+      "account number",
+      "payment",
+      "merchant",
+      "ussd"
+    ],
+    "mobile_security": [
+      "android",
+      "iphone",
+      "apk",
+      "play store",
+      "app store",
+      "sms",
+      "call",
+      "contact list",
+      "camera",
+      "microphone"
+    ],
+    "network_security": [
+      "vpn",
+      "firewall",
+      "dns",
+      "domain",
+      "ssl",
+      "tls",
+      "router",
+      "wifi"
+    ],
+    "incident_response": [
+      "breach",
+      "incident",
+      "compromised",
+      "infected",
+      "encrypted",
+      "locked",
+      "backup",
+      "restore",
+      "recovery",
+      "monitor",
+      "containment",
+      "eradication"
+    ],
+    "social_media": [
+      "telegram",
+      "whatsapp",
+      "facebook",
+      "instagram",
+      "gmail"
+    ]
+  },
+  "translations": {
+    "olè": {
+      "english": "thief",
+      "confidence": "verified"
+    },
+    "ole": {
+      "english": "thief",
+      "confidence": "verified",
+      "note": "ASCII fallback spelling of olè."
+    },
+    "olè jíjà": {
+      "english": "theft",
+      "confidence": "verified"
+    },
+    "ole jija": {
+      "english": "theft",
+      "confidence": "verified",
+      "note": "ASCII fallback spelling."
+    },
+    "jíjí": {
+      "english": "stealing",
+      "confidence": "verified",
+      "note": "Gerund form, e.g. 'jíjí kẹ̀kẹ́' = bike theft."
+    },
+    "jiji": {
+      "english": "stealing",
+      "confidence": "verified",
+      "note": "ASCII fallback spelling of jíjí."
+    },
+    "jalè": {
+      "english": "steal",
+      "confidence": "verified",
+      "note": "Verb 'to steal', e.g. 'Mo jalè' = 'I steal/stole'."
+    },
+    "jale": {
+      "english": "steal",
+      "confidence": "verified",
+      "note": "ASCII fallback spelling of jalè."
+    },
+    "jìbìtì": {
+      "english": "fraud",
+      "confidence": "verified",
+      "note": "Also covers 'scam'; e.g. 'jìbìtì káàdì ẹ̀yáwó' = credit card fraud."
+    },
+    "jibiti": {
+      "english": "fraud",
+      "confidence": "verified",
+      "note": "ASCII fallback spelling of jìbìtì."
+    },
+    "oníjìbìtì": {
+      "english": "fraudster",
+      "confidence": "verified",
+      "note": "Person who commits jìbìtì; also used for 419 scammers specifically."
+    },
+    "onijibiti": {
+      "english": "fraudster",
+      "confidence": "verified",
+      "note": "ASCII fallback spelling of oníjìbìtì."
+    },
+    "ẹ̀tàn": {
+      "english": "deceive",
+      "confidence": "verified",
+      "note": "Deceit/trickery; often paired with jìbìtì (ẹ̀tàn/jibiti) in real usage."
+    },
+    "etan": {
+      "english": "deceive",
+      "confidence": "verified",
+      "note": "ASCII fallback spelling of ẹ̀tàn."
+    },
+    "ajídétà": {
+      "english": "hacker",
+      "confidence": "verified"
+    },
+    "ajideta": {
+      "english": "hacker",
+      "confidence": "verified",
+      "note": "ASCII fallback spelling of ajídétà."
+    },
+    "ti hack": {
+      "english": "hacked",
+      "confidence": "common",
+      "note": "Perfect marker 'ti' + English loanword 'hack' — common code-switching pattern in spoken Nigerian Yoruba tech talk, not from a dictionary source."
+    },
+    "won ti hack mi": {
+      "english": "i was hacked",
+      "confidence": "common",
+      "note": "Common spoken construction: 'they have hacked me'."
+    },
+    "owó": {
+      "english": "money",
+      "confidence": "verified"
+    },
+    "owo": {
+      "english": "money",
+      "confidence": "verified",
+      "note": "ASCII fallback spelling of owó."
+    },
+    "ilé-ifowó-pamọ́": {
+      "english": "bank",
+      "confidence": "verified",
+      "note": "Literally 'house of money-keeping'."
+    },
+    "ile ifowo pamo": {
+      "english": "bank",
+      "confidence": "verified",
+      "note": "ASCII fallback spelling."
+    },
+    "banki": {
+      "english": "bank",
+      "confidence": "common",
+      "note": "Common loanword, used alongside the native compound above."
+    },
+    "akaunti": {
+      "english": "account",
+      "confidence": "common",
+      "note": "Standard loanword for bank/online account."
+    },
+    "ìfowó-èrú-pamọ́": {
+      "english": "money laundering",
+      "confidence": "verified"
+    },
+    "ifowo eru pamo": {
+      "english": "money laundering",
+      "confidence": "verified",
+      "note": "ASCII fallback spelling."
+    },
+    "káàdì": {
+      "english": "card",
+      "confidence": "verified"
+    },
+    "kaadi": {
+      "english": "card",
+      "confidence": "verified",
+      "note": "ASCII fallback spelling of káàdì."
+    },
+    "káàdì ẹ̀yáwó": {
+      "english": "credit card",
+      "confidence": "verified"
+    },
+    "kaadi eyawo": {
+      "english": "credit card",
+      "confidence": "verified",
+      "note": "ASCII fallback spelling."
+    },
+    "aabo": {
+      "english": "security",
+      "confidence": "verified"
+    },
+    "ọrọigbaniwọle": {
+      "english": "password",
+      "confidence": "verified",
+      "note": "Standard tech-localization term, confirmed in Microsoft's official Yoruba OS translations."
+    },
+    "oro igbaniwole": {
+      "english": "password",
+      "confidence": "verified",
+      "note": "ASCII fallback spelling of ọrọigbaniwọle."
+    },
+    "kọ̀ǹpútà": {
+      "english": "computer",
+      "confidence": "verified"
+    },
+    "konputa": {
+      "english": "computer",
+      "confidence": "verified",
+      "note": "ASCII fallback spelling of kọ̀ǹpútà."
+    },
+    "kọ̀ǹpútà alágbèéká": {
+      "english": "laptop",
+      "confidence": "verified",
+      "note": "Literally 'portable computer'."
+    },
+    "konputa alagbeeka": {
+      "english": "laptop",
+      "confidence": "verified",
+      "note": "ASCII fallback spelling."
+    },
+    "fóònù": {
+      "english": "phone",
+      "confidence": "verified"
+    },
+    "foonu": {
+      "english": "phone",
+      "confidence": "verified",
+      "note": "ASCII fallback spelling of fóònù."
+    },
+    "fóònù alágbèéká": {
+      "english": "mobile phone",
+      "confidence": "common",
+      "note": "Compositional: phone + portable."
+    },
+    "foonu alagbeeka": {
+      "english": "mobile phone",
+      "confidence": "common",
+      "note": "ASCII fallback spelling."
+    },
+    "ayélujára": {
+      "english": "internet",
+      "confidence": "verified",
+      "note": "Confirmed in real Yoruba-language text discussing internet/419 fraud."
+    },
+    "ayelujara": {
+      "english": "internet",
+      "confidence": "verified",
+      "note": "ASCII fallback spelling of ayélujára."
+    },
+    "ọ̀nà ìsopọ̀": {
+      "english": "link",
+      "confidence": "verified",
+      "note": "Confirmed via Microsoft Yoruba localization ('ọna asopọ ọrọigbaniwọle faili' = password file link)."
+    },
+    "ona asopo": {
+      "english": "link",
+      "confidence": "verified",
+      "note": "ASCII fallback spelling."
+    },
+    "tẹ̀": {
+      "english": "click",
+      "confidence": "common",
+      "note": "'To press/tap', e.g. tẹ ọna asopọ = click the link."
+    },
+    "te": {
+      "english": "click",
+      "confidence": "common",
+      "note": "ASCII fallback spelling of tẹ̀."
+    },
+    "alaye": {
+      "english": "data",
+      "confidence": "common",
+      "note": "Also covers 'information'."
+    },
+    "burúkú": {
+      "english": "malicious",
+      "confidence": "common",
+      "note": "Literally 'bad/wicked'; polysemous, use with care."
+    },
+    "buruku": {
+      "english": "malicious",
+      "confidence": "common",
+      "note": "ASCII fallback spelling of burúkú."
+    },
+    "ìwádìí": {
+      "english": "investigation",
+      "confidence": "verified"
+    },
+    "iwadii": {
+      "english": "investigation",
+      "confidence": "verified",
+      "note": "ASCII fallback spelling of ìwádìí."
+    },
+    "ọ̀daràn": {
+      "english": "criminal",
+      "confidence": "verified"
+    },
+    "odaran": {
+      "english": "criminal",
+      "confidence": "verified",
+      "note": "ASCII fallback spelling of ọ̀daràn."
+    },
+    "mú gẹ́gẹ́ bí ọ̀daràn": {
+      "english": "arrested as a criminal",
+      "confidence": "verified"
+    },
+    "mu gege bi odaran": {
+      "english": "arrested as a criminal",
+      "confidence": "verified",
+      "note": "ASCII fallback spelling."
+    },
+    "cctv": {
+      "english": "cctv",
+      "confidence": "verified",
+      "note": "Loanword, unchanged."
+    },
+    "ọlọ́pàá": {
+      "english": "police",
+      "confidence": "common"
+    },
+    "olopaa": {
+      "english": "police",
+      "confidence": "common",
+      "note": "ASCII fallback spelling of ọlọ́pàá."
+    },
+    "ìkìlọ̀": {
+      "english": "warning",
+      "confidence": "common"
+    },
+    "ikilo": {
+      "english": "warning",
+      "confidence": "common",
+      "note": "ASCII fallback spelling of ìkìlọ̀."
+    },
+    "ìròyìn": {
+      "english": "report",
+      "confidence": "common",
+      "note": "Also covers 'news'."
+    },
+    "iroyin": {
+      "english": "report",
+      "confidence": "common",
+      "note": "ASCII fallback spelling of ìròyìn."
+    },
+    "pààrọ̀": {
+      "english": "change",
+      "confidence": "common",
+      "note": "e.g. 'pààrọ̀ ọrọigbaniwọle' = change password."
+    },
+    "paaro": {
+      "english": "change",
+      "confidence": "common",
+      "note": "ASCII fallback spelling of pààrọ̀."
+    },
+    "ránṣẹ́ sí": {
+      "english": "contact",
+      "confidence": "common",
+      "note": "Literally 'send to'; used for contacting someone."
+    },
+    "ranse si": {
+      "english": "contact",
+      "confidence": "common",
+      "note": "ASCII fallback spelling."
+    },
+    "wọlé láìní àṣẹ": {
+      "english": "unauthorized access",
+      "confidence": "uncertain",
+      "note": "Constructed compositionally (wọlé = enter, láìní àṣẹ = without permission), not a confirmed idiomatic phrase. Needs native-speaker review."
+    },
+    "wole laini ase": {
+      "english": "unauthorized access",
+      "confidence": "uncertain",
+      "note": "ASCII fallback spelling of the constructed phrase above."
+    },
+    "koodu ìdánwò": {
+      "english": "verification code",
+      "confidence": "verified"
+    },
+    "koodu ìfọwọ́sì": {
+      "english": "confirmation code",
+      "confidence": "verified"
+    },
+    "kàdì SIM": {
+      "english": "sim card",
+      "confidence": "verified"
+    },
+    "nọ́mbà USSD": {
+      "english": "ussd code",
+      "confidence": "common"
+    },
+    "iṣowo banki": {
+      "english": "bank transaction",
+      "confidence": "common"
+    },
+    "ìsanwó": {
+      "english": "payment",
+      "confidence": "verified"
+    },
+    "tunse ọrọigbaniwọle": {
+      "english": "password reset",
+      "confidence": "verified"
+    },
+    "iṣiro ti dina": {
+      "english": "account suspended",
+      "confidence": "common"
+    },
+    "iṣẹ alabara": {
+      "english": "customer support",
+      "confidence": "verified"
+    },
+    "ìkìlọ̀ ete jìbìtì": {
+      "english": "fraud alert",
+      "confidence": "common"
+    },
+    "ọ̀nà asopọ èké": {
+      "english": "fake link",
+      "confidence": "common"
+    },
+    "ẹ̀rọ ìfowópamọ́ alágbèéká": {
+      "english": "mobile wallet",
+      "confidence": "common"
+    },
+    "app banki": {
+      "english": "banking app",
+      "confidence": "common"
+    },
+    "koodu ìkanṣoṣo": {
+      "english": "otp",
+      "confidence": "verified"
+    }
+  },
+  "phrases": {
+    "wọ́n bẹ̀rẹ̀ koodu ìdánwò mi": {
+      "english": "they asked for my verification code",
+      "confidence": "common"
+    },
+    "wọ́n bẹ̀rẹ̀ OTP mi": {
+      "english": "they asked for my otp",
+      "confidence": "common"
+    },
+    "akọ́ọ̀lẹ́ mi ti jẹ́ pirated": {
+      "english": "my account was hacked",
+      "confidence": "common"
+    },
+    "mo gba ifiranṣẹ iro": {
+      "english": "i received a fake message",
+      "confidence": "verified"
+    },
+    "kaadi SIM mi ti yí padà": {
+      "english": "my SIM card was swapped",
+      "confidence": "common"
+    },
+    "wọ́n bẹ̀rẹ̀ paswọ́ọ̀dù mi": {
+      "english": "they asked for my password",
+      "confidence": "common"
+    },
+    "mo gba ọna asopọ èké": {
+      "english": "i received a fake link",
+      "confidence": "common"
+    },
+    "mo gba imeeli èké lati ọdọ banki": {
+      "english": "i received a phishing message from bank",
+      "confidence": "common"
+    }
+  }
+}

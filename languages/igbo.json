@@ -1,0 +1,553 @@
+{
+  "_metadata": {
+    "language": "Igbo",
+    "language_code": "ig",
+    "project": "AfriShield AI",
+    "purpose": "Maps common Igbo security/fraud-related terms to their canonical English keyword equivalents, for use in multilingual scam/threat detection.",
+    "version": "2.1.0",
+    "maintainer": "Midian",
+    "disclaimer": "This is a starter, community-style vocabulary, not an exhaustive or professionally certified translation. Confidence levels are noted per entry. Corrections and native-speaker review are welcome, especially for entries marked 'community' or 'uncertain'.",
+    "confidence_levels": {
+      "verified": "Cross-checked against a published Igbo-English dictionary/glossary or genuine Igbo-language source text (e.g. a translated digital-security guide).",
+      "common": "Widely known/standard vocabulary or loanword, high confidence, not individually cross-checked in a dictionary this session.",
+      "uncertain": "A compositionally constructed phrase (built from verified words) rather than a confirmed idiom, or a term carried over from the original source list that could not be confirmed; flagged for native-speaker review."
+    },
+    "notes": [
+      "Igbo marks dot-below vowels (ị, ọ, ụ) and a dot-above ṅ, which are frequently dropped in real typed text (SMS, WhatsApp). Where relevant, both the correctly-marked spelling and a plain-ASCII fallback are included as separate keys mapping to the same English value.",
+      "'ojoro' from the original seed list is corrected here: 'ọjọọ'/'ọjọ' is dictionary-confirmed to mean 'bad/evil' generally, not 'fraud' specifically. Kept below marked as uncertain/deprecated, with 'aghụghọ' (dictionary-confirmed: fraud/deceit) provided as the verified replacement.",
+      "'hack'/'hacked' as bare loanwords are common code-switching in spoken Nigerian Igbo tech talk; the fuller native compound for 'hacker' (onye ozu ihe dị na kọmputa ndị ọzọ) is also included, confirmed via an independent Igbo-vocabulary source."
+    ]
+  },
+  "stopwords": {
+    "e": "Impersonal/general subject prefix (similar to 'one/it').",
+    "anyị": "'We' — first person plural pronoun.",
+    "m": "'I' / 'my' — first person singular pronoun/possessive suffix.",
+    "gị": "'You' / 'your' — second person singular pronoun/possessive suffix, extremely high frequency (e.g. 'paswọọdụ gị' = 'your password').",
+    "ọ": "'He/she/it' — third person singular subject marker.",
+    "ha": "'They/them' — third person plural pronoun.",
+    "ya": "'Him/her/it' — object pronoun.",
+    "na": "'And' / 'with' / 'at' — extremely common conjunction/preposition.",
+    "ka": "'That' / 'so that' / 'more than' — complementizer or comparative.",
+    "bụ": "Copula ('is/to be').",
+    "nwere": "'Have/has'.",
+    "anyị nwere": "'We have' — compositional phrase, carried over from the original seed list."
+  },
+  "categories": {
+    "account_compromise": [
+      "hacked",
+      "hacker",
+      "attacked",
+      "break_in",
+      "hack",
+      "unauthorized access",
+      "sim swap",
+      "compromised"
+    ],
+    "financial_fraud": [
+      "fraud",
+      "fraudster",
+      "scam",
+      "money",
+      "bank",
+      "account",
+      "atm",
+      "bvn",
+      "otp",
+      "pin",
+      "card",
+      "debit card",
+      "credit card",
+      "transaction",
+      "mobile money",
+      "wire transfer",
+      "gift card",
+      "loan scam",
+      "investment scam",
+      "crypto scam",
+      "romance scam",
+      "fake lottery",
+      "employment scam",
+      "parcel scam",
+      "giveaway"
+    ],
+    "malware_technical": [
+      "computer",
+      "laptop",
+      "internet",
+      "network",
+      "virus",
+      "malware",
+      "data",
+      "security",
+      "ransomware",
+      "trojan",
+      "worm",
+      "spyware",
+      "keylogger",
+      "botnet",
+      "ddos",
+      "vpn",
+      "firewall",
+      "backup",
+      "restore",
+      "recovery"
+    ],
+    "phishing_social_engineering": [
+      "password",
+      "phishing",
+      "email",
+      "website",
+      "phone",
+      "link",
+      "click",
+      "social engineering",
+      "authentication",
+      "verification code",
+      "2fa",
+      "mfa",
+      "urgent",
+      "verify now",
+      "claim prize",
+      "account suspended"
+    ],
+    "actions": [
+      "stolen",
+      "change",
+      "contact",
+      "steal",
+      "attack",
+      "warn",
+      "report",
+      "monitor",
+      "scan",
+      "update",
+      "open",
+      "close",
+      "recover"
+    ],
+    "people_institutions": [
+      "thief",
+      "police",
+      "cctv",
+      "fraudster",
+      "criminal"
+    ],
+    "devices": [
+      "phone",
+      "computer",
+      "laptop",
+      "sim card",
+      "router",
+      "wifi",
+      "usb"
+    ],
+    "authentication": [
+      "password",
+      "otp",
+      "2fa",
+      "mfa",
+      "verification code"
+    ],
+    "banking": [
+      "bank",
+      "mobile money",
+      "airtime",
+      "bank transfer",
+      "debit card",
+      "credit card",
+      "atm",
+      "transaction",
+      "account number",
+      "payment",
+      "merchant",
+      "ussd"
+    ],
+    "mobile_security": [
+      "android",
+      "iphone",
+      "apk",
+      "play store",
+      "app store",
+      "sms",
+      "call",
+      "contact list",
+      "camera",
+      "microphone"
+    ],
+    "network_security": [
+      "vpn",
+      "firewall",
+      "dns",
+      "domain",
+      "ssl",
+      "tls",
+      "router",
+      "wifi"
+    ],
+    "incident_response": [
+      "breach",
+      "incident",
+      "compromised",
+      "infected",
+      "encrypted",
+      "locked",
+      "backup",
+      "restore",
+      "recovery",
+      "monitor",
+      "containment",
+      "eradication"
+    ],
+    "social_media": [
+      "telegram",
+      "whatsapp",
+      "facebook",
+      "instagram",
+      "gmail"
+    ]
+  },
+  "translations": {
+    "whatsapp": {
+      "english": "whatsapp",
+      "confidence": "verified",
+      "note": "Brand name, unchanged."
+    },
+    "bvn": {
+      "english": "bvn",
+      "confidence": "verified"
+    },
+    "otp": {
+      "english": "otp",
+      "confidence": "verified"
+    },
+    "email": {
+      "english": "email",
+      "confidence": "common",
+      "note": "Also see 'ozi intaneti' below, the fuller native compound."
+    },
+    "virus": {
+      "english": "virus",
+      "confidence": "common",
+      "note": "Common loanword."
+    },
+    "malware": {
+      "english": "malware",
+      "confidence": "common",
+      "note": "Common loanword, no established native equivalent."
+    },
+    "phishing": {
+      "english": "phishing",
+      "confidence": "common",
+      "note": "Common loanword."
+    },
+    "scam": {
+      "english": "scam",
+      "confidence": "common",
+      "note": "Loanword; 'aghụghọ' is the native equivalent, see below."
+    },
+    "fraud": {
+      "english": "fraud",
+      "confidence": "common",
+      "note": "Loanword; 'aghụghọ' is the native equivalent, see below."
+    },
+    "ekwentị": {
+      "english": "phone",
+      "confidence": "common",
+      "note": "Standard Igbo word for telephone."
+    },
+    "ekwenti": {
+      "english": "phone",
+      "confidence": "common",
+      "note": "ASCII fallback spelling of ekwentị."
+    },
+    "akaụntụ": {
+      "english": "account",
+      "confidence": "verified",
+      "note": "Confirmed in an Igbo-translated digital-security guide ('ntọala akaụntụ' = account settings)."
+    },
+    "akauntu": {
+      "english": "account",
+      "confidence": "verified",
+      "note": "ASCII fallback spelling of akaụntụ."
+    },
+    "paswọọdụ": {
+      "english": "password",
+      "confidence": "verified",
+      "note": "Confirmed in an Igbo-translated digital-security guide ('gbanwee paswọọdụ gị' = change your password)."
+    },
+    "paswoodu": {
+      "english": "password",
+      "confidence": "verified",
+      "note": "ASCII fallback spelling of paswọọdụ."
+    },
+    "okwuntughe": {
+      "english": "password",
+      "confidence": "verified",
+      "note": "Alternate, more native-coined term for password, confirmed via an independent Igbo-vocabulary source."
+    },
+    "ụlọ akụ": {
+      "english": "bank",
+      "confidence": "verified",
+      "note": "Dictionary-confirmed."
+    },
+    "ulo aku": {
+      "english": "bank",
+      "confidence": "verified",
+      "note": "ASCII fallback spelling."
+    },
+    "ego": {
+      "english": "money",
+      "confidence": "verified"
+    },
+    "igwe ndọrọ ego": {
+      "english": "atm",
+      "confidence": "verified",
+      "note": "Literally 'money-withdrawal machine'."
+    },
+    "igwe ndoro ego": {
+      "english": "atm",
+      "confidence": "verified",
+      "note": "ASCII fallback spelling."
+    },
+    "hacked": {
+      "english": "hacked",
+      "confidence": "common",
+      "note": "Common loanword/code-switching."
+    },
+    "hack": {
+      "english": "hacked",
+      "confidence": "common",
+      "note": "Common loanword/code-switching."
+    },
+    "onye ozu ihe dị na kọmputa ndị ọzọ": {
+      "english": "hacker",
+      "confidence": "verified",
+      "note": "Literally 'one who steals things that are in other people's computers' — confirmed via an independent Igbo-vocabulary source."
+    },
+    "onye ozu ihe di na komputa ndi ozo": {
+      "english": "hacker",
+      "confidence": "verified",
+      "note": "ASCII fallback spelling of the entry above."
+    },
+    "wakporo": {
+      "english": "attacked",
+      "confidence": "common",
+      "note": "Past-tense verb form, related to mwakpo (attack)."
+    },
+    "mwakpo": {
+      "english": "attack",
+      "confidence": "common"
+    },
+    "akụka": {
+      "english": "break in",
+      "confidence": "verified",
+      "note": "Confirmed via an Igbo-vocabulary source ('Ana m akuka' = 'I break in')."
+    },
+    "akuka": {
+      "english": "break in",
+      "confidence": "verified",
+      "note": "ASCII fallback spelling of akụka."
+    },
+    "ezuru": {
+      "english": "stolen",
+      "confidence": "verified",
+      "note": "Inflected form of the confirmed root -zu- (to steal; 'Ana m ezu' = 'I steal')."
+    },
+    "ezuola": {
+      "english": "stolen",
+      "confidence": "verified",
+      "note": "Perfect-aspect inflected form of the same root."
+    },
+    "onye ohi": {
+      "english": "thief",
+      "confidence": "verified"
+    },
+    "onye ori": {
+      "english": "thief",
+      "confidence": "verified",
+      "note": "Dialectal alternate spelling of onye ohi."
+    },
+    "ohi": {
+      "english": "theft",
+      "confidence": "verified"
+    },
+    "aghụghọ": {
+      "english": "fraud",
+      "confidence": "verified",
+      "note": "Dictionary-confirmed: intentional deception for personal gain."
+    },
+    "aghugho": {
+      "english": "fraud",
+      "confidence": "verified",
+      "note": "ASCII fallback spelling of aghụghọ."
+    },
+    "onye aghụghọ": {
+      "english": "fraudster",
+      "confidence": "common",
+      "note": "'onye' (person) + aghụghọ (fraud); standard Igbo word-formation pattern, not found as a single dictionary entry."
+    },
+    "onye aghugho": {
+      "english": "fraudster",
+      "confidence": "common",
+      "note": "ASCII fallback spelling."
+    },
+    "ojoro": {
+      "english": "fraud",
+      "confidence": "uncertain",
+      "note": "DEPRECATED / UNVERIFIED — kept from the original seed list for backward compatibility, but appears to derive from 'ọjọọ' (bad/evil generally), not a dedicated fraud term. Prefer 'aghụghọ' above. Needs native-speaker confirmation."
+    },
+    "nche": {
+      "english": "protection",
+      "confidence": "common",
+      "note": "Root meaning 'guard/watch', e.g. 'onye nche' = guard/watchman."
+    },
+    "nchekwa": {
+      "english": "security",
+      "confidence": "verified",
+      "note": "Confirmed in an Igbo-translated digital-security guide ('nchekwa na nzuzo' = security and privacy)."
+    },
+    "nzuzo": {
+      "english": "secret",
+      "confidence": "verified",
+      "note": "Also covers 'privacy'; confirmed in the same source."
+    },
+    "kọmputa": {
+      "english": "computer",
+      "confidence": "verified"
+    },
+    "komputa": {
+      "english": "computer",
+      "confidence": "verified",
+      "note": "ASCII fallback spelling of kọmputa."
+    },
+    "laptọọpụ": {
+      "english": "laptop",
+      "confidence": "verified"
+    },
+    "laptoopu": {
+      "english": "laptop",
+      "confidence": "verified",
+      "note": "ASCII fallback spelling of laptọọpụ."
+    },
+    "intaneti": {
+      "english": "internet",
+      "confidence": "verified"
+    },
+    "ozi intaneti": {
+      "english": "email",
+      "confidence": "verified",
+      "note": "Literally 'internet message'."
+    },
+    "weebụsaịtị": {
+      "english": "website",
+      "confidence": "verified"
+    },
+    "weebusaiti": {
+      "english": "website",
+      "confidence": "verified",
+      "note": "ASCII fallback spelling of weebụsaịtị."
+    },
+    "netwok": {
+      "english": "network",
+      "confidence": "verified",
+      "note": "Loanword, confirmed via 'netwok enweghi eriri' = Wi-Fi (literally 'network without wire')."
+    },
+    "gbanwee": {
+      "english": "change",
+      "confidence": "verified",
+      "note": "Confirmed via 'gbanwee paswọọdụ gị' = change your password."
+    },
+    "onye uwe ojii": {
+      "english": "police",
+      "confidence": "verified",
+      "note": "Literally 'person in black uniform'."
+    },
+    "cctv": {
+      "english": "cctv",
+      "confidence": "verified",
+      "note": "Loanword, unchanged."
+    },
+    "koodu nkwenye": {
+      "english": "verification code",
+      "confidence": "verified"
+    },
+    "kadi SIM": {
+      "english": "sim card",
+      "confidence": "verified"
+    },
+    "nọmba USSD": {
+      "english": "ussd code",
+      "confidence": "common"
+    },
+    "ụgwọ": {
+      "english": "payment",
+      "confidence": "verified"
+    },
+    "ntinye PIN": {
+      "english": "pin entry",
+      "confidence": "common"
+    },
+    "túgharia paswọọdụ": {
+      "english": "password reset",
+      "confidence": "verified"
+    },
+    "akụkọ a kwụsịrị": {
+      "english": "account suspended",
+      "confidence": "common"
+    },
+    "dịkwa onye ahịa": {
+      "english": "customer support",
+      "confidence": "verified"
+    },
+    "ndụmọdụ aghụghọ": {
+      "english": "fraud alert",
+      "confidence": "common"
+    },
+    "njikọ ụgha": {
+      "english": "fake link",
+      "confidence": "common"
+    },
+    "ngwugwu ekwentị": {
+      "english": "mobile wallet",
+      "confidence": "common"
+    },
+    "ngwanrọ ụlọ akụ": {
+      "english": "banking app",
+      "confidence": "common"
+    }
+  },
+  "phrases": {
+    "ha jụrụ m koodu nkwenye m": {
+      "english": "they asked for my verification code",
+      "confidence": "common"
+    },
+    "ha jụrụ m OTP m": {
+      "english": "they asked for my otp",
+      "confidence": "common"
+    },
+    "akaụntụ m emezughị": {
+      "english": "my account was compromised",
+      "confidence": "common"
+    },
+    "enwetara m ozi aghụghọ": {
+      "english": "i received a fake message",
+      "confidence": "verified"
+    },
+    "a kpọrọ ekwentị m": {
+      "english": "my phone was stolen",
+      "confidence": "common"
+    },
+    "ha jụrụ m paswọọdụ m": {
+      "english": "they asked for my password",
+      "confidence": "common"
+    },
+    "enwetara m njikọ ụgha": {
+      "english": "i received a fake link",
+      "confidence": "common"
+    },
+    "enwetara m ozi aghụghọ sitere na banki": {
+      "english": "i received a phishing message from bank",
+      "confidence": "common"
+    }
+  }
+}

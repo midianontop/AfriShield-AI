@@ -1,0 +1,491 @@
+{
+  "_metadata": {
+    "language": "Arabic",
+    "language_code": "ar",
+    "project": "AfriShield AI",
+    "purpose": "Maps common Arabic security/fraud-related terms to their canonical English keyword equivalents, for use in multilingual scam/threat detection.",
+    "version": "2.1.0",
+    "maintainer": "Midian",
+    "disclaimer": "This is a starter, community-style vocabulary, not an exhaustive or professionally certified translation. Confidence levels are noted per entry. Corrections and native-speaker review are welcome, especially for entries marked 'community' or 'uncertain'.",
+    "confidence_levels": {
+      "verified": "Cross-checked against a published Arabic-English glossary or a widely used Arabic-language source.",
+      "common": "Widely known/standard vocabulary or loanword, high confidence, not individually cross-checked in this session.",
+      "uncertain": "A likely but not fully verified translation; flagged for native-speaker review."
+    },
+    "notes": [
+      "This is an initial starter glossary for Arabic and is intended to be expanded with native review over time.",
+      "Arabic often uses a mix of native vocabulary and modern loanwords for digital and security-related topics."
+    ]
+  },
+  "stopwords": {
+    "أنا": "'I/me' — first person singular pronoun.",
+    "و": "'And' — common conjunction.",
+    "أن": "'That' — common connector.",
+    "من": "Possessive/linking particle ('of').",
+    "هو": "Copula ('is/are').",
+    "في": "in",
+    "على": "on",
+    "إلى": "to",
+    "عن": "about",
+    "مع": "with",
+    "هذا": "this",
+    "هذه": "this (feminine)",
+    "ذلك": "that",
+    "كان": "was",
+    "كانت": "was (feminine)",
+    "لدي": "I have",
+    "لديّ": "I have",
+    "تم": "was done"
+  },
+  "categories": {
+    "account_compromise": [
+      "hacked",
+      "hack",
+      "unauthorized_access",
+      "unauthorized access",
+      "sim swap",
+      "compromised"
+    ],
+    "financial_fraud": [
+      "scam",
+      "fraud",
+      "money",
+      "bank",
+      "account",
+      "pin",
+      "card",
+      "otp",
+      "debit card",
+      "credit card",
+      "atm",
+      "transaction",
+      "mobile money",
+      "wire transfer",
+      "gift card",
+      "loan scam",
+      "investment scam",
+      "crypto scam",
+      "romance scam",
+      "fake lottery",
+      "employment scam",
+      "parcel scam",
+      "giveaway"
+    ],
+    "malware_technical": [
+      "virus",
+      "malware",
+      "computer",
+      "internet",
+      "data",
+      "security",
+      "ransomware",
+      "trojan",
+      "worm",
+      "spyware",
+      "keylogger",
+      "botnet",
+      "ddos",
+      "vpn",
+      "firewall",
+      "backup",
+      "restore",
+      "recovery"
+    ],
+    "phishing_social_engineering": [
+      "password",
+      "link",
+      "click",
+      "email",
+      "website",
+      "phishing",
+      "social_engineering",
+      "social engineering",
+      "authentication",
+      "verification code",
+      "2fa",
+      "mfa",
+      "urgent",
+      "verify now",
+      "claim prize",
+      "account suspended"
+    ],
+    "actions": [
+      "steal",
+      "attack",
+      "warn",
+      "report",
+      "change",
+      "contact",
+      "monitor",
+      "scan",
+      "update",
+      "open",
+      "close",
+      "recover"
+    ],
+    "people_institutions": [
+      "thief",
+      "police",
+      "criminal",
+      "fraudster"
+    ],
+    "devices": [
+      "phone",
+      "computer",
+      "sim_card",
+      "sim card",
+      "laptop",
+      "router",
+      "wifi",
+      "usb"
+    ],
+    "ransomware": [
+      "ransomware"
+    ],
+    "spyware": [
+      "spyware"
+    ],
+    "network": [
+      "network"
+    ],
+    "firewall": [
+      "firewall"
+    ],
+    "router": [
+      "router"
+    ],
+    "wifi": [
+      "wifi"
+    ],
+    "backup": [
+      "backup"
+    ],
+    "recovery": [
+      "recovery"
+    ],
+    "otp": [
+      "otp"
+    ],
+    "verification_code": [
+      "verification code"
+    ],
+    "whatsapp": [
+      "whatsapp"
+    ],
+    "telegram": [
+      "telegram"
+    ],
+    "authentication": [
+      "password",
+      "otp",
+      "2fa",
+      "mfa",
+      "verification code"
+    ],
+    "banking": [
+      "bank",
+      "mobile money",
+      "airtime",
+      "bank transfer",
+      "debit card",
+      "credit card",
+      "atm",
+      "transaction",
+      "account number",
+      "payment",
+      "merchant",
+      "ussd"
+    ],
+    "mobile_security": [
+      "android",
+      "iphone",
+      "apk",
+      "play store",
+      "app store",
+      "sms",
+      "call",
+      "contact list",
+      "camera",
+      "microphone"
+    ],
+    "network_security": [
+      "vpn",
+      "firewall",
+      "dns",
+      "domain",
+      "ssl",
+      "tls",
+      "router",
+      "wifi"
+    ],
+    "incident_response": [
+      "breach",
+      "incident",
+      "compromised",
+      "infected",
+      "encrypted",
+      "locked",
+      "backup",
+      "restore",
+      "recovery",
+      "monitor",
+      "containment",
+      "eradication"
+    ],
+    "social_media": [
+      "telegram",
+      "whatsapp",
+      "facebook",
+      "instagram",
+      "gmail"
+    ]
+  },
+  "translations": {
+    "احتيال": {
+      "english": "fraud",
+      "confidence": "verified"
+    },
+    "غش": {
+      "english": "scam",
+      "confidence": "common"
+    },
+    "اختراق": {
+      "english": "hack",
+      "confidence": "common"
+    },
+    "مُخترَق": {
+      "english": "hacked",
+      "confidence": "common"
+    },
+    "تم اختراقه": {
+      "english": "hacked",
+      "confidence": "common"
+    },
+    "مخترق": {
+      "english": "hacked",
+      "confidence": "common"
+    },
+    "اخترق": {
+      "english": "hacked",
+      "confidence": "common"
+    },
+    "اختُرق": {
+      "english": "hacked",
+      "confidence": "common"
+    },
+    "هجوم": {
+      "english": "attack",
+      "confidence": "verified"
+    },
+    "بيانات": {
+      "english": "data",
+      "confidence": "verified"
+    },
+    "بريد إلكتروني": {
+      "english": "email",
+      "confidence": "verified"
+    },
+    "رابط": {
+      "english": "link",
+      "confidence": "verified"
+    },
+    "انقر": {
+      "english": "click",
+      "confidence": "common"
+    },
+    "موقع إلكتروني": {
+      "english": "website",
+      "confidence": "verified"
+    },
+    "كلمة مرور": {
+      "english": "password",
+      "confidence": "verified"
+    },
+    "رقم سري": {
+      "english": "pin",
+      "confidence": "common"
+    },
+    "بنك": {
+      "english": "bank",
+      "confidence": "verified"
+    },
+    "حساب": {
+      "english": "account",
+      "confidence": "verified"
+    },
+    "مال": {
+      "english": "money",
+      "confidence": "verified"
+    },
+    "بطاقة ائتمان": {
+      "english": "credit card",
+      "confidence": "common"
+    },
+    "حاسوب": {
+      "english": "computer",
+      "confidence": "verified"
+    },
+    "إنترنت": {
+      "english": "internet",
+      "confidence": "verified"
+    },
+    "هاتف": {
+      "english": "phone",
+      "confidence": "verified"
+    },
+    "رقم الهاتف": {
+      "english": "phone number",
+      "confidence": "common"
+    },
+    "أمان": {
+      "english": "security",
+      "confidence": "verified"
+    },
+    "حماية": {
+      "english": "protection",
+      "confidence": "common"
+    },
+    "تنبيه": {
+      "english": "warning",
+      "confidence": "common"
+    },
+    "تقرير": {
+      "english": "report",
+      "confidence": "common"
+    },
+    "مجرم": {
+      "english": "criminal",
+      "confidence": "common"
+    },
+    "سارق": {
+      "english": "thief",
+      "confidence": "common"
+    },
+    "شرطة": {
+      "english": "police",
+      "confidence": "common"
+    },
+    "تغيير": {
+      "english": "change",
+      "confidence": "common"
+    },
+    "تواصل": {
+      "english": "contact",
+      "confidence": "common"
+    },
+    "رمز التحقق": {
+      "english": "verification code",
+      "confidence": "verified"
+    },
+    "رمز التأكيد": {
+      "english": "verification code",
+      "confidence": "verified"
+    },
+    "طلبوا رمز التحقق مني": {
+      "english": "they asked for my verification code",
+      "confidence": "common"
+    },
+    "تلقيت رسالة احتيالية": {
+      "english": "i received a fake message",
+      "confidence": "common"
+    },
+    "تم اختراق حسابي": {
+      "english": "my account was hacked",
+      "confidence": "verified"
+    },
+    "تم سرقة هاتفي": {
+      "english": "my phone was stolen",
+      "confidence": "common"
+    },
+    "تم تبديل شريحتي": {
+      "english": "my SIM card was swapped",
+      "confidence": "common"
+    },
+    "بطاقة SIM": {
+      "english": "sim card",
+      "confidence": "verified"
+    },
+    "رمز USSD": {
+      "english": "ussd code",
+      "confidence": "common"
+    },
+    "حساب بنكي": {
+      "english": "bank account",
+      "confidence": "verified"
+    },
+    "تحويل مالي": {
+      "english": "bank transfer",
+      "confidence": "common"
+    },
+    "إعادة تعيين كلمة المرور": {
+      "english": "password reset",
+      "confidence": "verified"
+    },
+    "الحساب معلق": {
+      "english": "account suspended",
+      "confidence": "verified"
+    },
+    "خدمة العملاء": {
+      "english": "customer support",
+      "confidence": "verified"
+    },
+    "تنبيه احتيال": {
+      "english": "fraud alert",
+      "confidence": "verified"
+    },
+    "رابط زائف": {
+      "english": "fake link",
+      "confidence": "verified"
+    },
+    "تطبيق بنكي": {
+      "english": "banking app",
+      "confidence": "common"
+    },
+    "محفظة إلكترونية": {
+      "english": "mobile wallet",
+      "confidence": "common"
+    },
+    "رمز مرور لمرة واحدة": {
+      "english": "otp",
+      "confidence": "verified"
+    }
+  },
+  "phrases": {
+    "طلبوا رمز التحقق مني": {
+      "english": "they asked for my verification code",
+      "confidence": "common"
+    },
+    "طلبوا كلمة المرور الخاصة بي": {
+      "english": "they asked for my password",
+      "confidence": "common"
+    },
+    "تم اختراق حسابي": {
+      "english": "my account was hacked",
+      "confidence": "verified"
+    },
+    "تلقيت رسالة احتيالية": {
+      "english": "i received a fake message",
+      "confidence": "common"
+    },
+    "تم سرقة هاتفي": {
+      "english": "my phone was stolen",
+      "confidence": "common"
+    },
+    "قالوا لي أن أُعيد ضبط كلمة المرور فوراً": {
+      "english": "i was told to reset my password immediately",
+      "confidence": "common"
+    },
+    "تلقيت رابطًا زائفًا": {
+      "english": "i received a fake link",
+      "confidence": "common"
+    },
+    "تلقيت رسالة احتيال من البنك": {
+      "english": "i received a phishing message from bank",
+      "confidence": "common"
+    },
+    "تم تبديل شريحتي": {
+      "english": "my SIM card was swapped",
+      "confidence": "common"
+    }
+  }
+}

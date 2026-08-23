@@ -4,7 +4,7 @@
     "language_code": "ha",
     "project": "AfriShield AI",
     "purpose": "Maps common Hausa security/fraud-related terms to their canonical English keyword equivalents, for use in multilingual scam/threat detection.",
-    "version": "2.0.0",
+    "version": "2.1.0",
     "maintainer": "Midian",
     "disclaimer": "This is a starter, community-style vocabulary, not an exhaustive or professionally certified translation. Confidence levels are noted per entry. Corrections and native-speaker review are welcome, especially for entries marked 'community' or 'uncertain'.",
     "confidence_levels": {
@@ -31,23 +31,35 @@
     "sai": "'Then' / 'except'.",
     "wani": "'A certain (someone)' — masculine.",
     "wata": "'A certain (someone)' — feminine.",
-    "wannan": "'This'."
+    "wannan": "'This'.",
+    "shi": "Third-person masculine pronoun ('he'). Strip in preprocessing for reported speech.",
+    "su": "Third-person plural pronoun ('they/them'). Strip in preprocessing for reported speech.",
+    "ni": "First-person pronoun ('I/me'). Strip in preprocessing for personal reports."
   },
 
   "categories": {
-    "account_compromise": ["hacked", "hack", "unauthorized_access", "sim_swap"],
-    "financial_fraud": ["scam", "fraud", "money", "bank", "account", "stolen", "bvn", "otp", "pin"],
-    "malware_technical": ["virus", "malware", "computer", "internet", "network", "data"],
-    "phishing_social_engineering": ["password", "link", "click", "phone_number", "email", "website"],
-    "actions": ["steal", "attack", "warn", "report", "open", "close", "change", "contact", "enter_type"],
+    "account_compromise": ["hacked", "hack", "unauthorized access", "sim swap"],
+    "financial_fraud": ["scam", "fraud", "crypto scam", "loan scam", "investment scam", "romance scam", "fake lottery", "gift card scam", "money", "bank", "account", "stolen", "bvn", "otp", "pin"],
+    "malware_technical": ["virus", "malware", "computer", "internet", "network", "data", "trojan", "ransomware", "spyware", "keylogger", "worm", "botnet"],
+    "phishing_social_engineering": ["password", "link", "click", "phone number", "email", "website", "telegram", "facebook", "instagram", "gmail"],
+    "actions": ["steal", "attack", "warn", "report", "open", "close", "change", "contact", "enter", "restore", "backup", "recover", "disconnect", "scan", "update"],
     "people_institutions": ["thief", "fraudster", "police", "efcc"],
-    "devices": ["phone", "my_phone", "broken"]
+    "devices": ["phone", "my phone", "broken", "router", "wifi", "usb", "laptop"],
+    "authentication": ["password", "otp", "2fa", "mfa", "verification code"],
+    "banking": ["opay", "palmpay", "moniepoint", "kuda", "gtbank", "access bank", "uba", "mobile money", "airtime", "bank transfer", "debit card", "atm", "transaction", "account number", "payment", "merchant", "ussd"],
+    "incident_response": ["breach", "incident", "compromised", "infected", "encrypted", "locked", "backup", "restore", "recovery", "monitor", "containment", "eradication"],
+    "mobile_security": ["android", "iphone", "apk", "play store", "app store", "permission", "sms", "call", "contact list", "camera", "microphone"],
+    "network_security": ["vpn", "firewall", "ddos", "dns", "domain", "ssl", "tls"],
+    "social_engineering": ["phishing", "impersonation", "fake message", "fake call", "technical support scam", "urgent payment"],
+    "social_media": ["telegram", "facebook", "instagram", "gmail"]
   },
 
   "translations": {
     "hacking": {"english": "hacked", "confidence": "common"},
     "hack": {"english": "hacked", "confidence": "common"},
     "an hack": {"english": "hacked", "confidence": "common", "note": "'an' + loanword 'hack', very common construction in spoken Hausa."},
+    "an hacke": {"english": "hacked", "confidence": "common", "note": "Common colloquial variant of 'an hack'."},
+    "an yi hack": {"english": "hacked", "confidence": "common", "note": "Alternative phrasing for a hacked account or device."},
 
     "shiga ba tare da izini ba": {"english": "unauthorized access", "confidence": "community", "note": "Literally 'entering without permission'."},
 
@@ -57,11 +69,39 @@
     "email": {"english": "email", "confidence": "verified", "note": "Common loanword."},
     "bvn": {"english": "bvn", "confidence": "verified"},
     "otp": {"english": "otp", "confidence": "verified"},
+    "lambar tabbatarwa": {"english": "verification code", "confidence": "common", "note": "Literal Hausa phrase for a verification/confirmation code."},
+    "lambar tabbaci": {"english": "verification code", "confidence": "common", "note": "Alternate Hausa phrase for verification code."},
+    "opay": {"english": "opay", "confidence": "verified"},
+    "palmpay": {"english": "palmpay", "confidence": "verified"},
+    "moniepoint": {"english": "moniepoint", "confidence": "verified"},
+    "kuda": {"english": "kuda", "confidence": "verified"},
+    "gtbank": {"english": "gtbank", "confidence": "verified"},
+    "access bank": {"english": "access bank", "confidence": "verified"},
+    "uba": {"english": "uba", "confidence": "verified"},
     "virus": {"english": "virus", "confidence": "verified", "note": "Common loanword."},
     "malware": {"english": "malware", "confidence": "verified", "note": "Common loanword, no established native equivalent."},
+    "trojan": {"english": "trojan", "confidence": "verified"},
+    "ransomware": {"english": "ransomware", "confidence": "verified"},
+    "spyware": {"english": "spyware", "confidence": "verified"},
+    "keylogger": {"english": "keylogger", "confidence": "verified"},
+    "worm": {"english": "worm", "confidence": "verified"},
+    "botnet": {"english": "botnet", "confidence": "verified"},
+    "telegram": {"english": "telegram", "confidence": "verified"},
+    "facebook": {"english": "facebook", "confidence": "verified"},
+    "instagram": {"english": "instagram", "confidence": "verified"},
+    "gmail": {"english": "gmail", "confidence": "verified"},
     "scam": {"english": "scam", "confidence": "verified", "note": "Loanword; 'zamba' is the native equivalent, see below."},
     "fraud": {"english": "fraud", "confidence": "verified", "note": "Loanword; 'zamba' is the native equivalent, see below."},
     "zamba": {"english": "fraud", "confidence": "verified", "note": "Dictionary-confirmed: fraud / scam / swindle."},
+    "crypto scam": {"english": "crypto scam", "confidence": "verified"},
+    "loan scam": {"english": "loan scam", "confidence": "verified"},
+    "investment scam": {"english": "investment scam", "confidence": "verified"},
+    "romance scam": {"english": "romance scam", "confidence": "verified"},
+    "fake lottery": {"english": "fake lottery", "confidence": "verified"},
+    "gift card scam": {"english": "gift card scam", "confidence": "verified"},
+    "an saci asusuna": {"english": "account compromised", "confidence": "common"},
+    "an sace wayata": {"english": "phone stolen", "confidence": "common"},
+    "an yi min zamba": {"english": "fraud victim", "confidence": "verified"},
     "yaudara": {"english": "deceive", "confidence": "common", "note": "To deceive/trick someone."},
     "dan damfara": {"english": "fraudster", "confidence": "common", "note": "From 'damfara' (to swindle/con); 'con man'."},
     "ɗan damfara": {"english": "fraudster", "confidence": "common", "note": "Correct hooked-letter spelling of the entry above."},
@@ -98,6 +138,38 @@
     "rahoto": {"english": "report", "confidence": "verified"},
 
     "link": {"english": "link", "confidence": "common", "note": "Usually kept as an English loanword in spoken Hausa."},
+    "restore": {"english": "restore", "confidence": "verified"},
+    "backup": {"english": "backup", "confidence": "verified"},
+    "recover": {"english": "recovery", "confidence": "verified"},
+    "disconnect": {"english": "disconnect", "confidence": "verified"},
+    "scan": {"english": "scan", "confidence": "verified"},
+    "update": {"english": "update", "confidence": "verified"},
+    "router": {"english": "router", "confidence": "verified"},
+    "wifi": {"english": "wifi", "confidence": "verified"},
+    "usb": {"english": "usb", "confidence": "verified"},
+    "sms": {"english": "sms", "confidence": "verified", "note": "Common loanword/abbreviation."},
+    "ma'amala": {"english": "transaction", "confidence": "common", "note": "Common Hausa term for a financial transaction."},
+    "biyan kuɗi": {"english": "payment", "confidence": "verified", "note": "Literally 'payment'."},
+    "katin cire kudi": {"english": "debit card", "confidence": "common", "note": "Common descriptive phrase for a debit card."},
+    "katin bashi": {"english": "credit card", "confidence": "common", "note": "Literal translation for a credit card in Hausa."},
+    "ussd": {"english": "ussd", "confidence": "verified", "note": "Common banking acronym."},
+    "lambar USSD": {"english": "ussd code", "confidence": "common", "note": "Common descriptive phrase for a USSD banking code."},
+    "lambar latsa": {"english": "code", "confidence": "common", "note": "Often used for USSD or confirmation codes."},
+    "sim": {"english": "sim card", "confidence": "common", "note": "Common shorthand for SIM card."},
+    "katin sim": {"english": "sim card", "confidence": "common", "note": "Common descriptive phrase for SIM card."},
+    "app na banki": {"english": "banking app", "confidence": "common", "note": "Common phrase for a mobile banking application."},
+    "bogi": {"english": "fake", "confidence": "common", "note": "Common word for fake or counterfeit."},
+    "phishing": {"english": "phishing", "confidence": "common", "note": "Common English loanword used in tech contexts."},
+    "zamba ta waya": {"english": "phone scam", "confidence": "common", "note": "Literally 'phone fraud'."},
+    "sakon phishing": {"english": "phishing message", "confidence": "common", "note": "Mixed Hausa + loanword phrase."},
+    "tsaro na intanet": {"english": "internet security", "confidence": "common", "note": "Literal phrase used in tech discussions."},
+    "vpn": {"english": "vpn", "confidence": "common", "note": "Common loanword/acronym."},
+    "firewall": {"english": "firewall", "confidence": "common", "note": "Common loanword in technical discussion."},
+    "ddos": {"english": "ddos", "confidence": "common", "note": "Common security acronym."},
+    "dns": {"english": "dns", "confidence": "common", "note": "Common technical acronym."},
+    "ssl": {"english": "ssl", "confidence": "common", "note": "Common technical acronym."},
+    "tls": {"english": "tls", "confidence": "common", "note": "Common technical acronym."},
+    "laptop": {"english": "laptop", "confidence": "verified"},
     "shafi": {"english": "website", "confidence": "common", "note": "'Page' — commonly used for website."},
     "latsa": {"english": "click", "confidence": "common", "note": "Literally 'press/tap'."},
     "buga": {"english": "enter", "confidence": "common", "note": "'To type/enter' e.g. 'buga lambar sirri' = enter your PIN."},
@@ -107,6 +179,9 @@
     "canza": {"english": "change", "confidence": "verified", "note": "e.g. 'canza kalmar sirri' = change password."},
     "tuntuɓi": {"english": "contact", "confidence": "common", "note": "e.g. 'tuntuɓi banki' = contact the bank."},
     "tuntubi": {"english": "contact", "confidence": "common", "note": "ASCII fallback spelling of tuntuɓi."},
+    "gaggawa": {"english": "urgent", "confidence": "verified"},
+    "nan da nan": {"english": "immediately", "confidence": "verified"},
+    "taimako": {"english": "help", "confidence": "verified"},
 
     "'yan sanda": {"english": "police", "confidence": "verified"},
     "yan sanda": {"english": "police", "confidence": "verified", "note": "ASCII fallback spelling (no apostrophe)."},
@@ -119,5 +194,423 @@
     },
     "lalace": {"english": "broken", "confidence": "verified", "note": "Dictionary-confirmed: to spoil/go bad/break down."},
     "karye": {"english": "broken", "confidence": "common", "note": "To snap/break (physical breakage, e.g. a cracked screen)."}
+  },
+
+  "phrases": {
+    "an sace kudina": {
+      "english": "my money was stolen",
+      "confidence": "verified"
+    },
+    "an sace asusuna": {
+      "english": "my account was stolen",
+      "confidence": "verified"
+    },
+    "an hacke whatsapp dina": {
+      "english": "my whatsapp was hacked",
+      "confidence": "verified"
+    },
+    "na karbi sakon karya": {
+      "english": "i received a fake message",
+      "confidence": "verified"
+    },
+    "sun yaudare ni": {
+      "english": "they tricked me",
+      "confidence": "common"
+    },
+    "sun yi mini karya": {
+      "english": "they lied to me",
+      "confidence": "common"
+    },
+    "sun ce in aika kudi": {
+      "english": "they told me to send money",
+      "confidence": "common"
+    },
+    "sun nemi bvn dina": {
+      "english": "they asked for my bvn",
+      "confidence": "verified"
+    },
+    "sun nemi otp dina": {
+      "english": "they asked for my otp",
+      "confidence": "verified"
+    },
+    "sun nemi kalmar sirri ta": {
+      "english": "they asked for my password",
+      "confidence": "verified"
+    },
+    "sun nemi lambar tabbatarwa ta": {
+      "english": "they asked for my verification code",
+      "confidence": "common"
+    },
+    "sun nemi lambar tabbaci ta": {
+      "english": "they asked for my verification code",
+      "confidence": "common"
+    },
+    "sun nemi lambar tabbatarwa dina": {
+      "english": "they asked for my verification code",
+      "confidence": "common"
+    },
+    "sun nemi lambar tabbaci dina": {
+      "english": "they asked for my confirmation code",
+      "confidence": "common"
+    },
+    "sun nemi lambar sirri na": {
+      "english": "they asked for my secret code/password",
+      "confidence": "common"
+    },
+    "sun nemi lambar sirri na banki": {
+      "english": "they asked for my bank password",
+      "confidence": "common"
+    },
+    "sun nemi lambar katina": {
+      "english": "they asked for my card number",
+      "confidence": "common"
+    },
+    "sun nemi bayanan katin banki na": {
+      "english": "they asked for my bank card details",
+      "confidence": "common"
+    },
+    "sun nemi lambobin SMS dina": {
+      "english": "they asked for my SMS codes",
+      "confidence": "common"
+    },
+    "sun nemi lambar tabbatata ta": {
+      "english": "they asked for my confirmation code",
+      "confidence": "common"
+    },
+    "sun nemi tabbaci": {
+      "english": "they asked for confirmation",
+      "confidence": "common",
+      "note": "Short idiomatic phrase that may be used for verification request contexts."
+    },
+    "sun nemi na tabbatar da asusuna": {
+      "english": "they asked me to verify my account",
+      "confidence": "common"
+    },
+    "sun nemi na tabbatar da asusun bankina": {
+      "english": "they asked me to verify my bank account",
+      "confidence": "common"
+    },
+    "sun nemi na shigar da lambar tabbatarwa": {
+      "english": "they asked me to enter the verification code",
+      "confidence": "common"
+    },
+    "na shigar da lambar tabbatarwa": {
+      "english": "i entered the verification code",
+      "confidence": "common"
+    },
+    "na buga lambar tabbatarwa": {
+      "english": "i typed the verification code",
+      "confidence": "common"
+    },
+    "sun ce na tabbatar da asusuna": {
+      "english": "they said i should verify my account",
+      "confidence": "common"
+    },
+    "sun ce in tabbatar da asusuna": {
+      "english": "they said i should verify my account",
+      "confidence": "common"
+    },
+    "na danna link": {
+      "english": "i clicked a link",
+      "confidence": "verified"
+    },
+    "wayata ta kamu da virus": {
+      "english": "my phone is infected with a virus",
+      "confidence": "verified"
+    },
+    "kwamfutata ta kamu da malware": {
+      "english": "my computer is infected with malware",
+      "confidence": "verified"
+    },
+    "asusun bankina an hacke": {
+      "english": "my bank account was hacked",
+      "confidence": "verified"
+    },
+    "an sace wayata": {
+      "english": "my phone was stolen",
+      "confidence": "verified"
+    },
+    "an yi min zamba": {
+      "english": "i was scammed",
+      "confidence": "verified"
+    },
+    "na rasa kudina": {
+      "english": "i lost my money",
+      "confidence": "verified"
+    },
+    "an cire kudi daga asusuna": {
+      "english": "money was withdrawn from my account",
+      "confidence": "verified"
+    },
+    "na karbi email na bogi": {
+      "english": "i received a fake email",
+      "confidence": "verified"
+    },
+    "na karbi sakon whatsapp na bogi": {
+      "english": "i received a fake whatsapp message",
+      "confidence": "verified"
+    },
+    "sun ce na ci caca": {
+      "english": "they said i won a lottery",
+      "confidence": "verified"
+    },
+    "sun ce in biya kafin in karbi kyauta": {
+      "english": "they asked me to pay before receiving a prize",
+      "confidence": "verified"
+    },
+    "ina bukatar taimako": {
+      "english": "i need help",
+      "confidence": "verified"
+    },
+    "na bukatar in yi rahoto": {
+      "english": "i want to report this",
+      "confidence": "verified"
+    },
+    "wannan ya kasance na zamba": {
+      "english": "this looks like a scam",
+      "confidence": "verified"
+    },
+    "wannan barazana ce": {
+      "english": "this is a threat",
+      "confidence": "verified"
+    },
+    "sun nemi bayanai na": {
+      "english": "they requested my information",
+      "confidence": "verified"
+    },
+    "sun nemi hotuna na": {
+      "english": "they requested my photos",
+      "confidence": "verified"
+    },
+    "sun yi kiran waya da ni": {
+      "english": "they called me on the phone",
+      "confidence": "verified"
+    },
+    "na karbi kiran waya na zamba": {
+      "english": "i received a scam call",
+      "confidence": "verified"
+    },
+    "an yi min transfer ba tare da izini ba": {
+      "english": "a transfer was made without my permission",
+      "confidence": "verified"
+    },
+    "an canza kalmar sirri ta": {
+      "english": "my password was changed",
+      "confidence": "verified"
+    },
+    "an kulle asusuna": {
+      "english": "my account was locked",
+      "confidence": "verified"
+    },
+    "na rasa damar shiga asusuna": {
+      "english": "i lost access to my account",
+      "confidence": "verified"
+    },
+    "an yi min sim swap": {
+      "english": "i experienced a sim swap",
+      "confidence": "verified"
+    },
+    "sakon ya zo daga lambar da ba a sani ba": {
+      "english": "the message came from an unknown number",
+      "confidence": "verified"
+    },
+    "na ga abin da ba daidai ba": {
+      "english": "i saw something suspicious",
+      "confidence": "verified"
+    },
+    "na buɗe app da ba a sani ba": {
+      "english": "i opened an unknown app",
+      "confidence": "verified"
+    },
+    "na shigar da bayanai na": {
+      "english": "i entered my details",
+      "confidence": "verified"
+    },
+    "na rasa wayata": {
+      "english": "i lost my phone",
+      "confidence": "verified"
+    },
+    "an sace hotuna na": {
+      "english": "my photos were stolen",
+      "confidence": "verified"
+    },
+    "an yi min zamba ta intanet": {
+      "english": "i was scammed online",
+      "confidence": "verified"
+    },
+    "sakon ya kasance na bogi": {
+      "english": "the message was fake",
+      "confidence": "verified"
+    },
+    "sun aika min sakon phishing": {
+      "english": "they sent me a phishing message",
+      "confidence": "verified"
+    },
+    "an yi min zamba ta USSD": {
+      "english": "i was scammed via USSD",
+      "confidence": "verified"
+    },
+    "an cire kudi daga asusuna ta USSD": {
+      "english": "money was withdrawn from my account via USSD",
+      "confidence": "verified"
+    },
+    "sun bukaci bayanan asusun banki na": {
+      "english": "they asked for my bank account details",
+      "confidence": "verified"
+    },
+    "sun bukaci lambar USSD dina": {
+      "english": "they asked for my USSD code",
+      "confidence": "verified"
+    },
+    "sim dina ta canza": {
+      "english": "my sim was changed",
+      "confidence": "verified"
+    },
+    "na rasa sim dina": {
+      "english": "i lost my sim card",
+      "confidence": "common"
+    },
+    "sun sace sim dina": {
+      "english": "they stole my sim card",
+      "confidence": "common"
+    },
+    "an yi amfani da sim dina ba tare da izini ba": {
+      "english": "my sim was used without permission",
+      "confidence": "verified"
+    },
+    "na karbi sakon bogi daga banki": {
+      "english": "i received a fake message from the bank",
+      "confidence": "verified"
+    },
+    "na buɗe app na banki da ba a sani ba": {
+      "english": "i opened an unknown banking app",
+      "confidence": "common"
+    },
+    "na bude app na banki da ba a sani ba": {
+      "english": "i opened an unknown banking app",
+      "confidence": "common",
+      "note": "ASCII/fallback variant without the tilded u."
+    },
+    "an yi min zamba ta cikin app na banki": {
+      "english": "i was scammed through a banking app",
+      "confidence": "common"
+    },
+    "an yi min zamba ta cikin app banki": {
+      "english": "i was scammed through a banking app",
+      "confidence": "common",
+      "note": "Compact variant without the possessive particle 'na'."
+    },
+    "an cire kudi daga asusun bankina": {
+      "english": "money was taken from my bank account",
+      "confidence": "common"
+    },
+    "an yi min canja wurin kudi ba tare da izini ba": {
+      "english": "an unauthorized money transfer was made",
+      "confidence": "common"
+    },
+    "na buƙatar in sake dawo da asusuna": {
+      "english": "i need to recover my account",
+      "confidence": "verified"
+    },
+    "na buƙatar in mayar da asusuna": {
+      "english": "i need to restore my account",
+      "confidence": "verified"
+    },
+    "na buƙatar taimako daga hukumomi": {
+      "english": "i need help from the authorities",
+      "confidence": "verified"
+    },
+    "wannan ya faru da ƙarfe": {
+      "english": "this happened recently",
+      "confidence": "verified"
+    },
+    "wannan ya faru a rana": {
+      "english": "this happened today",
+      "confidence": "verified"
+    },
+    "na ji tsoro": {
+      "english": "i am scared",
+      "confidence": "verified"
+    },
+    "na ji kunya": {
+      "english": "i feel embarrassed",
+      "confidence": "verified"
+    },
+    "an yi min cin hanci": {
+      "english": "i was bribed",
+      "confidence": "verified"
+    },
+    "sun nemi kuɗi a madadin kyauta": {
+      "english": "they asked for money instead of a prize",
+      "confidence": "verified"
+    },
+    "sun nemi na biya kafin in karba": {
+      "english": "they asked me to pay before i receive it",
+      "confidence": "verified"
+    },
+    "an yi min tambaya game da asusuna": {
+      "english": "they asked me about my account",
+      "confidence": "verified"
+    },
+    "an yi amfani da asusuna ba tare da izini ba": {
+      "english": "my account was used without permission",
+      "confidence": "verified"
+    },
+    "an yi amfani da lambar wayata": {
+      "english": "my phone number was used",
+      "confidence": "verified"
+    },
+    "sun karbi bayanan katina": {
+      "english": "they took my card details",
+      "confidence": "verified"
+    },
+    "sun cire kudi daga katina": {
+      "english": "they withdrew money from my card",
+      "confidence": "common"
+    },
+    "sun cire kudi daga asusuna": {
+      "english": "they withdrew money from my account",
+      "confidence": "common"
+    },
+    "sun cire kudi daga asusuna ta USSD": {
+      "english": "they withdrew money from my account via USSD",
+      "confidence": "common"
+    },
+    "sun cire kudi daga katina ta USSD": {
+      "english": "they withdrew money from my card via USSD",
+      "confidence": "common"
+    },
+    "sun cire kudi daga asusuna ba tare da izini ba": {
+      "english": "they withdrew money from my account without permission",
+      "confidence": "common"
+    },
+    "sun cire kudi daga katina ba tare da izini ba": {
+      "english": "they withdrew money from my card without permission",
+      "confidence": "common"
+    },
+    "an cire kudi daga katina": {
+      "english": "money was withdrawn from my card",
+      "confidence": "verified"
+    },
+    "na rasa katin debit dina": {
+      "english": "i lost my debit card",
+      "confidence": "common"
+    },
+    "na rasa katin bashi na": {
+      "english": "i lost my credit card",
+      "confidence": "common"
+    },
+    "an yi amfani da katina ba tare da izini ba": {
+      "english": "my card was used without permission",
+      "confidence": "verified"
+    },
+    "na samu kiran zamba": {
+      "english": "i received a scam call",
+      "confidence": "verified"
+    },
+    "an yi amfani da hotuna na": {
+      "english": "my photos were used",
+      "confidence": "verified"
+    }
   }
 }

@@ -1,0 +1,313 @@
+{
+  "_metadata": {
+    "language": "Kanuri",
+    "language_code": "kr",
+    "project": "AfriShield AI",
+    "purpose": "Maps common Kanuri security/fraud-related terms to their canonical English keyword equivalents, for use in multilingual scam/threat detection.",
+    "version": "2.1.0",
+    "maintainer": "Midian",
+    "disclaimer": "IMPORTANT: this is the most minimal and lowest-confidence file in the set, more so even than fulfulde.json. Kanuri (Central Kanuri / Yerwa Kanuri, ISO 639-3: knc) is a Nilo-Saharan language, spoken mainly in Borno State, Nigeria and around Lake Chad. Unlike Hausa/Yoruba/Igbo/Fulfulde, it is NOT closely related to any of the other languages in this project, so no cross-language cognate inference was possible. After extensive searching, only ONE term (ndaltere/steal) could be confirmed against an academic source (the World Loanword Database, a Max Planck Institute publication). Everything else here is a common loanword assumption, not a sourced fact. This file should be treated as a placeholder more than a glossary, and needs native Kanuri-speaker input before any real reliance on it.",
+    "confidence_levels": {
+      "verified": "Cross-checked against a published academic source — for this file, only the World Loanword Database (Löhr & Wolff 2009).",
+      "common": "A loanword pattern consistent with regional contact (Hausa/English/Arabic all have historical contact with Kanuri); not independently confirmed this session."
+    },
+    "notes": [
+      "Kanuri historically absorbed vocabulary from Arabic (via Islamic scholarship, pre-modern period), Hausa (medieval-to-modern contact), and English/French (colonial and postcolonial period) — documented in the World Loanword Database's own contact-period chronology for this language. This makes English/Hausa-style loanwords for modern technical concepts a reasonable assumption, following the same pattern as Fulfulde.",
+      "No stopword list is included: no Kanuri grammatical/function words could be confirmed this session, and Kanuri's postposition-based, SOV grammar with noun-class agreement is different enough from the other five languages that guessing would be irresponsible without a source."
+    ]
+  },
+  "stopwords": {},
+  "categories": {
+    "account_compromise": [
+      "hacked",
+      "hack",
+      "unauthorized access",
+      "sim swap",
+      "compromised"
+    ],
+    "financial_fraud": [
+      "fraud",
+      "scam",
+      "bank",
+      "bvn",
+      "otp",
+      "money",
+      "account",
+      "pin",
+      "card",
+      "debit card",
+      "credit card",
+      "atm",
+      "transaction",
+      "mobile money",
+      "wire transfer",
+      "gift card",
+      "loan scam",
+      "investment scam",
+      "crypto scam",
+      "romance scam",
+      "fake lottery",
+      "employment scam",
+      "parcel scam",
+      "giveaway"
+    ],
+    "malware_technical": [
+      "virus",
+      "malware",
+      "internet",
+      "computer",
+      "data",
+      "security",
+      "ransomware",
+      "trojan",
+      "worm",
+      "spyware",
+      "keylogger",
+      "botnet",
+      "ddos",
+      "vpn",
+      "firewall",
+      "backup",
+      "restore",
+      "recovery"
+    ],
+    "phishing_social_engineering": [
+      "password",
+      "phishing",
+      "email",
+      "link",
+      "click",
+      "website",
+      "social engineering",
+      "authentication",
+      "verification code",
+      "2fa",
+      "mfa",
+      "urgent",
+      "verify now",
+      "claim prize",
+      "account suspended"
+    ],
+    "actions": [
+      "stolen",
+      "steal",
+      "attack",
+      "warn",
+      "report",
+      "change",
+      "contact",
+      "monitor",
+      "scan",
+      "update",
+      "open",
+      "close",
+      "recover"
+    ],
+    "people_institutions": [
+      "police",
+      "thief",
+      "fraudster",
+      "criminal"
+    ],
+    "devices": [
+      "phone",
+      "computer",
+      "sim card",
+      "laptop",
+      "router",
+      "wifi",
+      "usb"
+    ],
+    "authentication": [
+      "password",
+      "otp",
+      "2fa",
+      "mfa",
+      "verification code"
+    ],
+    "banking": [
+      "bank",
+      "mobile money",
+      "airtime",
+      "bank transfer",
+      "debit card",
+      "credit card",
+      "atm",
+      "transaction",
+      "account number",
+      "payment",
+      "merchant",
+      "ussd"
+    ],
+    "mobile_security": [
+      "android",
+      "iphone",
+      "apk",
+      "play store",
+      "app store",
+      "sms",
+      "call",
+      "contact list",
+      "camera",
+      "microphone"
+    ],
+    "network_security": [
+      "vpn",
+      "firewall",
+      "dns",
+      "domain",
+      "ssl",
+      "tls",
+      "router",
+      "wifi"
+    ],
+    "incident_response": [
+      "breach",
+      "incident",
+      "compromised",
+      "infected",
+      "encrypted",
+      "locked",
+      "backup",
+      "restore",
+      "recovery",
+      "monitor",
+      "containment",
+      "eradication"
+    ],
+    "social_media": [
+      "telegram",
+      "whatsapp",
+      "facebook",
+      "instagram",
+      "gmail"
+    ]
+  },
+  "translations": {
+    "ndaltere": {
+      "english": "steal",
+      "confidence": "verified",
+      "note": "Confirmed via the World Loanword Database (Löhr & Wolff, 2009), a Max Planck Institute academic publication. Original form: ndàltə́."
+    },
+    "bank": {
+      "english": "bank",
+      "confidence": "common",
+      "note": "Loanword; no confirmed native term found."
+    },
+    "bvn": {
+      "english": "bvn",
+      "confidence": "common",
+      "note": "Nigeria-specific acronym, likely used as-is."
+    },
+    "otp": {
+      "english": "otp",
+      "confidence": "common"
+    },
+    "phon": {
+      "english": "phone",
+      "confidence": "common",
+      "note": "Guessed loanword adaptation; not confirmed."
+    },
+    "email": {
+      "english": "email",
+      "confidence": "common",
+      "note": "Loanword."
+    },
+    "internet": {
+      "english": "internet",
+      "confidence": "common",
+      "note": "Loanword; not confirmed."
+    },
+    "virus": {
+      "english": "virus",
+      "confidence": "common",
+      "note": "Loanword; not confirmed."
+    },
+    "malware": {
+      "english": "malware",
+      "confidence": "common",
+      "note": "Loanword; no confirmed native term found."
+    },
+    "phishing": {
+      "english": "phishing",
+      "confidence": "common",
+      "note": "Loanword; no confirmed native term found."
+    },
+    "scam": {
+      "english": "scam",
+      "confidence": "common",
+      "note": "Loanword; no confirmed native term found."
+    },
+    "fraud": {
+      "english": "fraud",
+      "confidence": "common",
+      "note": "Loanword; no confirmed native term found."
+    },
+    "hack": {
+      "english": "hacked",
+      "confidence": "common",
+      "note": "Loanword/code-switching, no confirmed native term found."
+    },
+    "hacked": {
+      "english": "hacked",
+      "confidence": "common"
+    },
+    "password": {
+      "english": "password",
+      "confidence": "common",
+      "note": "Loanword; no confirmed native term found."
+    },
+    "polis": {
+      "english": "police",
+      "confidence": "common",
+      "note": "Loanword."
+    },
+    "whatsapp": {
+      "english": "whatsapp",
+      "confidence": "verified",
+      "note": "Brand name, unchanged."
+    },
+    "koodi tsarka": {
+      "english": "verification code",
+      "confidence": "common"
+    },
+    "SIM": {
+      "english": "sim card",
+      "confidence": "common"
+    },
+    "OTP": {
+      "english": "otp",
+      "confidence": "common"
+    },
+    "koodi USSD": {
+      "english": "ussd code",
+      "confidence": "common"
+    },
+    "sim": {
+      "english": "sim card",
+      "confidence": "common"
+    },
+    "banki": {
+      "english": "bank",
+      "confidence": "common"
+    }
+  },
+  "phrases": {
+    "ɓe nayi koodi tsarka": {
+      "english": "they asked for my verification code",
+      "confidence": "common"
+    },
+    "sim am ɓe ɗakile": {
+      "english": "my sim card was swapped",
+      "confidence": "common"
+    },
+    "ɓe nayi OTP am": {
+      "english": "they asked for my otp",
+      "confidence": "common"
+    },
+    "akunti am ɓe wakkile": {
+      "english": "my account was compromised",
+      "confidence": "common"
+    }
+  }
+}

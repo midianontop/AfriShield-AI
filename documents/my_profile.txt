@@ -1,19 +1,13 @@
- Midian is a cybersecurity analyst and AI enthusiast studying Computer Science at Aliko Dangote University of Science and Technology (ADUSTECH). He trains in Data Science and Machine Learning through the 3MTT (Three Million Technical Talent) program and aims to become an AI Security Engineer building AI and cybersecurity solutions for Africa.
+# Muassir Ismail Dalhat (Midian)
 
-Midian is a Computer Science student at Aliko Dangote University of Science and Technology (ADUSTECH), combining academic learning with hands-on training in data science, machine learning, and cybersecurity. As a participant in the 3MTT (Three Million Technical Talent) program, he is expanding his expertise in practical ML workflows, model evaluation, and data-driven security analytics.
+**Computer Science | Cybersecurity | Artificial Intelligence | Machine Learning | Aspiring AI Security Engineer**
 
-His technical interests include cybersecurity, artificial intelligence, machine learning, data science, penetration testing, web application security, and Retrieval-Augmented Generation (RAG) systems. Current projects include a Cybersecurity RAG Assistant and a submission to the Africa Deep Tech Challenge 2026, where he’s applying ML and security techniques to real-world problems.
+**Muassir Ismail Dalhat**, professionally known as **Midian**, is a Computer Science student with completed training in **Cybersecurity, Data Science, and Machine Learning**. He completed the **Data Science and Machine Learning program through 3MTT/DeepTech** and the **Cybersecurity program through 3MTT/NextGen**, developing practical knowledge in artificial intelligence, data-driven systems, cybersecurity, and machine learning.
 
-Midian’s career goal is to become an AI Security Engineer focused on designing robust AI systems and security solutions tailored to the African technology landscape. He is eager to collaborate on projects that bridge AI innovation with practical cybersecurity needs.
+His interests lie at the intersection of **offensive and defensive cybersecurity and artificial intelligence**. He is developing practical expertise in **penetration testing, web application security, vulnerability assessment, network security, threat analysis, security operations, data analytics, machine learning workflows, model evaluation, and Retrieval-Augmented Generation (RAG) systems**.
 
-Name: Midian
+Muassir is particularly passionate about applying **Artificial Intelligence to cybersecurity** to improve threat detection, security analysis, incident response, automation, and data-driven decision-making. His work includes the development of **AfriShield AI**, an offline AI-powered cybersecurity assistant that combines **local AI, RAG, cybersecurity knowledge bases, vector databases, threat detection, scam detection, and incident-response capabilities**.
 
-Current role: Computer Science student, ADUSTECH; Cybersecurity analyst and AI enthusiast
+He has also participated in the **Africa Deep Tech Challenge 2026**, where he applies artificial intelligence, machine learning, and cybersecurity concepts to practical challenges affecting African communities and organizations.
 
-Professional development: Trainee, 3MTT (Three Million Technical Talent) — Data Science & Machine Learning
-
-Technical interests: Cybersecurity, AI, Machine Learning, Data Science, Penetration Testing, Web App Security, RAG systems
-
-Current projects: Cybersecurity RAG Assistant; Africa Deep Tech Challenge 2026 project
-
-Career objective: Become an AI Security Engineer; build AI and cybersecurity solutions for Africa.
+His long-term career objective is to become an **AI Security Engineer**, specializing in the design and development of **secure, reliable, and scalable AI-powered cybersecurity solutions for Africa**. He is open to collaboration and opportunities involving **cybersecurity, artificial intelligence, machine learning, data science, security engineering, and emerging technologies**.

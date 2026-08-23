@@ -1,0 +1,396 @@
+🎯 KALISCOUT TUTORIAL #002
+
+"Phishing Simulation with ZPhisher on Termux"
+
+Difficulty: Beginner
+Time: 30 Minutes
+Tools: Termux, ZPhisher, Android/Linux
+Goal: Deploy a local phishing simulation page and capture demo credentials.
+
+---
+
+📖 LEARNING OBJECTIVES
+
+By the end of this tutorial, you will:
+
+· Install Termux on Android from official sources.
+· Configure Termux repositories and update packages.
+· Clone ZPhisher from GitHub.
+· Deploy a Facebook login simulation locally.
+· Understand how phishing pages capture credentials.
+· Learn ethical implications of phishing simulations.
+
+---
+
+⚠️ LEGAL & ETHICAL DISCLAIMER
+
+This tutorial is for EDUCATIONAL PURPOSES ONLY.
+
+· Use ONLY on your own devices or networks.
+· Never deploy against real users without explicit written consent.
+· Phishing simulations require authorization from system owners.
+· KaliScout promotes ethical innovation – protect, not exploit.
+
+---
+
+🧰 PREREQUISITES
+
+· Android Device (Tablet/Phone) with minimum 4GB RAM.
+· Storage: 150MB free space.
+· Network: Wi-Fi connection required.
+· Enable: "Install from Unknown Sources" (temporary).
+
+---
+
+📱 PART 1: INSTALLING TERMUX
+
+Step 1: Download Official Termux
+
+NEVER download Termux from Play Store (outdated). Use official GitHub releases.
+
+1. Open browser → go to:
+      https://github.com/termux/termux-app/releases
+2. Scroll to find: v0.119.0-beta.3 (or latest stable)
+3. Download the APK file:
+      termux-app_v0.119.0-beta.3.apk (~119 MB)
+
+Step 2: Install Termux APK
+
+1. Open Downloads folder → tap the APK.
+2. You'll see security warning: "Your phone currently isn't allowed to install unknown apps from this source."
+3. Tap Settings → Enable "Allow from this source".
+4. Go back → tap Install → wait for completion.
+5. Tap Open to launch Termux.
+
+---
+
+🖥️ PART 2: INITIAL TERMUX SETUP
+
+Step 3: First Launch
+
+You'll see the Termux welcome screen:
+
+```
+Welcome to Termux!
+Docs:    https://termux.dev/docs
+Donate:  https://termux.dev/donate
+Community: https://termux.dev/community
+```
+
+Step 4: Update Repositories
+
+Termux needs mirror selection for reliable package downloads.
+
+```bash
+termux-change-repo
+```
+
+· Select a mirror: Choose mirrors.nguyenhoang.cloud (or any from Asia/US).
+· Wait for confirmation: [*] (1) https://mirrors.nguyenhoang.cloud/termux/termux-main: ok
+
+Step 5: Update Package Lists
+
+```bash
+pkg update
+```
+
+Wait for:
+
+```
+Fetched 576 kB in 13s (45.2 kB/s)
+Reading package lists... Done
+Building dependency tree... Done
+7 packages can be upgraded.
+```
+
+---
+
+📦 PART 3: INSTALL GIT
+
+Step 6: Install Git
+
+```bash
+pkg install git
+```
+
+Expected output:
+
+```
+git is already the newest version (2.55.0).
+0 upgraded, 0 newly installed, 0 to remove and 7 not upgraded.
+```
+
+🔥 Analyst Tip: Git allows cloning repositories directly to Termux – essential for security tools.
+
+---
+
+🛠️ PART 4: CLONE ZPHISHER
+
+Step 7: Clone from GitHub
+
+```bash
+git clone https://github.com/htr-tech/zphisher.git
+```
+
+You'll see:
+
+```
+Cloning into 'zphisher'...
+remote: Enumerating objects: 1801, done.
+Receiving objects: 19% (343/1801)...
+```
+
+Wait for 100% completion.
+
+Step 8: Verify Download
+
+Check your files:
+
+```bash
+ls
+```
+
+Output should show:
+
+```
+go  gobuster  install-nehtunter-termux  kali-nehtunter-rootfs-full-arm64.tar.xz
+malicious.pcap  storage  zphisher
+```
+
+---
+
+🚀 PART 5: RUN ZPHISHER
+
+Step 9: Navigate to Directory
+
+```bash
+cd zphisher
+```
+
+Step 10: List Files
+
+```bash
+ls
+```
+
+Expected output:
+
+```
+Dockerfile  LICENSE  README.md  make-deb.sh  run-docker.sh  scripts  zphisher.sh
+```
+
+Step 11: Execute ZPhisher
+
+```bash
+./zphisher.sh
+```
+
+If permission denied: Run chmod +x zphisher.sh first.
+
+You'll see:
+
+```
+Version : 2.3.5
+[–] Tool Created by htr-tech (tahmid.rayat)
+```
+
+---
+
+🎯 PART 6: DEPLOY PHISHING SIMULATION
+
+Step 12: Select Attack Target
+
+You'll see menu with 35 options:
+
+```
+[01] Facebook    [11] Twitch     [21] DeviantArt
+[02] Instagram   [12] Pinterest  [22] Badoo
+[03] Google      [13] Snapchat   [23] Origin
+[04] Microsoft   [14] LinkedIn   [24] DropBox
+...
+[34] Discord     [35] Roblox
+```
+
+Type 1 and press Enter (for Facebook).
+
+Step 13: Choose Template
+
+```
+[01] Traditional Login Page
+[02] Advanced Voting Poll Login Page
+[03] Fake Security Login Page
+[04] Facebook Messenger Login Page
+```
+
+Type 1 (Traditional Login Page) → Press Enter.
+
+Step 14: Select Port Forwarding Method
+
+```
+[01] Localhost
+[02] CloudFlared [Auto Detects]
+[03] LocalXpose [NEW! Max 15Min]
+```
+
+Type 1 (Localhost) → Press Enter.
+
+---
+
+🌐 PART 7: ACCESS THE PAGE
+
+Step 15: Server Starts
+
+You'll see:
+
+```
+[-] Successfully Hosted at : http://127.0.0.1:1234
+[-] Waiting for Login Info, Ctrl + C to exit.
+```
+
+Step 16: Open Browser
+
+1. Open your Android browser (Chrome/Firefox).
+2. Type in address bar: http://127.0.0.1:1234
+3. OR tap the URL shown in Termux.
+
+---
+
+📸 PART 8: CREDENTIAL CAPTURE DEMO
+
+Step 17: Fake Login Page
+
+You'll see a realistic Facebook login page asking for:
+
+· Email/Phone: demo@kaliscout.com
+· Password: Kal1Sc0ut#2026
+
+Step 18: Submit Credentials
+
+Type any fake credentials and click Log In.
+
+Step 19: Capture Success
+
+Switch back to Termux. You'll see:
+
+```
+[+] Victim IP: 127.0.0.1
+[+] Login Info Captured!
+[+] Email: demo@kaliscout.com
+[+] Password: Kal1Sc0ut#2026
+```
+
+🎯 CONGRATULATIONS! You've just performed a controlled phishing simulation.
+
+---
+
+📊 DEMO SCREENSHOT REFERENCE
+
+Your Termux should show:
+
+1. Initial mirror selection screen (mirrors.nguyenhoang.cloud)
+2. pkg install git output
+3. git clone progress bar
+4. Directory listing with zphisher folder
+5. ./zphisher.sh execution
+6. Attack selection menu
+7. Localhost hosting confirmation
+
+Browser should show:
+
+· URL: 127.0.0.1:1234
+· Fake Facebook login page
+· Credential fields
+
+---
+
+🧠 ETHICAL USE GUIDELINES
+
+✅ DO ❌ DON'T
+Use on your own devices Deploy against real users
+Test in isolated networks Share links publicly
+Explain to participants Capture real credentials
+Delete captured data Sell or misuse data
+
+---
+
+🔧 TROUBLESHOOTING
+
+Issue Solution
+Permission denied chmod +x zphisher.sh
+No such file Check you're in ~/zphisher
+Repo mirror fails Run termux-change-repo again
+Port already in use Use kill -9 $(lsof -t -i:1234)
+Browser won't connect Ensure Wi-Fi is ON, use 127.0.0.1 not localhost
+
+---
+
+🔄 CLEANUP
+
+When done:
+
+1. Press Ctrl + C in Termux to stop server.
+2. Exit ZPhisher: Type 00 and Enter.
+3. Exit Termux: Type exit twice.
+
+To remove ZPhisher:
+
+```bash
+cd ~
+rm -rf zphisher
+```
+
+---
+
+📚 ADDITIONAL RESOURCES
+
+· Termux Official Docs
+· ZPhisher GitHub
+· KaliScout Repository
+· Phishing Awareness Guide
+
+---
+
+🏁 CONCLUSION
+
+In under 30 minutes, you:
+✅ Installed Termux from official GitHub sources.
+✅ Configured repositories and updated packages.
+✅ Cloned ZPhisher using Git.
+✅ Deployed a Facebook phishing simulation locally.
+✅ Captured test credentials successfully.
+
+🔥 IMPORTANT: This tool is a red-team simulation – use it to understand how attackers operate so you can better defend against them.
+
+Next Tutorial Preview: "Detecting Phishing Pages with Machine Learning" – Request it in the community!
+
+---
+
+📄 HOW TO GENERATE THE PDF
+
+1. Select All (Ctrl+A) → Copy this entire text.
+2. Paste into Google Docs or Microsoft Word.
+3. Insert screenshots (from your screenshots folder) at these points:
+   · Termux welcome screen
+   · pkg install git output
+   · git clone in progress
+   · ZPhisher menu
+   · Browser showing login page
+   · Credential capture output
+4. File → Download → PDF Document (.pdf).
+5. Share with KaliScout community!
+
+---
+
+Keep Exploring. Keep Protecting. 🚀
+– KaliScout Curriculum Team, July 2026
+
+---
+
+Need me to adjust this tutorial for:
+
+· Termux on iOS (different setup)?
+· Ubuntu/Linux instead of Android?
+· CloudFlared (public URL) instead of localhost?
+· Different targets (Instagram, Google, etc.)?
+
+Just tell me – I'll generate the modified PDF content instantly! 🛡️

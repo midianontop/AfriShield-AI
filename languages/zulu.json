@@ -1,0 +1,570 @@
+{
+  "_metadata": {
+    "language": "Zulu",
+    "language_code": "zu",
+    "project": "AfriShield AI",
+    "purpose": "Maps common Zulu security/fraud-related terms to their canonical English keyword equivalents, for use in multilingual scam/threat detection.",
+    "version": "2.1.0",
+    "maintainer": "Midian",
+    "disclaimer": "This is a starter, community-style vocabulary, not an exhaustive or professionally certified translation. Confidence levels are noted per entry. Corrections and native-speaker review are welcome, especially for entries marked 'community' or 'uncertain'.",
+    "confidence_levels": {
+      "verified": "Cross-checked against a published Zulu-English glossary or a widely used Zulu-language source.",
+      "common": "Widely known/standard vocabulary or loanword, high confidence, not individually cross-checked in this session.",
+      "uncertain": "A likely but not fully verified translation; flagged for native-speaker review."
+    },
+    "notes": [
+      "This is an initial starter glossary for Zulu and is intended to be expanded with native review over time.",
+      "Zulu often uses a mixture of native words and modern loanwords for digital and security-related vocabulary."
+    ]
+  },
+  "stopwords": {
+    "ngi": "'I/me' — first person singular pronoun.",
+    "ukuthi": "'That' — common clause marker.",
+    "na": "'And' / 'with' — common conjunction.",
+    "ye": "Possessive/linking particle ('of').",
+    "ngu": "Copula ('is/are').",
+    "lokhu": "this",
+    "loku": "this",
+    "kwakung": "was",
+    "ngine": "I have"
+  },
+  "categories": {
+    "account_compromise": [
+      "hacked",
+      "hack",
+      "unauthorized_access",
+      "unauthorized access",
+      "sim swap",
+      "compromised"
+    ],
+    "financial_fraud": [
+      "scam",
+      "fraud",
+      "money",
+      "bank",
+      "account",
+      "pin",
+      "card",
+      "otp",
+      "debit card",
+      "credit card",
+      "atm",
+      "transaction",
+      "mobile money",
+      "wire transfer",
+      "gift card",
+      "loan scam",
+      "investment scam",
+      "crypto scam",
+      "romance scam",
+      "fake lottery",
+      "employment scam",
+      "parcel scam",
+      "giveaway"
+    ],
+    "malware_technical": [
+      "virus",
+      "malware",
+      "computer",
+      "internet",
+      "data",
+      "security",
+      "ransomware",
+      "trojan",
+      "worm",
+      "spyware",
+      "keylogger",
+      "botnet",
+      "ddos",
+      "vpn",
+      "firewall",
+      "backup",
+      "restore",
+      "recovery"
+    ],
+    "phishing_social_engineering": [
+      "password",
+      "link",
+      "click",
+      "email",
+      "website",
+      "phishing",
+      "social_engineering",
+      "social engineering",
+      "authentication",
+      "verification code",
+      "2fa",
+      "mfa",
+      "urgent",
+      "verify now",
+      "claim prize",
+      "account suspended"
+    ],
+    "actions": [
+      "steal",
+      "attack",
+      "warn",
+      "report",
+      "change",
+      "contact",
+      "monitor",
+      "scan",
+      "update",
+      "open",
+      "close",
+      "recover"
+    ],
+    "people_institutions": [
+      "thief",
+      "police",
+      "criminal",
+      "fraudster"
+    ],
+    "devices": [
+      "phone",
+      "computer",
+      "sim_card",
+      "sim card",
+      "laptop",
+      "router",
+      "wifi",
+      "usb"
+    ],
+    "ransomware": [
+      "ransomware"
+    ],
+    "spyware": [
+      "spyware"
+    ],
+    "network": [
+      "network"
+    ],
+    "firewall": [
+      "firewall"
+    ],
+    "router": [
+      "router"
+    ],
+    "wifi": [
+      "wifi"
+    ],
+    "backup": [
+      "backup"
+    ],
+    "recovery": [
+      "recovery"
+    ],
+    "otp": [
+      "otp"
+    ],
+    "verification_code": [
+      "verification code"
+    ],
+    "whatsapp": [
+      "whatsapp"
+    ],
+    "telegram": [
+      "telegram"
+    ],
+    "authentication": [
+      "password",
+      "otp",
+      "2fa",
+      "mfa",
+      "verification code"
+    ],
+    "banking": [
+      "bank",
+      "mobile money",
+      "airtime",
+      "bank transfer",
+      "debit card",
+      "credit card",
+      "atm",
+      "transaction",
+      "account number",
+      "payment",
+      "merchant",
+      "ussd"
+    ],
+    "mobile_security": [
+      "android",
+      "iphone",
+      "apk",
+      "play store",
+      "app store",
+      "sms",
+      "call",
+      "contact list",
+      "camera",
+      "microphone"
+    ],
+    "network_security": [
+      "vpn",
+      "firewall",
+      "dns",
+      "domain",
+      "ssl",
+      "tls",
+      "router",
+      "wifi"
+    ],
+    "incident_response": [
+      "breach",
+      "incident",
+      "compromised",
+      "infected",
+      "encrypted",
+      "locked",
+      "backup",
+      "restore",
+      "recovery",
+      "monitor",
+      "containment",
+      "eradication"
+    ],
+    "social_media": [
+      "telegram",
+      "whatsapp",
+      "facebook",
+      "instagram",
+      "gmail"
+    ]
+  },
+  "translations": {
+    "isikhohliso": {
+      "english": "scam",
+      "confidence": "common"
+    },
+    "ukukhohlisa": {
+      "english": "fraud",
+      "confidence": "common"
+    },
+    "ihack": {
+      "english": "hack",
+      "confidence": "common"
+    },
+    "ihlekisiwe": {
+      "english": "hacked",
+      "confidence": "common"
+    },
+    "ukuhlasela": {
+      "english": "attack",
+      "confidence": "common"
+    },
+    "idatha": {
+      "english": "data",
+      "confidence": "verified"
+    },
+    "i-imeyili": {
+      "english": "email",
+      "confidence": "common"
+    },
+    "isixhumanisi": {
+      "english": "link",
+      "confidence": "common"
+    },
+    "ukuchofoza": {
+      "english": "click",
+      "confidence": "common"
+    },
+    "iwebhusayithi": {
+      "english": "website",
+      "confidence": "common"
+    },
+    "iphasiwedi": {
+      "english": "password",
+      "confidence": "common"
+    },
+    "iphin": {
+      "english": "pin",
+      "confidence": "common"
+    },
+    "ibhange": {
+      "english": "bank",
+      "confidence": "verified"
+    },
+    "i-akhawunti": {
+      "english": "account",
+      "confidence": "common"
+    },
+    "imali": {
+      "english": "money",
+      "confidence": "verified"
+    },
+    " ikhadi lesikweletu": {
+      "english": "credit card",
+      "confidence": "uncertain"
+    },
+    "ikhompyutha": {
+      "english": "computer",
+      "confidence": "common"
+    },
+    "i-inthanethi": {
+      "english": "internet",
+      "confidence": "common"
+    },
+    "ifoni": {
+      "english": "phone",
+      "confidence": "verified"
+    },
+    "inombolo yefoni": {
+      "english": "phone number",
+      "confidence": "common"
+    },
+    "ukuphepha": {
+      "english": "security",
+      "confidence": "verified"
+    },
+    "uvikelo": {
+      "english": "protection",
+      "confidence": "common"
+    },
+    "isixwayiso": {
+      "english": "warning",
+      "confidence": "common"
+    },
+    "umbiko": {
+      "english": "report",
+      "confidence": "common"
+    },
+    "ukubanjwa": {
+      "english": "arrest",
+      "confidence": "common"
+    },
+    "umphangi": {
+      "english": "thief",
+      "confidence": "common"
+    },
+    "amapolisa": {
+      "english": "police",
+      "confidence": "common"
+    },
+    "ukushintsha": {
+      "english": "change",
+      "confidence": "common"
+    },
+    "xhumana": {
+      "english": "contact",
+      "confidence": "common"
+    },
+    "i-whatsapp": {
+      "english": "whatsapp",
+      "confidence": "common"
+    },
+    "i-telegram": {
+      "english": "telegram",
+      "confidence": "common"
+    },
+    "ifacebook": {
+      "english": "facebook",
+      "confidence": "common"
+    },
+    "i-instagram": {
+      "english": "instagram",
+      "confidence": "common"
+    },
+    "i-gmail": {
+      "english": "gmail",
+      "confidence": "common"
+    },
+    "ikhodi yokuqinisekisa": {
+      "english": "verification code",
+      "confidence": "common"
+    },
+    "OTP": {
+      "english": "otp",
+      "confidence": "common"
+    },
+    "2FA": {
+      "english": "2fa",
+      "confidence": "common"
+    },
+    "MFA": {
+      "english": "mfa",
+      "confidence": "common"
+    },
+    "ivirus": {
+      "english": "virus",
+      "confidence": "common"
+    },
+    "i-malware": {
+      "english": "malware",
+      "confidence": "common"
+    },
+    "i-spyware": {
+      "english": "spyware",
+      "confidence": "common"
+    },
+    "i-trojan": {
+      "english": "trojan",
+      "confidence": "common"
+    },
+    "i-ransomware": {
+      "english": "ransomware",
+      "confidence": "common"
+    },
+    "iworm": {
+      "english": "worm",
+      "confidence": "common"
+    },
+    "i-keylogger": {
+      "english": "keylogger",
+      "confidence": "common"
+    },
+    "i-botnet": {
+      "english": "botnet",
+      "confidence": "common"
+    },
+    "ukudlwengula": {
+      "english": "phishing",
+      "confidence": "common"
+    },
+    "ubunjiniyela bomphakathi": {
+      "english": "social engineering",
+      "confidence": "common"
+    },
+    "ukubuyisa": {
+      "english": "recovery",
+      "confidence": "common"
+    },
+    "i-backup": {
+      "english": "backup",
+      "confidence": "common"
+    },
+    "ukubuyisela": {
+      "english": "restore",
+      "confidence": "common"
+    },
+    "ukubamba": {
+      "english": "containment",
+      "confidence": "common"
+    },
+    "ukuphelisa": {
+      "english": "eradication",
+      "confidence": "common"
+    },
+    "isigameko": {
+      "english": "incident",
+      "confidence": "common"
+    },
+    "ukwephuka kwedatha": {
+      "english": "data breach",
+      "confidence": "common"
+    },
+    "inethiwekhi": {
+      "english": "network",
+      "confidence": "common"
+    },
+    "ifirewall": {
+      "english": "firewall",
+      "confidence": "common"
+    },
+    "irouter": {
+      "english": "router",
+      "confidence": "common"
+    },
+    "iwifi": {
+      "english": "wifi",
+      "confidence": "common"
+    },
+    "USB": {
+      "english": "usb",
+      "confidence": "common"
+    },
+    "VPN": {
+      "english": "vpn",
+      "confidence": "common"
+    },
+    "BVN": {
+      "english": "bvn",
+      "confidence": "common"
+    },
+    "NIN": {
+      "english": "nin",
+      "confidence": "common"
+    },
+    "SIM Swap": {
+      "english": "sim swap",
+      "confidence": "common"
+    },
+    "kuyahlazeka": {
+      "english": "compromised",
+      "confidence": "common"
+    },
+    "ikhadi le-SIM": {
+      "english": "sim card",
+      "confidence": "verified"
+    },
+    "inombolo ye-USSD": {
+      "english": "ussd code",
+      "confidence": "common"
+    },
+    "ukudluliselwa kwemali": {
+      "english": "bank transfer",
+      "confidence": "common"
+    },
+    "ukusetha kabusha iphasiwedi": {
+      "english": "password reset",
+      "confidence": "verified"
+    },
+    "i-akhawunti ivinjiwe": {
+      "english": "account suspended",
+      "confidence": "common"
+    },
+    "ukwesekwa kwamakhasimende": {
+      "english": "customer support",
+      "confidence": "verified"
+    },
+    "isaziso sobuqili": {
+      "english": "fraud alert",
+      "confidence": "common"
+    },
+    "isixhumanisi sebuqili": {
+      "english": "fake link",
+      "confidence": "common"
+    },
+    "uhlelo lokusebenza lwebhange": {
+      "english": "banking app",
+      "confidence": "common"
+    },
+    "i-OTP": {
+      "english": "otp",
+      "confidence": "verified"
+    }
+  },
+  "phrases": {
+    "bacela ikhodi yami yokuqinisekisa": {
+      "english": "they asked for my verification code",
+      "confidence": "common"
+    },
+    "bacela i-OTP yami": {
+      "english": "they asked for my otp",
+      "confidence": "common"
+    },
+    "i-akhawunti yami yephulwe": {
+      "english": "my account was hacked",
+      "confidence": "common"
+    },
+    "ngithole umyalezo wokukhohlisa": {
+      "english": "i received a fake message",
+      "confidence": "verified"
+    },
+    "ifoni yami yebiwe": {
+      "english": "my phone was stolen",
+      "confidence": "common"
+    },
+    "bacela iphasiwedi yami": {
+      "english": "they asked for my password",
+      "confidence": "common"
+    },
+    "ngithole isixhumanisi sebuqili": {
+      "english": "i received a fake link",
+      "confidence": "common"
+    },
+    "ngithole i-imeyili yephishing evela ebhange": {
+      "english": "i received a phishing message from bank",
+      "confidence": "common"
+    }
+  }
+}

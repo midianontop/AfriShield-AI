@@ -1,0 +1,738 @@
+{
+  "_metadata": {
+    "language": "Swahili",
+    "language_code": "sw",
+    "project": "AfriShield AI",
+    "purpose": "Maps common Swahili security/fraud-related terms to their canonical English keyword equivalents, for use in multilingual scam/threat detection.",
+    "version": "2.1.0",
+    "maintainer": "Midian",
+    "disclaimer": "This is a starter, community-style vocabulary, not an exhaustive or professionally certified translation. Confidence levels are noted per entry. Corrections and native-speaker review are welcome, especially for entries marked 'community' or 'uncertain'.",
+    "confidence_levels": {
+      "verified": "Cross-checked against a published Swahili-English dictionary/glossary or genuine Swahili-language source text (e.g. an actual Swahili cybersecurity glossary or security-vendor blog post).",
+      "common": "Widely known/standard vocabulary or loanword, high confidence, not individually cross-checked in a dictionary this session.",
+      "uncertain": "A compositionally constructed phrase rather than a confirmed idiom; flagged for native-speaker review."
+    },
+    "notes": [
+      "Unlike the original Hausa/Igbo seed lists, no clear errors were found in the original Swahili seed — it was already largely accurate. This upgrade focuses on adding structure, expanding vocabulary, and separating grammatical words from translation targets.",
+      "Swahili has genuine, well-established native cybersecurity vocabulary (unlike some other African languages where tech terms are mostly bare English loanwords) — e.g. 'udukuzi' (hacking) and 'programu hasidi' (malware) are real, actively-used terms, not constructed compounds, confirmed via an actual Swahili-language hacking glossary and a security company's Swahili blog."
+    ]
+  },
+  "stopwords": {
+    "mimi": "'I/me' — first person singular pronoun.",
+    "yangu": "'My/mine' — first person singular possessive.",
+    "wangu": "Alternate class agreement form of 'yangu' (my/mine).",
+    "wako": "'Your/yours' — second person singular possessive.",
+    "yako": "Alternate class agreement form of 'wako' (your/yours), e.g. 'akaunti yako' = your account.",
+    "na": "'And' / 'with' / 'by' — extremely common conjunction/preposition.",
+    "ya": "Possessive/linking particle ('of'), class agreement form.",
+    "wa": "Possessive/linking particle ('of'), class agreement form.",
+    "ni": "Copula ('is/are').",
+    "kwa": "Common preposition ('for/with/to').",
+    "katika": "Common preposition ('in/at/within').",
+    "hii": "Demonstrative ('this').",
+    "hiyo": "Demonstrative ('that').",
+    "huyu": "Demonstrative ('this person').",
+    "wale": "Demonstrative ('those').",
+    "kwa ajili ya": "Common preposition phrase ('for the purpose of').",
+    "au": "Conjunction ('or').",
+    "si": "Negation ('is not' / 'not').",
+    "kuwa": "Infinitive marker ('to be/that')."
+  },
+  "categories": {
+    "account_compromise": [
+      "hacked",
+      "hacking",
+      "hacker",
+      "compromised",
+      "unauthorized access",
+      "hack",
+      "sim swap"
+    ],
+    "financial_fraud": [
+      "scam",
+      "fraud",
+      "money",
+      "bank",
+      "account",
+      "bank card",
+      "pin",
+      "bvn",
+      "otp",
+      "agent",
+      "romance scam",
+      "investment scam",
+      "loan scam",
+      "crypto scam",
+      "fake lottery",
+      "employment scam",
+      "parcel scam",
+      "giveaway",
+      "card",
+      "debit card",
+      "credit card",
+      "atm",
+      "transaction",
+      "mobile money",
+      "wire transfer",
+      "gift card"
+    ],
+    "malware_technical": [
+      "virus",
+      "malware",
+      "computer",
+      "internet",
+      "data breach",
+      "protection",
+      "ransomware",
+      "trojan",
+      "spyware",
+      "worm",
+      "keylogger",
+      "botnet",
+      "ddos",
+      "vpn",
+      "firewall",
+      "backup",
+      "restore",
+      "recovery",
+      "encrypted",
+      "incident",
+      "breach",
+      "data",
+      "security"
+    ],
+    "phishing_social_engineering": [
+      "password",
+      "phishing",
+      "social engineering",
+      "email",
+      "website",
+      "link",
+      "click",
+      "authentication",
+      "2fa",
+      "mfa",
+      "verification code",
+      "urgent",
+      "verify now",
+      "claim prize",
+      "account suspended"
+    ],
+    "actions": [
+      "stolen",
+      "steal",
+      "attack",
+      "cybercriminals",
+      "warning",
+      "report",
+      "restore",
+      "backup",
+      "recover",
+      "disconnect",
+      "scan",
+      "update",
+      "warn",
+      "change",
+      "contact",
+      "monitor",
+      "open",
+      "close"
+    ],
+    "people_institutions": [
+      "thief",
+      "theft",
+      "police",
+      "fraudster",
+      "tapeli",
+      "criminal"
+    ],
+    "devices": [
+      "phone",
+      "computer",
+      "sim card",
+      "router",
+      "wifi",
+      "usb",
+      "laptop"
+    ],
+    "banking": [
+      "m-pesa",
+      "airtel money",
+      "tigo pesa",
+      "halo pesa",
+      "mobile money",
+      "airtime",
+      "bank transfer",
+      "debit card",
+      "atm",
+      "transaction",
+      "account number",
+      "payment",
+      "merchant",
+      "ussd",
+      "bank",
+      "credit card"
+    ],
+    "social_media": [
+      "facebook",
+      "instagram",
+      "telegram",
+      "gmail",
+      "whatsapp"
+    ],
+    "mobile_security": [
+      "android",
+      "iphone",
+      "apk",
+      "play store",
+      "app store",
+      "permission",
+      "sms",
+      "call",
+      "contact list",
+      "camera",
+      "microphone"
+    ],
+    "authentication": [
+      "password",
+      "otp",
+      "2fa",
+      "mfa",
+      "verification code"
+    ],
+    "network_security": [
+      "vpn",
+      "firewall",
+      "dns",
+      "domain",
+      "ssl",
+      "tls",
+      "router",
+      "wifi"
+    ],
+    "incident_response": [
+      "breach",
+      "incident",
+      "compromised",
+      "infected",
+      "encrypted",
+      "locked",
+      "backup",
+      "restore",
+      "recovery",
+      "monitor",
+      "containment",
+      "eradication"
+    ]
+  },
+  "translations": {
+    "simu": {
+      "english": "phone",
+      "confidence": "verified"
+    },
+    "akaunti": {
+      "english": "account",
+      "confidence": "verified",
+      "note": "Confirmed in real usage: 'akaunti za biashara' = business accounts."
+    },
+    "nenosiri": {
+      "english": "password",
+      "confidence": "verified",
+      "note": "Literally 'secret word' (neno=word + siri=secret)."
+    },
+    "benki": {
+      "english": "bank",
+      "confidence": "verified",
+      "note": "Common loanword."
+    },
+    "pesa": {
+      "english": "money",
+      "confidence": "verified"
+    },
+    "bvn": {
+      "english": "bvn",
+      "confidence": "verified",
+      "note": "Nigeria-specific term; kept for cross-border scam contexts even though Swahili is primarily East African."
+    },
+    "otp": {
+      "english": "otp",
+      "confidence": "verified"
+    },
+    "m-pesa": {
+      "english": "m-pesa",
+      "confidence": "verified"
+    },
+    "airtel money": {
+      "english": "airtel money",
+      "confidence": "verified"
+    },
+    "tigo pesa": {
+      "english": "tigo pesa",
+      "confidence": "verified"
+    },
+    "halo pesa": {
+      "english": "halo pesa",
+      "confidence": "verified"
+    },
+    "tapeli": {
+      "english": "scammer",
+      "confidence": "verified"
+    },
+    "utambulisho": {
+      "english": "identity",
+      "confidence": "verified"
+    },
+    "wizi wa utambulisho": {
+      "english": "identity theft",
+      "confidence": "verified"
+    },
+    "virusi": {
+      "english": "virus",
+      "confidence": "verified",
+      "note": "Common loanword, plural/generic form."
+    },
+    "kirusi": {
+      "english": "virus",
+      "confidence": "verified",
+      "note": "Singular (class 7 noun) form of virusi."
+    },
+    "malware": {
+      "english": "malware",
+      "confidence": "common",
+      "note": "Loanword; 'programu hasidi' is the native equivalent, see below."
+    },
+    "programu hasidi": {
+      "english": "malware",
+      "confidence": "verified",
+      "note": "Literally 'malicious program' — confirmed in a real Swahili-language cybersecurity blog post, the proper native term rather than the bare loanword."
+    },
+    "ransomware": {
+      "english": "ransomware",
+      "confidence": "verified"
+    },
+    "trojan": {
+      "english": "trojan",
+      "confidence": "verified"
+    },
+    "spyware": {
+      "english": "spyware",
+      "confidence": "verified"
+    },
+    "worm": {
+      "english": "worm",
+      "confidence": "verified"
+    },
+    "keylogger": {
+      "english": "keylogger",
+      "confidence": "verified"
+    },
+    "botnet": {
+      "english": "botnet",
+      "confidence": "verified"
+    },
+    "ddos": {
+      "english": "ddos",
+      "confidence": "verified"
+    },
+    "vpn": {
+      "english": "vpn",
+      "confidence": "verified"
+    },
+    "firewall": {
+      "english": "firewall",
+      "confidence": "verified"
+    },
+    "authentication": {
+      "english": "authentication",
+      "confidence": "verified"
+    },
+    "2fa": {
+      "english": "2fa",
+      "confidence": "verified"
+    },
+    "mfa": {
+      "english": "mfa",
+      "confidence": "verified"
+    },
+    "backup": {
+      "english": "backup",
+      "confidence": "verified"
+    },
+    "restore": {
+      "english": "restore",
+      "confidence": "verified"
+    },
+    "recovery": {
+      "english": "recovery",
+      "confidence": "verified"
+    },
+    "encrypted": {
+      "english": "encrypted",
+      "confidence": "verified"
+    },
+    "incident": {
+      "english": "incident",
+      "confidence": "verified"
+    },
+    "breach": {
+      "english": "breach",
+      "confidence": "verified"
+    },
+    "phishing": {
+      "english": "phishing",
+      "confidence": "common",
+      "note": "Loanword; 'hadaa' is a native equivalent used in real cybersecurity content, see below."
+    },
+    "hadaa": {
+      "english": "phishing",
+      "confidence": "verified",
+      "note": "Confirmed used specifically for phishing in a genuine Swahili cybersecurity blog post (Seqrite); more generally means trickery/deception."
+    },
+    "utapeli": {
+      "english": "scam",
+      "confidence": "verified"
+    },
+    "udanganyifu": {
+      "english": "fraud",
+      "confidence": "verified",
+      "note": "From 'danganya' (to deceive)."
+    },
+    "ulaghai": {
+      "english": "fraud",
+      "confidence": "common",
+      "note": "Alternate term for fraud/swindling."
+    },
+    "mlaghai": {
+      "english": "fraudster",
+      "confidence": "common",
+      "note": "Person who commits ulaghai."
+    },
+    "romance scam": {
+      "english": "romance scam",
+      "confidence": "verified"
+    },
+    "investment scam": {
+      "english": "investment scam",
+      "confidence": "verified"
+    },
+    "loan scam": {
+      "english": "loan scam",
+      "confidence": "verified"
+    },
+    "crypto scam": {
+      "english": "crypto scam",
+      "confidence": "verified"
+    },
+    "fake lottery": {
+      "english": "fake lottery",
+      "confidence": "verified"
+    },
+    "employment scam": {
+      "english": "employment scam",
+      "confidence": "verified"
+    },
+    "parcel scam": {
+      "english": "parcel scam",
+      "confidence": "verified"
+    },
+    "giveaway": {
+      "english": "giveaway",
+      "confidence": "verified"
+    },
+    "hack": {
+      "english": "hacked",
+      "confidence": "common",
+      "note": "Loanword/code-switching; 'udukuzi' cluster below is the proper native term."
+    },
+    "hacked": {
+      "english": "hacked",
+      "confidence": "common",
+      "note": "Loanword/code-switching."
+    },
+    "udukuzi": {
+      "english": "hacking",
+      "confidence": "verified",
+      "note": "Confirmed via a real Swahili-language hacking-terminology glossary post and multiple genuine news/forum usages."
+    },
+    "mdukuzi": {
+      "english": "hacker",
+      "confidence": "verified",
+      "note": "Confirmed in real usage, e.g. news coverage of a hacking conviction."
+    },
+    "kudukua": {
+      "english": "to hack",
+      "confidence": "verified",
+      "note": "Infinitive verb form, dictionary-confirmed (Wiktionary): to crack/gain unauthorized access."
+    },
+    "kudukuliwa": {
+      "english": "hacked",
+      "confidence": "verified",
+      "note": "Passive form: 'to be hacked', e.g. 'simu yako imedukuliwa' = your phone has been hacked."
+    },
+    "imedukuliwa": {
+      "english": "has been hacked",
+      "confidence": "verified"
+    },
+    "imevamiwa": {
+      "english": "compromised",
+      "confidence": "common",
+      "note": "Passive of 'vamia' (to invade/attack)."
+    },
+    "imeibiwa": {
+      "english": "has been stolen",
+      "confidence": "common"
+    },
+    "kuiba": {
+      "english": "to steal",
+      "confidence": "verified",
+      "note": "Infinitive verb form, confirmed in real usage ('kuiba namba za kadi za malipo' = to steal payment card numbers)."
+    },
+    "whatsapp": {
+      "english": "whatsapp",
+      "confidence": "verified",
+      "note": "Brand name, unchanged."
+    },
+    "facebook": {
+      "english": "facebook",
+      "confidence": "verified"
+    },
+    "instagram": {
+      "english": "instagram",
+      "confidence": "verified"
+    },
+    "telegram": {
+      "english": "telegram",
+      "confidence": "verified"
+    },
+    "gmail": {
+      "english": "gmail",
+      "confidence": "verified"
+    },
+    "barua pepe": {
+      "english": "email",
+      "confidence": "verified",
+      "note": "Literally 'wind letter'."
+    },
+    "usalama": {
+      "english": "security",
+      "confidence": "verified"
+    },
+    "ulinzi": {
+      "english": "protection",
+      "confidence": "verified",
+      "note": "Confirmed in real usage ('hazina ulinzi wowote' = have no protection at all)."
+    },
+    "shambulio": {
+      "english": "attack",
+      "confidence": "verified"
+    },
+    "mashambulizi ya mtandaoni": {
+      "english": "cyberattacks",
+      "confidence": "verified",
+      "note": "Plural/fuller form, confirmed in real cybersecurity content."
+    },
+    "wahalifu wa mtandao": {
+      "english": "cybercriminals",
+      "confidence": "verified"
+    },
+    "uhandisi wa jamii": {
+      "english": "social engineering",
+      "confidence": "verified",
+      "note": "Direct, confirmed translation used in real Swahili cybersecurity content."
+    },
+    "ukiukaji wa data": {
+      "english": "data breach",
+      "confidence": "verified"
+    },
+    "kompyuta": {
+      "english": "computer",
+      "confidence": "verified"
+    },
+    "mtandao": {
+      "english": "internet",
+      "confidence": "verified",
+      "note": "Also covers 'network'; confirmed in multiple real-world sources."
+    },
+    "mitandao": {
+      "english": "networks",
+      "confidence": "verified",
+      "note": "Plural form of mtandao."
+    },
+    "tovuti": {
+      "english": "website",
+      "confidence": "verified",
+      "note": "Confirmed in real usage."
+    },
+    "kiungo": {
+      "english": "link",
+      "confidence": "common"
+    },
+    "link": {
+      "english": "link",
+      "confidence": "common",
+      "note": "Common loanword/code-switching, seen alongside 'kiungo' in casual usage."
+    },
+    "bonyeza": {
+      "english": "click",
+      "confidence": "common"
+    },
+    "programu": {
+      "english": "app",
+      "confidence": "common",
+      "note": "Also 'program/software' generally."
+    },
+    "wizi": {
+      "english": "theft",
+      "confidence": "verified",
+      "note": "Dictionary-confirmed ('Wizi ni mbaya' = theft is bad)."
+    },
+    "mwizi": {
+      "english": "thief",
+      "confidence": "common",
+      "note": "Person who commits wizi; standard derivation."
+    },
+    "wadanganyifu": {
+      "english": "scammers",
+      "confidence": "common",
+      "note": "Plural form of 'mdanganyifu'/'fraudster'."
+    },
+    "wameibiwa": {
+      "english": "have been stolen",
+      "confidence": "common"
+    },
+    "wanadukua": {
+      "english": "are hacking",
+      "confidence": "common"
+    },
+    "amekudukua": {
+      "english": "has hacked",
+      "confidence": "common"
+    },
+    "wamedukuliwa": {
+      "english": "have been hacked",
+      "confidence": "common"
+    },
+    "polisi": {
+      "english": "police",
+      "confidence": "common",
+      "note": "Common loanword."
+    },
+    "ripoti": {
+      "english": "report",
+      "confidence": "common"
+    },
+    "onyo": {
+      "english": "warning",
+      "confidence": "common"
+    },
+    "wakala": {
+      "english": "agent",
+      "confidence": "common",
+      "note": "Relevant to mobile-money (e.g. M-Pesa) agent fraud in East Africa."
+    },
+    "namba ya siri": {
+      "english": "pin",
+      "confidence": "common",
+      "note": "Literally 'secret number', parallel construction to nenosiri (secret word = password)."
+    },
+    "kadi ya benki": {
+      "english": "bank card",
+      "confidence": "common"
+    },
+    "sim kadi": {
+      "english": "sim card",
+      "confidence": "common"
+    },
+    "laini": {
+      "english": "sim card",
+      "confidence": "common",
+      "note": "Colloquial term for a phone line/SIM."
+    },
+    "nambari ya kuthibitisha": {
+      "english": "verification code",
+      "confidence": "verified"
+    },
+    "kadi ya malipo": {
+      "english": "debit card",
+      "confidence": "verified"
+    },
+    "nambari ya USSD": {
+      "english": "ussd code",
+      "confidence": "verified"
+    },
+    "simu ya SIM": {
+      "english": "sim card",
+      "confidence": "verified"
+    },
+    "ushiriki": {
+      "english": "phishing",
+      "confidence": "common"
+    },
+    "kuwekwa upya nenosiri": {
+      "english": "password reset",
+      "confidence": "verified"
+    },
+    "akaunti imezimwa": {
+      "english": "account suspended",
+      "confidence": "verified"
+    },
+    "huduma kwa wateja": {
+      "english": "customer support",
+      "confidence": "verified"
+    },
+    "anguko la ulaghai": {
+      "english": "fraud alert",
+      "confidence": "common"
+    },
+    "kiungo bandia": {
+      "english": "fake link",
+      "confidence": "common"
+    },
+    "app ya benki": {
+      "english": "banking app",
+      "confidence": "common"
+    },
+    "mfuko wa simu": {
+      "english": "mobile wallet",
+      "confidence": "common"
+    },
+    "nenosiri la matumizi mara moja": {
+      "english": "otp",
+      "confidence": "verified"
+    }
+  },
+  "phrases": {
+    "waliomba nambari yangu ya uthibitisho": {
+      "english": "they asked for my verification code",
+      "confidence": "verified"
+    },
+    "waliomba OTP yangu": {
+      "english": "they asked for my otp",
+      "confidence": "common"
+    },
+    "waliomba nenosiri langu": {
+      "english": "they asked for my password",
+      "confidence": "common"
+    },
+    "akaunti yangu ilidukuliwa": {
+      "english": "my account was compromised",
+      "confidence": "verified"
+    },
+    "nilipokea ujumbe wa ulaghai": {
+      "english": "i received a fake message",
+      "confidence": "verified"
+    },
+    "simu yangu iliibwa": {
+      "english": "my phone was stolen",
+      "confidence": "common"
+    },
+    "nilipokea kiungo bandia": {
+      "english": "i received a fake link",
+      "confidence": "common"
+    },
+    "nilipokea barua pepe ya ulaghai kutoka benki": {
+      "english": "i received a phishing message from bank",
+      "confidence": "common"
+    }
+  }
+}
