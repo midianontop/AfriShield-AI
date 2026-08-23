@@ -7,7 +7,7 @@
 ================================================================================
 
   Author  : Midian
-  Version : 3.2.0
+  Version : 3.3.0
 ================================================================================
 """
 
@@ -16,10 +16,30 @@ from __future__ import annotations
 import json
 import logging
 import os
+import textwrap
 from datetime import datetime
-from typing import Any
+from typing import Any, Dict, List, Optional
 
 import streamlit as st
+
+# =============================================================================
+# RETRIEVER WARM-UP
+# =============================================================================
+
+@st.cache_resource(show_spinner=False)
+def initialize_retriever():
+    """
+    Load the embedding model and ChromaDB once.
+
+    Streamlit keeps this resource in memory so subsequent
+    questions do not reload the embedding model.
+    """
+    try:
+        retriever_ready()
+        return True
+    except Exception:
+        logging.exception("Retriever warm-up failed.")
+        return False
 
 # ==============================================================================
 # LOGGING
@@ -31,15 +51,144 @@ logging.basicConfig(
 )
 logger = logging.getLogger("afrishield_ai")
 
+try:
+    from translations import get_translator, translate_message
+    from language_detector import detect_language
+    TRANSLATION_OK = True
+except Exception:
+    logger.exception("Translation modules failed to load; multilingual support is disabled.")
+    TRANSLATION_OK = False
+
+    def get_translator():
+        return None
+
+    def translate_message(text: str, language: Optional[str] = None) -> Dict[str, Any]:
+        return {
+            "original": text,
+            "language": "unknown",
+            "translated": text,
+            "matched_phrases": [],
+        }
+
+    def detect_language(text: str) -> str:
+        return "unknown"
+
 
 # ==============================================================================
 # CONFIGURATION
 # ==============================================================================
 
-APP_VERSION = "1.0"
+APP_VERSION = "3.3.0"
 APP_TAGLINE = "Offline African Cybersecurity Intelligence Platform"
 CHALLENGE_TAG = "Africa Deep Tech Challenge 2026"
 INCIDENT_LOG_PATH = "incident_logs.json"
+
+_app_translator = None
+
+
+def get_app_translator():
+    global _app_translator
+    if _app_translator is None and TRANSLATION_OK:
+        try:
+            _app_translator = get_translator()
+        except Exception:
+            logger.exception("Failed to initialize translator on demand.")
+            _app_translator = None
+    return _app_translator
+
+
+def safe_translate_message(text: str) -> Dict[str, Any]:
+    if not TRANSLATION_OK:
+        return {
+            "original": text,
+            "language": "unknown",
+            "translated": text,
+            "matched_phrases": [],
+        }
+
+    try:
+        return translate_message(text)
+    except Exception:
+        logger.exception("Translation failed for this message.")
+        return {
+            "original": text,
+            "language": "unknown",
+            "translated": text,
+            "matched_phrases": [],
+        }
+
+
+def build_incident_summary(
+    threat_type: Optional[str],
+    severity: Optional[str],
+    confidence: float,
+    matched_keywords: Optional[List[str]] = None,
+) -> str:
+    """Build a short incident-summary block for the assistant response."""
+    lines = ["### Incident Summary", ""]
+    lines.append(f"**Category:** {threat_type or 'No specific threat detected'}")
+    if severity:
+        lines.append(f"**Severity:** {severity}")
+    if confidence:
+        lines.append(f"**Confidence:** {confidence:.0f}%")
+    if matched_keywords:
+        lines.append(f"**Signals:** {', '.join(matched_keywords)}")
+    return "\n".join(lines)
+
+
+def build_intent_explanation(
+    intent: Optional[str],
+    intent_confidence: float,
+    matched_terms: Optional[List[str]] = None,
+    question: bool = False,
+) -> str:
+    """Explain why the detector classified the message the way it did."""
+    lines = ["### Detected Intent", ""]
+    lines.append(f"**Intent:** {intent or 'Unknown'}")
+    if intent_confidence:
+        lines.append(f"**Confidence:** {intent_confidence:.0f}%")
+
+    reasons: List[str] = []
+    if matched_terms:
+        reasons.append("Matched terms: " + ", ".join(matched_terms))
+    if question:
+        reasons.append("The message was phrased as a question rather than an active incident report.")
+    if not reasons:
+        reasons.append("The message did not contain enough incident-specific signals to classify it strongly.")
+
+    lines.append("**Why:** " + " ".join(reasons))
+    return "\n".join(lines)
+
+
+def build_canonical_interpretation(
+    question: str,
+    translated_question: str,
+    matched_phrases: Optional[List[str]] = None,
+) -> str:
+    """Show the normalized interpretation of the user's input."""
+    lines = ["### Canonical Interpretation", ""]
+    lines.append(f"**User input:** {question}")
+    lines.append(f"**Canonical meaning:** {translated_question or question}")
+    if matched_phrases:
+        lines.append(f"**Matched phrases:** {', '.join(matched_phrases)}")
+    return "\n".join(lines)
+
+
+def translate_for_user(text: str, detected_language: str) -> str:
+    """Translate display text into the user's detected language when possible."""
+    if not text or detected_language in {"unknown", "english", ""}:
+        return text
+
+    translator_instance = get_app_translator()
+    if translator_instance is None:
+        return text
+
+    try:
+        return translator_instance.translate_to_language(text, detected_language)
+    except Exception:
+        logger.exception("Failed to translate assistant text for the detected language.")
+        return text
+
 
 USER_AVATAR = "🧑🏾"
 ASSISTANT_AVATAR = "🛡️"
@@ -48,6 +197,12 @@ QUICK_PROMPTS = (
     "I think my WhatsApp was hacked",
     "Someone is asking for my BVN and OTP — is this a scam?",
     "What is phishing and how do I spot it?",
+)
+
+WELCOME_TIPS = (
+    "Describe what happened in plain language and include any suspicious links or messages.",
+    "Mention whether money, passwords, OTPs, or personal IDs were requested.",
+    "The assistant can help assess risk and outline next steps, but always verify with official support channels.",
 )
 
 DO_NOT_SHARE_ITEMS = (
@@ -120,7 +275,7 @@ except Exception:
     logger.exception("Retriever module failed to load; RAG context will be unavailable.")
     RETRIEVER_OK = False
 
-    def search_documents(query: str) -> list[str]:
+    def search_documents(query: str) -> List[str]:
         return []
 
 try:
@@ -153,7 +308,7 @@ except Exception:
     logger.exception("Incident response module failed to load.")
     INCIDENT_RESPONSE_OK = False
 
-    def get_incident_response(threat_type: str) -> list[str]:
+    def get_incident_response(threat_type: str) -> List[str]:
         return []
 
 try:
@@ -189,7 +344,7 @@ def configure_page() -> None:
         initial_sidebar_state="expanded",
     )
     st.markdown(
-        f"""
+        textwrap.dedent(f"""
         <style>
         #MainMenu {{ visibility: hidden; }}
         footer {{ visibility: hidden; }}
@@ -341,31 +496,31 @@ def configure_page() -> None:
             padding-top: 1rem;
         }}
         </style>
-        """,
+        """).strip(),
         unsafe_allow_html=True,
     )
 
 
 def render_hero() -> None:
     st.markdown(
-        f"""
+        textwrap.dedent(f"""
         <div class="afs-hero">
             <p class="afs-hero-title">🛡️ AfriShield AI Cybersecurity Assistant</p>
             <p class="afs-hero-tagline">{APP_TAGLINE}</p>
         </div>
-        """,
+        """).strip(),
         unsafe_allow_html=True,
     )
 
 
 def render_welcome() -> None:
     st.markdown(
-        """
+        textwrap.dedent("""
         <div class="afs-welcome">
             <p class="afs-welcome-title">👋 Start by describing a security concern</p>
             <p class="afs-welcome-sub">Or try one of these</p>
         </div>
-        """,
+        """).strip(),
         unsafe_allow_html=True,
     )
     cols = st.columns(len(QUICK_PROMPTS))
@@ -374,6 +529,10 @@ def render_welcome() -> None:
             if st.button(prompt, use_container_width=True, key=f"quick_{prompt}"):
                 st.session_state["_pending_question"] = prompt
                 st.rerun()
+
+    with st.expander("💡 Quick guidance", expanded=False):
+        for tip in WELCOME_TIPS:
+            st.write(f"• {tip}")
 
 
 def render_verdict_chip(category: str, severity_value: str, confidence: float) -> None:
@@ -385,14 +544,14 @@ def render_verdict_chip(category: str, severity_value: str, confidence: float) -
         severity_word, _SEVERITY_STYLES["Low"]
     )
     st.markdown(
-        f"""
+        textwrap.dedent(f"""
         <div class="afs-verdict" style="--afs-verdict-bg:{bg}; --afs-verdict-border:{border}; --afs-verdict-text:{text_color};">
             <div class="afs-verdict-row">
                 <span class="afs-verdict-category"><span style="color:{border};">{dot}</span> {category}</span>
                 <span class="afs-verdict-meta">{severity_word.upper()} · {confidence:.0f}% confidence</span>
             </div>
         </div>
-        """,
+        """).strip(),
         unsafe_allow_html=True,
     )
 
@@ -403,14 +562,14 @@ def render_scam_banner(scam_type: str) -> None:
     report is a different kind of alert from a technical incident, and
     the color makes that immediately legible at a glance."""
     st.markdown(
-        f"""
+        textwrap.dedent(f"""
         <div class="afs-verdict" style="--afs-verdict-bg:{PALETTE['magenta_bg']}; --afs-verdict-border:{PALETTE['magenta']}; --afs-verdict-text:{PALETTE['magenta_text']};">
             <div class="afs-verdict-row">
                 <span class="afs-verdict-category"><span style="color:{PALETTE['magenta']};">●</span> Scam Alert: {scam_type}</span>
                 <span class="afs-verdict-meta">SOCIAL ENGINEERING</span>
             </div>
         </div>
-        """,
+        """).strip(),
         unsafe_allow_html=True,
     )
 
@@ -441,12 +600,12 @@ def _engine_status(label: str, ok: bool) -> None:
     color = PALETTE["teal"] if ok else PALETTE["vermilion"]
     state = "Ready" if ok else "Unavailable"
     st.markdown(
-        f"""
+        textwrap.dedent(f"""
         <div class="afs-status-row">
             <span class="afs-dot" style="background:{color};"></span>
             <span>{label} — {state}</span>
         </div>
-        """,
+        """).strip(),
         unsafe_allow_html=True,
     )
 
@@ -458,7 +617,7 @@ def _engine_status(label: str, ok: bool) -> None:
 def render_sidebar() -> None:
     with st.sidebar:
         st.markdown(
-            """
+            textwrap.dedent("""
             <div class="afs-brand">
                 <div class="afs-brand-icon">🛡️</div>
                 <div class="afs-brand-text">
@@ -466,7 +625,7 @@ def render_sidebar() -> None:
                     <p>Cybersecurity Intelligence</p>
                 </div>
             </div>
-            """,
+            """).strip(),
             unsafe_allow_html=True,
         )
         st.divider()
@@ -475,10 +634,11 @@ def render_sidebar() -> None:
         st.divider()
 
         st.caption("ENGINE STATUS")
+        _engine_status("Translation / Language Layer", TRANSLATION_OK)
         _engine_status("Threat Engine", THREAT_ENGINE_OK)
         _engine_status("Scam Engine", SCAM_ENGINE_OK)
         _engine_status("RAG Knowledge Base", RETRIEVER_OK)
-        _engine_status("Llama 3.2 Offline AI", LLAMA_OK)
+        _engine_status("LLM Response Generator", LLAMA_OK)
         st.divider()
 
         st.subheader("📊 Session Statistics")
@@ -506,56 +666,133 @@ def render_sidebar() -> None:
         st.caption(CHALLENGE_TAG)
 
 
-# ==============================================================================
+ # ==============================================================================
 # CHAT RENDERING (single source of truth for both history + live messages)
 # ==============================================================================
 
-def render_assistant_message(msg: dict[str, Any]) -> None:
+def render_assistant_message(msg: Dict[str, Any]) -> None:
+    threat_label = msg.get("threat_display") or msg.get("threat")
+
     if msg.get("threat"):
         confidence = msg.get("confidence") or 0
-        render_verdict_chip(msg["threat"], msg.get("severity") or "", confidence)
+        render_verdict_chip(
+            threat_label,
+            msg.get("severity") or "",
+            confidence
+        )
         st.progress(min(int(confidence), 100))
 
+    scam_label = msg.get("scam_display") or msg.get("scam")
+
     if msg.get("scam"):
-        render_scam_banner(msg["scam"])
+        render_scam_banner(scam_label)
 
-    st.markdown(msg["content"])
+    # --------------------------------------------------------------------------
+    # Canonical interpretation
+    # --------------------------------------------------------------------------
+    canonical = msg.get("canonical_interpretation")
 
-    if msg.get("recommendations"):
+    if canonical:
+        st.info(canonical)
+
+    # --------------------------------------------------------------------------
+    # Incident / intent information
+    # --------------------------------------------------------------------------
+    if msg.get("incident_summary"):
+        st.markdown(msg["incident_summary"])
+
+    if msg.get("intent_explanation"):
+        st.markdown(msg["intent_explanation"])
+
+    # --------------------------------------------------------------------------
+    # Explainability
+    # --------------------------------------------------------------------------
+    if msg.get("explainability"):
+        with st.expander("🔎 Why this was classified this way"):
+            st.markdown(msg["explainability"])
+
+    # --------------------------------------------------------------------------
+    # Main AI response
+    # --------------------------------------------------------------------------
+    content = msg.get("content") or ""
+
+    # If canonical interpretation has accidentally been included
+    # inside the main content, don't render it a second time.
+    if canonical and content.strip() == canonical.strip():
+        content = ""
+
+    if content:
+        st.markdown(content)
+
+    # --------------------------------------------------------------------------
+    # Recommendations
+    # --------------------------------------------------------------------------
+    recommendations = (
+        msg.get("recommendations_display")
+        or msg.get("recommendations")
+        or []
+    )
+
+    if recommendations:
         st.subheader("🛠 Recommended Actions")
-        for item in msg["recommendations"]:
+
+        for item in recommendations:
             st.success(item)
 
+    # --------------------------------------------------------------------------
+    # Threat analysis details
+    # --------------------------------------------------------------------------
     if msg.get("threat"):
         with st.expander("🔍 Threat Analysis Details"):
             st.write("Intent:", msg.get("intent") or "—")
-            st.write("Matched Signals:", msg.get("matched_keywords") or [])
+            st.write(
+                "Matched Signals:",
+                msg.get("matched_keywords") or []
+            )
+
+            if msg.get("matched_phrases"):
+                st.write(
+                    "Matched Translation Phrases:",
+                    msg.get("matched_phrases")
+                )
 
 
 def render_chat_history() -> None:
     for msg in st.session_state.messages:
-        avatar = ASSISTANT_AVATAR if msg["role"] == "assistant" else USER_AVATAR
+        avatar = (
+            ASSISTANT_AVATAR
+            if msg["role"] == "assistant"
+            else USER_AVATAR
+        )
+
         with st.chat_message(msg["role"], avatar=avatar):
             if msg["role"] == "assistant":
                 render_assistant_message(msg)
             else:
-                st.write(msg["content"])
+                st.write(msg["content"])    
 
 
 # ==============================================================================
 # CORE PIPELINE: scam detection -> threat analysis -> RAG -> generation
 # ==============================================================================
 
-def analyze_user_message(question: str) -> dict[str, Any]:
+def analyze_user_message(question: str) -> Dict[str, Any]:
     """Run the full detection + RAG + generation pipeline for one user
     message and return an assistant message dict ready to store/render.
     Every external engine call is isolated so one failure degrades that
     feature only, instead of crashing the whole response."""
 
+    # Translate user text into canonical English and detect language.
+    translation_details = safe_translate_message(question)
+
+    detected_language = translation_details.get("language", "unknown") or "unknown"
+    translated_question = translation_details.get("translated", question)
+    matched_phrases: list[str] = translation_details.get("matched_phrases", [])
+
     scam_result = None
     if SCAM_ENGINE_OK:
         try:
-            scam_result = detect_scam(question)
+            scam_result = detect_scam(translated_question)
         except Exception:
             logger.exception("Scam detection failed for this message.")
 
@@ -563,11 +800,13 @@ def analyze_user_message(question: str) -> dict[str, Any]:
     confidence = 0.0
     matched_keywords: list[str] = []
     recommendations: list[str] = []
+    intent_confidence = 0.0
+    incident_type = None
 
     analysis = None
     if THREAT_ENGINE_OK:
         try:
-            analysis = analyze_threat(question)
+            analysis = analyze_threat(translated_question)
         except Exception:
             logger.exception("Threat analysis failed for this message.")
 
@@ -575,7 +814,9 @@ def analyze_user_message(question: str) -> dict[str, Any]:
         threat_type = analysis.category
         severity = analysis.severity.value
         confidence = analysis.confidence
-        intent = analysis.incident_type.value
+        incident_type = analysis.incident_type.value
+        intent = analysis.user_intent.value
+        intent_confidence = analysis.intent_confidence
         matched_keywords = analysis.matched_keywords
 
         if INCIDENT_RESPONSE_OK:
@@ -586,12 +827,12 @@ def analyze_user_message(question: str) -> dict[str, Any]:
 
         if INCIDENT_LOGGER_OK:
             try:
-                save_incident(question, threat_type, severity, confidence)
+                save_incident(translated_question, threat_type, severity, confidence)
             except Exception:
                 logger.exception("Failed to persist incident log.")
 
     try:
-        documents = search_documents(question) if RETRIEVER_OK else []
+        documents = search_documents(translated_question) if RETRIEVER_OK else []
     except Exception:
         logger.exception("Document retrieval failed.")
         documents = []
@@ -605,7 +846,7 @@ def analyze_user_message(question: str) -> dict[str, Any]:
         )
 
     try:
-        answer = generate_answer(question, context)
+        answer = generate_answer(translated_question, context)
     except Exception:
         logger.exception("Answer generation failed.")
         answer = (
@@ -614,25 +855,85 @@ def analyze_user_message(question: str) -> dict[str, Any]:
             "threat or scam was detected — please try again shortly."
         )
 
+    canonical_interpretation = build_canonical_interpretation(question, translated_question, matched_phrases)
+    incident_summary = build_incident_summary(threat_type, severity, confidence, matched_keywords) if threat_type else None
+    intent_explanation = build_intent_explanation(
+        intent,
+        intent_confidence,
+        matched_keywords or None,
+        question=translated_question.endswith("?"),
+    ) if intent else None
+    explainability = None
+    if matched_keywords:
+        explainability = "\n".join(
+            [
+                "**Why this was flagged:**",
+                f"- Matched signals: {', '.join(matched_keywords)}",
+                f"- Confidence: {confidence:.0f}%",
+                f"- Incident type: {incident_type or 'Unknown'}",
+            ]
+        )
+
+    response_sections: list[str] = []
+    # Canonical interpretation is rendered separately by
+    # render_assistant_message(), so do not add it to response_sections.
+    if incident_summary:
+        response_sections.append(incident_summary)
+    if intent_explanation:
+        response_sections.append(intent_explanation)
     if scam_result:
         do_not_share = "\n".join(f"- {item}" for item in DO_NOT_SHARE_ITEMS)
-        answer = (
-            f"🚨 **SCAM ALERT DETECTED**\n\n"
+        scam_block = (
+            f"### Scam Alert\n\n"
             f"**Scam Type:** {scam_result}\n\n"
-            f"{answer}\n\n"
             f"**Never share:**\n{do_not_share}"
         )
+        response_sections.append(scam_block)
+    response_sections.append(answer)
+
+    final_answer = "\n\n".join(section for section in response_sections if section)
+    translated_recommendations = recommendations
+    translated_threat_type = threat_type
+    translated_scam_result = scam_result
+
+    if detected_language not in {"unknown", "english"}:
+        translator_instance = get_app_translator()
+        if translator_instance is not None:
+            try:
+                final_answer = translate_for_user(final_answer, detected_language)
+                translated_recommendations = [
+                    translator_instance.translate_to_language(item, detected_language)
+                    for item in recommendations
+                ] if recommendations else []
+                translated_threat_type = (
+                    translator_instance.translate_to_language(threat_type, detected_language)
+                    if threat_type else None
+                )
+                translated_scam_result = (
+                    translator_instance.translate_to_language(scam_result, detected_language)
+                    if scam_result else None
+                )
+            except Exception:
+                logger.exception("Response translation failed.")
 
     return {
         "role": "assistant",
-        "content": answer,
+        "content": final_answer,
         "threat": threat_type,
+        "threat_display": translated_threat_type,
         "severity": severity,
         "confidence": confidence,
         "recommendations": recommendations,
-        "scam": scam_result,
+        "recommendations_display": translated_recommendations,
+        "scam": translated_scam_result,
+        "scam_display": translated_scam_result,
         "intent": intent,
+        "incident_summary": incident_summary,
+        "intent_explanation": intent_explanation,
+        "canonical_interpretation": canonical_interpretation,
+        "explainability": explainability,
         "matched_keywords": matched_keywords,
+        "matched_phrases": matched_phrases,
     }
 
 
@@ -678,8 +979,7 @@ def main() -> None:
         render_assistant_message(assistant_message)
 
 
-main()
-
- 
+if __name__ == "__main__":
+    main()
 
  
